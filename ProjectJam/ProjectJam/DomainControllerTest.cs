@@ -18,17 +18,31 @@ namespace ProjectJam
             }
             return dct;
         }
-        public void onStart(string database)
+        public void onStart(string type)
         {
-            DBControllerTest.StartDatabase(database);
+            switch (type)
+            {
+                case "M1":
+                    DBControllerTest.dbc.setController(PersistanceTypes.M1);
+                    break;
+                case "M2":
+                    DBControllerTest.dbc.setController(PersistanceTypes.M2);
+                    break;
+                case "M3":
+                    DBControllerTest.dbc.setController(PersistanceTypes.M3);
+                    break;
+                default:
+                    break;
+            }
+
         }
         public void createFruit()
         {
-            DBControllerTest.idb.createFruit();
+            DBControllerTest.dbc.getController().storeFood();
         }
         public void changeFruit()
         {
-            DBControllerTest.idb.changeFruit();
+            DBControllerTest.dbc.getController().changeFood();
         }
     }
 }

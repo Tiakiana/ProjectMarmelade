@@ -56,11 +56,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DatabaseTest.cs" />
+    <Compile Include="DBControllerTest2.cs" />
+    <Compile Include="DBControllerTest3.cs" />
+    <Compile Include="IDBController.cs" />
     <Compile Include="DBControllerTest.cs" />
     <Compile Include="DomainControllerTest.cs" />
     <Compile Include="DomainTest.cs" />
-    <Compile Include="IDatabase.cs" />
     <Compile Include="UITest.cs" />
+    <Compile Include="Utility.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

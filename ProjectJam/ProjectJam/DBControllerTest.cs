@@ -6,23 +6,43 @@ using System.Threading.Tasks;
 
 namespace ProjectJam
 {
-    class DBControllerTest
+    class DBControllerTest : IDBController
     {
-        public static IDatabase idb = null;
+        public static volatile IDBController dbc = null;
 
-        public static void StartDatabase(string database)
+       
+        public void setController(PersistanceTypes idb)
         {
-            switch (database)
+            switch (idb)
             {
-                case "MYSQL":
-                    idb = new DatabaseTest();
+                case PersistanceTypes.M1:
+                    dbc = new DBControllerTest();
                     break;
-                case "Something else":
+                case PersistanceTypes.M2:
+                    dbc = new DBControllerTest2();
+                    break;
+                case PersistanceTypes.M3:
+                    dbc = new DBControllerTest3();
                     break;
                 default:
-                    throw new Exception();
+                    break;
             }
         }
+
+        public void storeFood()
+        {
+            throw new NotImplementedException();
+        }
+        public void changeFood()
+        {
+            throw new NotImplementedException();
+        }
+
+        IDBController IDBController.getController()
+        {
+            return dbc;
+        }
+
 
     }
 }

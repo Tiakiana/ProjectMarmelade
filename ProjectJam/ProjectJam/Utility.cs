@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace ProjectJam
 {
-    interface IDatabase
-    {
-        void createFruit();
-        void changeFruit();
-    }
+    public enum PersistanceTypes { M1, M2, M3 }
+
 }
