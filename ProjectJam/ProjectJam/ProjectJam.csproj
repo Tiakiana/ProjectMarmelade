@@ -68,7 +68,6 @@
     <Compile Include="QualityTest.cs" />
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="View.cs" />
     <Compile Include="Utility.cs" />
     <Page Include="MainWindow.xaml">

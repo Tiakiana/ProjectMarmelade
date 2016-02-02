@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Persistance
 {
-    class Database
+    interface IDBController
     {
+        IDBController getController();
+        void setController(Domain.PersistanceTypes idb);
+
     }
 }
