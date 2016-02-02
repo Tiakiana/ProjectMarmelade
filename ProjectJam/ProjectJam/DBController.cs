@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace Persistance
 {
@@ -10,9 +11,9 @@ namespace Persistance
     {
         public static volatile IDBController dbc = null;
 
-        public void setController(PersistanceTypes idb)
+        public void setController(PersistanceTypes persistance)
         {
-            switch (idb)
+            switch (persistance)
             {
                 case PersistanceTypes.Persistance1:
                     dbc = new DBController_1();
@@ -20,11 +21,10 @@ namespace Persistance
             }
         }
 
-        IDBController IDBController.getController()
+        internal IDBController getController()
         {
             return dbc;
         }
-
 
     }
 }

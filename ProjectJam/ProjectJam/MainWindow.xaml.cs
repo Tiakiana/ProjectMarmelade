@@ -23,12 +23,8 @@ namespace ProjectJam
         public MainWindow()
         {
             InitializeComponent();
+            View.View.onStart("M1");
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            View ui = new View();
-            ui.testTest();
-        }
     }
 }

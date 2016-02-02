@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
 namespace Persistance
 {
@@ -12,13 +13,12 @@ namespace Persistance
         {
             throw new NotImplementedException();
         }
-
         public IDBController getController()
         {
             throw new NotImplementedException();
         }
 
-        public void setController(PersistanceTypes idb)
+        public void setController(PersistanceTypes persistance)
         {
             throw new NotImplementedException();
         }
