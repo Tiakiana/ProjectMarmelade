@@ -27,7 +27,7 @@ namespace ProjectJam
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            UITest ui = new UITest();
+            View ui = new View();
             ui.testTest();
         }
     }

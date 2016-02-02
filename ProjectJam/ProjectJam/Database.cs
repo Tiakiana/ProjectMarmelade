@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Persistance
 {
-    public enum PersistanceTypes { Persistance1, Persistance2 }
-
+    class Database
+    {
+    }
 }

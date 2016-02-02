@@ -55,14 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DatabaseTest.cs" />
-    <Compile Include="DBControllerTest2.cs" />
-    <Compile Include="DBControllerTest3.cs" />
+    <Compile Include="DBController_1.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="IDBController.cs" />
-    <Compile Include="DBControllerTest.cs" />
-    <Compile Include="DomainControllerTest.cs" />
+    <Compile Include="DBController.cs" />
+    <Compile Include="DomainController.cs" />
     <Compile Include="DomainTest.cs" />
-    <Compile Include="UITest.cs" />
+    <Compile Include="IQualityTest.cs" />
+    <Compile Include="Production.cs" />
+    <Compile Include="ProductionFactory.cs" />
+    <Compile Include="QualityTest.cs" />
+    <Compile Include="QualityTestController.cs" />
+    <Compile Include="QualityTestFactory.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="View.cs" />
     <Compile Include="Utility.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
