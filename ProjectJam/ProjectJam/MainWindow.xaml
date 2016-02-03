@@ -5,6 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectJam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800
+                    ">
+            <TabItem Header="Create qt">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="lbl_QualityTestCreate" Content="Create New Quality Test" HorizontalAlignment="Left" Margin="22,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBox x:Name="tb_prodID" HorizontalAlignment="Left" Height="24" Margin="22,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="lbl_prodID" Content="ProdID" HorizontalAlignment="Left" Margin="22,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>
+                    <TextBox x:Name="tb_TestActivities" HorizontalAlignment="Left" Height="114" Margin="22,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243"/>
+                    <Label x:Name="lbl_TestAct" Content="Test Activities" HorizontalAlignment="Left" Margin="22,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>
+                    <Label x:Name="lbl_Employee" Content="Employee" HorizontalAlignment="Left" Margin="338,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>
+                    <TextBox x:Name="tb_Employee" HorizontalAlignment="Left" Height="24" Margin="338,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+                    <TextBox x:Name="tb_TestActivities_Copy" HorizontalAlignment="Left" Height="114" Margin="313,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243"/>
+                    <Label x:Name="lbl_ExpectedRes" Content="Expected Results" HorizontalAlignment="Left" Margin="313,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>
+                    <DatePicker x:Name="dt_DatePicker" HorizontalAlignment="Left" Margin="40,322,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lbl_prodIDNotFound" Content="Production Not Found" HorizontalAlignment="Left" Margin="147,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Visibility="Hidden"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Approve QT ">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btn_Create" Content="Save" HorizontalAlignment="Left" Margin="241,408,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button x:Name="btn_Reset" Content="Reset" HorizontalAlignment="Left" Margin="356,408,0,0" VerticalAlignment="Top" Width="76"/>
+    </Grid>
 </Window>
