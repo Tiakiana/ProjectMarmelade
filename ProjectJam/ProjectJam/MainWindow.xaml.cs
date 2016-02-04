@@ -23,7 +23,7 @@ namespace ProjectJam
         public MainWindow()
         {
             InitializeComponent();
-            View.View.onStart("M1");
+            Domain.DomainController.getDCT().onStart("M1");
         }
 
     }

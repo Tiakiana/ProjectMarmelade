@@ -67,8 +67,6 @@
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
     <Compile Include="QualityTestController.cs" />
-    <Compile Include="QualityTestFactory.cs" />
-    <Compile Include="View.cs" />
     <Compile Include="Utility.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
