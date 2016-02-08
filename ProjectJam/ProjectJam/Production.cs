@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectJam
+namespace Domain
 {
     class Production
     {
@@ -17,8 +17,11 @@ namespace ProjectJam
         {
             return null;
         }
-        internal string SaveQualityTest()
+        internal string SaveQualityTest(IQualityTest iqt)
         {
+            // gør noget effent med iqt i databasen
+            iQualityTest.Add(iqt);
+
             return null;
         }
     }

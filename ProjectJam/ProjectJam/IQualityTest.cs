@@ -1,4 +1,4 @@
-﻿namespace ProjectJam
+﻿namespace Domain
 {
     internal interface IQualityTest
     {

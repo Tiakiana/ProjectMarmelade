@@ -23,11 +23,11 @@
                     <Label x:Name="lbl_TestAct" Content="Test Activities" HorizontalAlignment="Left" Margin="22,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.ColumnSpan="2"/>
                     <Label x:Name="lbl_Employee" Content="Employee" HorizontalAlignment="Left" Margin="227,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="2"/>
                     <TextBox x:Name="tb_Employee" HorizontalAlignment="Left" Height="24" Margin="227,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198" Grid.Column="2"/>
-                    <TextBox x:Name="tb_TestActivities_Copy" HorizontalAlignment="Left" Height="114" Margin="202,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.Column="2"/>
+                    <TextBox x:Name="tb_ExpectedRes" HorizontalAlignment="Left" Height="114" Margin="202,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.Column="2"/>
                     <Label x:Name="lbl_ExpectedRes" Content="Expected Results" HorizontalAlignment="Left" Margin="202,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="2"/>
                     <DatePicker x:Name="dt_DatePicker" HorizontalAlignment="Left" Margin="40,322,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
                     <Label x:Name="lbl_prodIDNotFound" Content="Production Not Found" HorizontalAlignment="Left" Margin="36,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Visibility="Hidden" Grid.Column="2"/>
-                    <Button x:Name="btn_Create" Content="Save" HorizontalAlignment="Left" Margin="130,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
+                    <Button x:Name="btn_Create" Content="Save" HorizontalAlignment="Left" Margin="130,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2" Click="btn_Create_Click"/>
                     <Button x:Name="btn_Reset" Content="Reset" HorizontalAlignment="Left" Margin="245,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
                 </Grid>
             </TabItem>

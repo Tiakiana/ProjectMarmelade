@@ -9,7 +9,6 @@ namespace Domain
     class DomainController
     {
         static DomainController dct = null;
-        static QualityTestController qtc = null;
         public static DomainController getDCT()
         {
             if (dct == null)
@@ -20,7 +19,11 @@ namespace Domain
         }
         public DomainController()
         {
-            qtc = new QualityTestController();
+
+        }
+
+        public QualityTestController GetQualityTestController() {
+            return dct.GetQualityTestController();
         }
         public void onStart(string type)
         {

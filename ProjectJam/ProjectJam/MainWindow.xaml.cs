@@ -25,6 +25,15 @@ namespace ProjectJam
             InitializeComponent();
             Domain.DomainController.getDCT().onStart("M1");
         }
-
+        /*
+        int prodID, DateTime date, 
+                string qualityTestActivities, string expresults, string results,
+                string comments, string comment, string employee)
+    */
+        private void btn_Create_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime? date = dt_DatePicker.SelectedDate;
+            Domain.DomainController.getDCT().GetQualityTestController().CreateQualityTest(Int32.Parse(tb_prodID.Text), dt_DatePicker.DisplayDate, tb_TestActivities.Text, tb_ExpectedRes.Text,tb_Employee.Text, null, null);
+        }
     }
 }
