@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DBController_1.cs" />
+    <Compile Include="DBC.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IDBController.cs" />

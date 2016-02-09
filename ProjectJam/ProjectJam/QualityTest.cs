@@ -11,7 +11,8 @@ namespace Domain
 
         private int prodID;
         private DateTime date;
-        private string qualityTestActivities, expResults, employee,comment, results;
+        private string qualityTestActivities, expResults, employee, comment, results;
+        private bool done, approved;
 
         public QualityTest(int prodID, DateTime date,
                 string qualityTestActivities, string expResults,
@@ -24,16 +25,14 @@ namespace Domain
             this.employee = employee;
             this.results = null;
             this.comment = null;
-
+            this.done = false;
+            this.approved = false;
         }
 
         public QualityTest(int prodID, DateTime date,
                 string qualityTestActivities, string expResults,
                  string employee, string comment, string results)
         {
-
-           
-
             this.prodID = prodID;
             this.date = date;
             this.qualityTestActivities = qualityTestActivities;
@@ -41,6 +40,33 @@ namespace Domain
             this.employee = employee;
             this.results = results;
             this.comment = comment;
+            this.done = false;
+            this.approved = false;
+        }
+
+        public int getID()
+        {
+            return prodID;
+        }
+
+        public override string ToString()
+        {
+            return "ID: " + prodID + " Date: " + date + "\nquality test activities: " + qualityTestActivities + " expected results: " + expResults + "\nemployee: " + employee + "\ncomments: " + comment + " results: " + results + "\nIs the test done? " + done + "\nIs the test approved? " + approved;
+        }
+
+        public void setComment(string comment)
+        {
+            this.comment = comment;
+        }
+
+        public void setResult(string results)
+        {
+            this.results = results;
+        }
+
+        public void setDone(bool cHecked)
+        {
+            this.approved = cHecked;
         }
     }
 }

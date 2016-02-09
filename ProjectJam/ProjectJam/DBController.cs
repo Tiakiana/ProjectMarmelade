@@ -7,23 +7,23 @@ using Domain;
 
 namespace Persistance
 {
-    class DBController : IDBController
+    class DBController
     {
-        public static volatile IDBController dbc = null;
+        public static volatile IDBController idbc = null;
 
-        public static void setController(PersistanceTypes persistance)
+        internal static void setController(PersistanceTypes persistance)
         {
             switch (persistance)
             {
                 case PersistanceTypes.Persistance1:
-                    dbc = new DBController_1();
+                    idbc = new DBC();
                     break;
             }
         }
 
-        internal IDBController getController()
+        internal static IDBController getController()
         {
-            return dbc;
+            return idbc;
         }
 
     }

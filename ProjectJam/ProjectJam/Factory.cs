@@ -9,23 +9,15 @@ namespace Domain
     class Factory
     {
         public static Factory factory;
-
         public static Factory GetFactory() {
             if (factory == null)
             {
                 factory = new Factory();
-                
             }
             return factory;
         }
         public QualityTestFactory GetQTF() {
-            return factory.GetQTF();
+            return QualityTestFactory.getQTF();
         } 
-
-        //internal QualityTestFactory qtf;
-   
-       
-
-
     }
 }

@@ -9,6 +9,7 @@ namespace Persistance
 {
     interface IDBController
     {
-        
+        IQualityTest getQualityTest(int ID);
+        void saveQualityTest(IQualityTest iq);
     }
 }
