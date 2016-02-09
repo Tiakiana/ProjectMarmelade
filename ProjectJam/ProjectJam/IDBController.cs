@@ -9,6 +9,6 @@ namespace Persistance
 {
     interface IDBController
     {
-        void setController(PersistanceTypes persistance);
+        
     }
 }

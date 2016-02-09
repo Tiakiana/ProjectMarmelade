@@ -11,7 +11,7 @@ namespace Persistance
     {
         public static volatile IDBController dbc = null;
 
-        public void setController(PersistanceTypes persistance)
+        public static void setController(PersistanceTypes persistance)
         {
             switch (persistance)
             {

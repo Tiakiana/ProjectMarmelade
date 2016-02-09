@@ -30,10 +30,10 @@ namespace Domain
             switch (type)
             {
                 case "M1":
-                    Persistance.DBController.dbc.setController(PersistanceTypes.Persistance1);
+                    Persistance.DBController.setController(PersistanceTypes.Persistance1);
                     break;
                 case "M2":
-                    Persistance.DBController.dbc.setController(PersistanceTypes.Persistance2);
+                    Persistance.DBController.setController(PersistanceTypes.Persistance2);
                     break;
                 default:
                     throw new Exception("There is no such persistance available");
