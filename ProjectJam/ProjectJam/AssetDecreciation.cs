@@ -44,7 +44,7 @@ namespace Domain
         public void DecreciateAnnuityMethod()
         {
             //Annuitet er sær, der er åbenbart to formler?
-            dn = d1(1 + i)n - 1
+            //dn = d1(1 + i)n - 1
             
             //mellemregning for at skrive (1+i)^-n om til p
             double p = Math.Pow((1 + DecriationInterest), -DecreciationLifeSpan);

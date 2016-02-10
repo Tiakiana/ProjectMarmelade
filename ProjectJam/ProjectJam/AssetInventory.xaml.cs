@@ -27,9 +27,9 @@ namespace ProjectJam
        
         private void planMaintenanceButton_Click(object sender, RoutedEventArgs e)
         {
-            AssetInventory newAssetIventory = new AssetInventory();
+            AssetPlanMaintenance newPlanMaintenanceWindow = new AssetPlanMaintenance();
 
-            newAssetIventory.Show();
+            newPlanMaintenanceWindow.Show();
             this.Close();
         }
 
@@ -43,12 +43,18 @@ namespace ProjectJam
 
         private void assetInformationButton_Click(object sender, RoutedEventArgs e)
         {
+            AssetInformation newAssetInformationWindow = new AssetInformation();
 
+            newAssetInformationWindow.Show();
+            this.Close();
         }
 
         private void completedMaintenanceButton_Click(object sender, RoutedEventArgs e)
         {
+            AssetCompletedMaintenance newCompletedMaintenanceWindow = new AssetCompletedMaintenance();
 
+            newCompletedMaintenanceWindow.Show();
+            this.Close();
         }
 
     }
