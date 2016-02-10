@@ -41,7 +41,6 @@ namespace ProjectJam
             tb_result_chng.Text = "";
             tb_TestActivities_chng.Text = "";
             Txt_boxQualityTest.Text = "";
-            Txt_boxReturnMsg.Text = "";
             Txt_boxReturnMsg_chng.Text = "";
         }
         private void btn_Create_Click(object sender, RoutedEventArgs e)
@@ -80,7 +79,7 @@ namespace ProjectJam
             
             try
             {
-                Domain.DomainController.getDCT().GetQualityTestController().ChangeQualityTest((bool)cb_approved.IsChecked,tb_result.Text, tb_comment.Text);
+                Domain.DomainController.getDCT().GetQualityTestController().ChangeQualityTest((bool)cb_TestDone.IsChecked,(bool)cb_approved.IsChecked,tb_result.Text, tb_comment.Text);
             }
             catch (Exception)
             {
@@ -89,5 +88,40 @@ namespace ProjectJam
             MessageBox.Show("The result has been saved");
             resetFields();
         }
+
+        private void btn_getQualityTest_chng_Click(object sender, RoutedEventArgs e)
+        {
+            int a = 0;
+            string[] b = null;
+            try
+            {
+                a = int.Parse(tb_qualityTestID_chng.Text);
+                try
+                {
+                    b = Domain.DomainController.getDCT().GetQualityTestController().GetQualityTestAsArray(a);
+                    tb_result_chng.Text = b[0];
+                    tb_TestActivities_chng.Text = b[1];
+                    tb_comment_chng.Text = b[2];
+                    tb_ExpectedRes_chng.Text = b[3];
+                    //dt_DatePicker.SelectedDate = b[4];
+                    cb_approved_chng.IsChecked = Boolean.Parse(b[5]);
+                    cb_TestDone_chng.IsChecked = Boolean.Parse(b[6]);
+                    tb_Employee_chng.Text = b[7];
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("The quality test does not exist");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please type in an ID not a sentence");
+            }
+
+          
+        }
+
+       
+
     }
 }

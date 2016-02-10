@@ -31,7 +31,7 @@ namespace Domain
 
         public QualityTest(int prodID, DateTime date,
                 string qualityTestActivities, string expResults,
-                 string employee, string comment, string results)
+                 string employee, string comment, string results, bool done, bool approved)
         {
             this.prodID = prodID;
             this.date = date;
@@ -40,8 +40,8 @@ namespace Domain
             this.employee = employee;
             this.results = results;
             this.comment = comment;
-            this.done = false;
-            this.approved = false;
+            this.done = done;
+            this.approved = approved;
         }
 
         public int getID()
@@ -53,6 +53,20 @@ namespace Domain
         {
             return "ID: " + prodID + " Date: " + date + "\nquality test activities: " + qualityTestActivities + " expected results: " + expResults + "\nemployee: " + employee + "\ncomments: " + comment + " results: " + results + "\nIs the test done? " + done + "\nIs the test approved? " + approved;
         }
+        public string[] ToString2()
+        {
+            string[] s = new string[8];
+            s[0] = results;
+            s[1] = qualityTestActivities;
+            s[2] = comment;
+            s[3] = expResults;
+            s[4] = date.ToString();
+            s[5] = approved.ToString();
+            s[6] = done.ToString();
+            s[7] = employee;
+            return s;
+            }
+
 
         public void setComment(string comment)
         {
@@ -64,9 +78,15 @@ namespace Domain
             this.results = results;
         }
 
+
+        public void setApproved(bool done)
+        {
+            approved = done;
+        }
+
         public void setDone(bool cHecked)
         {
-            this.approved = cHecked;
+            done = cHecked;
         }
     }
 }

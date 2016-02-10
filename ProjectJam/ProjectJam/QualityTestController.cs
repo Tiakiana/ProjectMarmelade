@@ -48,12 +48,16 @@ namespace Domain
             result = Persistance.DBController.getController().getQualityTest(ID);
             return result.ToString();
         }
+        internal string[] GetQualityTestAsArray(int ID) {
+            return Persistance.DBController.getController().getQualityTest(ID).ToString2();
+        }
 
-        internal string ChangeQualityTest(bool cHecked, string comment, string result)
+        internal string ChangeQualityTest(bool done, bool cHecked, string comment, string result)
         {
             this.result.setComment(comment);
             this.result.setResult(result);
-            this.result.setDone(cHecked);
+            this.result.setDone(done);
+            this.result.setApproved(cHecked);
             Persistance.DBController.getController().saveQualityTest(this.result);
             return "The data has been saved";
         }

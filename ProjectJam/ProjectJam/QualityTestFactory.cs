@@ -30,7 +30,7 @@ namespace Domain
             }
             else
             {
-                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, comment, results);
+                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, comment, results, false, false);
 
             }
 
