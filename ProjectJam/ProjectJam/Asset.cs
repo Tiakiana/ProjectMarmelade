@@ -19,7 +19,7 @@ namespace Domain
         private bool IsOperative { get; set; }
         private List<AssetDecreciation> AssetDecreciationList { get; set; }
         private List<AssetMaintenance> AssetMaintenanceList { get; set; }
-        
+
         // Constructors:
         public Asset()
         {
