@@ -5,16 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain
-{       enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod};
+{
+    enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod };
     class AssetDecreciation
     {
         // Properties
         private DecreciationType decreciationType { get; set; }
-        private decimal DecreciationValue { get; set; }
-        private decimal DecreciationPurchasePrice { get; set; }
-        private decimal DecreciationScrapValue { get; set; }
-        private int DecreciationLifeSpan { get; set; }
+        private double DecreciationValue { get; set; }
+        private double DecreciationPurchasePrice { get; set; }
+        private double DecreciationScrapValue { get; set; }
+        private double DecreciationLifeSpan { get; set; }
         public int DecriationPercent { get; set; }
+        public double DecriationInterest { get; set; }
 
         // Constructors:
         public AssetDecreciation()
@@ -25,7 +27,7 @@ namespace Domain
             this.DecreciationScrapValue = 0;
             this.DecreciationLifeSpan = 1;
         }
-        
+
         //Methods:
         public void DecreciateLinearyMethod()
         {
@@ -35,16 +37,19 @@ namespace Domain
         }
         public void DecreciateBalanceMethod()
         {
-            DecreciationValue = 
+            DecreciationValue =
                 DecreciationPurchasePrice * DecriationPercent / 100;
             // DO STUFF
         }
         public void DecreciateAnnuityMethod()
         {
-            //Annuitet er sær
+            //Annuitet er sær, der er åbenbart to formler?
             dn = d1(1 + i)n - 1
-            //og
-            k = (𝐴−𝑆)(𝑖/ (1−(1 +𝑖))−𝑛)+𝑆𝑖
+            
+            //mellemregning for at skrive (1+i)^-n om til p
+            double p = Math.Pow((1 + DecriationInterest), -DecreciationLifeSpan);
+            //Den anden formel
+            double k = (DecreciationPurchasePrice - DecreciationScrapValue) * DecriationInterest / ((1 - p) + DecreciationScrapValue * DecriationInterest);
             // DO STUFF
         }
     }
