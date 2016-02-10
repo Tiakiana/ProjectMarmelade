@@ -30,6 +30,7 @@ namespace ProjectJam
             if (MessageBox.Show("Plan maintenance for: \n AssetId \n AssetName \n date \n description", "Plan Maintenance", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 // do yes stuff
+                MessageBox.Show("Maintenance planned");
             }
             else
             {

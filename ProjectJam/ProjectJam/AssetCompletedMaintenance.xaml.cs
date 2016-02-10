@@ -37,7 +37,8 @@ namespace ProjectJam
             // insert selected values in messagebox
             if (MessageBox.Show("Pleas confirm that: \n AssetId \n AssetName \n has been maintained", "Maintenance", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                // do yes stuff
+                // do yes stuff 
+                MessageBox.Show("Asset back in the game");
             }
             else
             {
