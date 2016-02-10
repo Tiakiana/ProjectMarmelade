@@ -15,13 +15,26 @@ using System.Windows.Shapes;
 namespace ProjectJam
 {
     /// <summary>
-    /// Interaction logic for AssetMakeAsset.xaml
+    /// Interaction logic for AssetPlanMaintenance.xaml
     /// </summary>
-    public partial class AssetMakeAsset : Window
+    public partial class AssetPlanMaintenance : Window
     {
-        public AssetMakeAsset()
+        public AssetPlanMaintenance()
         {
             InitializeComponent();
+        }
+
+        private void confirmPlanMaintenanceButton_Click(object sender, RoutedEventArgs e)
+        {
+            // insert selected values in messagebox
+            if (MessageBox.Show("Plan maintenance for: \n AssetId \n AssetName \n date \n description", "Plan Maintenance", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                // do yes stuff
+            }
+            else
+            {
+                // do no stuff
+            }
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
@@ -29,14 +42,7 @@ namespace ProjectJam
             AssetInventory assetInventoryWindow = new AssetInventory();
 
             assetInventoryWindow.Show();
-
             this.Close();
-        }
-
-        private void createButton_Click(object sender, RoutedEventArgs e)
-        {
-            //insert values til database
-            MessageBox.Show("New asset was created", "Succes");
         }
     }
 }

@@ -56,13 +56,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Asset.cs" />
+    <Compile Include="AssetCompletedMaintenance.xaml.cs">
+      <DependentUpon>AssetCompletedMaintenance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AssetController.cs" />
     <Compile Include="AssetDatabaseController.cs" />
+    <Compile Include="AssetInformation.xaml.cs">
+      <DependentUpon>AssetInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AssetInventory.xaml.cs">
       <DependentUpon>AssetInventory.xaml</DependentUpon>
     </Compile>
     <Compile Include="AssetMakeAsset.xaml.cs">
       <DependentUpon>AssetMakeAsset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AssetPlanMaintenance.xaml.cs">
+      <DependentUpon>AssetPlanMaintenance.xaml</DependentUpon>
     </Compile>
     <Compile Include="DBC.cs" />
     <Compile Include="AssetDecreciation.cs" />
@@ -80,11 +89,23 @@
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
     <Compile Include="Utility.cs" />
+    <Page Include="AssetCompletedMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AssetInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AssetInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AssetMakeAsset.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AssetPlanMaintenance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

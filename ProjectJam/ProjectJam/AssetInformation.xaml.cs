@@ -15,28 +15,28 @@ using System.Windows.Shapes;
 namespace ProjectJam
 {
     /// <summary>
-    /// Interaction logic for AssetMakeAsset.xaml
+    /// Interaction logic for AssetInformation.xaml
     /// </summary>
-    public partial class AssetMakeAsset : Window
+    public partial class AssetInformation : Window
     {
-        public AssetMakeAsset()
+        public AssetInformation()
         {
             InitializeComponent();
         }
 
+        private void showButton_Click(object sender, RoutedEventArgs e)
+        {
+            //mulgivis unødvendig
+        }
+
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
+
             AssetInventory assetInventoryWindow = new AssetInventory();
 
             assetInventoryWindow.Show();
-
             this.Close();
-        }
 
-        private void createButton_Click(object sender, RoutedEventArgs e)
-        {
-            //insert values til database
-            MessageBox.Show("New asset was created", "Succes");
         }
     }
 }

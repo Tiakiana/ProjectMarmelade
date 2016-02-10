@@ -27,15 +27,17 @@ namespace ProjectJam
        
         private void planMaintenanceButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            AssetInventory newAssetIventory = new AssetInventory();
+
+            newAssetIventory.Show();
+            this.Close();
         }
 
         private void newAssetButton_Click(object sender, RoutedEventArgs e)
         {
-            AssetMakeAsset newAssetWindow = new AssetMakeAsset();
+            AssetMakeAsset newMakeAssetWindow = new AssetMakeAsset();
 
-            newAssetWindow.Show();
-
+            newMakeAssetWindow.Show();
             this.Close();
         }
 
