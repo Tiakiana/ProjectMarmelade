@@ -33,11 +33,11 @@ namespace Domain
 
         public QualityTestController()
         { }
-            internal string CreateQualityTest(int prodID, DateTime date, 
+            internal string CreateQualityTest(int prodID, DateTime? date, 
                 string qualityTestActivities, string expresults,
                  string employee, string comments, string results) {
 
-            IQualityTest iqt = Factory.GetFactory().GetQTF().CreateQualityTest(prodID, date, qualityTestActivities, expresults, employee, comments, results);
+            IQualityTest iqt = Factory.GetFactory().GetQTF().CreateQualityTest(prodID, (DateTime) date, qualityTestActivities, expresults, employee, comments, results,false,false);
             Persistance.DBController.getController().saveQualityTest(iqt);
             return "underway";
 
@@ -60,6 +60,13 @@ namespace Domain
             this.result.setApproved(cHecked);
             Persistance.DBController.getController().saveQualityTest(this.result);
             return "The data has been saved";
+        }
+
+        internal void ChangeAllQualityTest(int ID, string testActivties, string result, string expResult, string comment
+            , DateTime date, string employee, bool approved, bool done)
+        {
+            
+            Persistance.DBController.getController().changeQualityTest(Factory.GetFactory().GetQTF().CreateQualityTest(ID, date, testActivties, expResult, employee, comment, result, approved, done));
         }
     }
 }

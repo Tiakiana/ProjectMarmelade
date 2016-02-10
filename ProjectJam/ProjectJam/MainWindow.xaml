@@ -14,21 +14,23 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="20*"/>
-                        <ColumnDefinition Width="679*"/>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="594*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="lbl_createQualityTest" Content="Create New Quality Test" HorizontalAlignment="Left" Margin="22,20,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="3"/>
                     <TextBox x:Name="tb_prodID" HorizontalAlignment="Left" Height="24" Margin="22,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
                     <Label x:Name="lbl_prodID" Content="ProdID" HorizontalAlignment="Left" Margin="22,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>
-                    <TextBox x:Name="tb_TestActivities" HorizontalAlignment="Left" Height="114" Margin="22,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="tb_TestActivities" HorizontalAlignment="Left" Height="114" Margin="22,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.ColumnSpan="5"/>
                     <Label x:Name="lbl_TestAct" Content="Test Activities" HorizontalAlignment="Left" Margin="22,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.ColumnSpan="2"/>
-                    <Label x:Name="lbl_Employee" Content="Employee" HorizontalAlignment="Left" Margin="227,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="2"/>
-                    <TextBox x:Name="tb_Employee" HorizontalAlignment="Left" Height="24" Margin="227,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198" Grid.Column="2"/>
-                    <TextBox x:Name="tb_ExpectedRes" HorizontalAlignment="Left" Height="114" Margin="202,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.Column="2"/>
-                    <Label x:Name="lbl_ExpectedRes" Content="Expected Results" HorizontalAlignment="Left" Margin="202,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="2"/>
+                    <Label x:Name="lbl_Employee" Content="Employee" HorizontalAlignment="Left" Margin="143,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="4"/>
+                    <TextBox x:Name="tb_Employee" HorizontalAlignment="Left" Height="24" Margin="143,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198" Grid.Column="4"/>
+                    <TextBox x:Name="tb_ExpectedRes" HorizontalAlignment="Left" Height="114" Margin="118,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="243" Grid.Column="4"/>
+                    <Label x:Name="lbl_ExpectedRes" Content="Expected Results" HorizontalAlignment="Left" Margin="118,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Grid.Column="4"/>
                     <DatePicker x:Name="dt_DatePicker" HorizontalAlignment="Left" Margin="40,322,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <Label x:Name="lbl_prodIDNotFound" Content="Production Not Found" HorizontalAlignment="Left" Margin="36,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Visibility="Hidden" Grid.Column="2"/>
-                    <Button x:Name="btn_Create" Content="Save" HorizontalAlignment="Left" Margin="130,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2" Click="btn_Create_Click"/>
-                    <Button x:Name="btn_Reset" Content="Reset" HorizontalAlignment="Left" Margin="245,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="2"/>
+                    <Label x:Name="lbl_prodIDNotFound" Content="Production Not Found" HorizontalAlignment="Left" Margin="36,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635" Visibility="Hidden" Grid.Column="2" Grid.ColumnSpan="3"/>
+                    <Button x:Name="btn_Create" Content="Save" HorizontalAlignment="Left" Margin="46,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="4" Click="btn_Create_Click"/>
+                    <Button x:Name="btn_Reset" Content="Reset" HorizontalAlignment="Left" Margin="161,408,0,0" VerticalAlignment="Top" Width="76" Grid.Column="4"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Approve QT ">
@@ -61,8 +63,7 @@
                     <Label x:Name="lbl_comment_chng" Content="Comments" HorizontalAlignment="Left" Margin="22,253,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.976,7.962"/>
                     <TextBox x:Name="tb_comment_chng" HorizontalAlignment="Left" Height="114" Margin="22,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
                     <CheckBox x:Name="cb_approved_chng" Content="Test approved" HorizontalAlignment="Left" Margin="22,430,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="Txt_boxReturnMsg_chng" HorizontalAlignment="Left" Height="75" Margin="356,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="349"/>
-                    <Button x:Name="btn_approveResults_chng" Content="Change Results" HorizontalAlignment="Left" Margin="418,480,0,0" VerticalAlignment="Top" Width="110"/>
+                    <Button x:Name="btn_approveResults_chng" Content="Change Results" HorizontalAlignment="Left" Margin="418,480,0,0" VerticalAlignment="Top" Width="110" Click="btn_approveResults_chng_Click"/>
                     <Label x:Name="lbl_errorsOrSucces_chng" Content="" HorizontalAlignment="Left" Margin="356,279,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.976,7.962"/>
                     <TextBox x:Name="tb_ExpectedRes_chng" HorizontalAlignment="Left" Height="114" Margin="356,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="349"/>
                     <Label x:Name="lbl_ExpectedRes_chng" Content="Expected Results" HorizontalAlignment="Left" Margin="356,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.426,0.635"/>

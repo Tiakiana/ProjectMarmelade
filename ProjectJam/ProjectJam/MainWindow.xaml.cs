@@ -41,12 +41,15 @@ namespace ProjectJam
             tb_result_chng.Text = "";
             tb_TestActivities_chng.Text = "";
             Txt_boxQualityTest.Text = "";
-            Txt_boxReturnMsg_chng.Text = "";
+            tb_ExpectedRes_chng.Text = "";
+            cb_approved_chng.IsChecked = false;
+            cb_approved.IsChecked = false;
+            cb_TestDone.IsChecked = false;
+            cb_TestDone_chng.IsChecked = false;
         }
         private void btn_Create_Click(object sender, RoutedEventArgs e)
         {
-            DateTime? date = dt_DatePicker.SelectedDate;
-            Domain.DomainController.getDCT().GetQualityTestController().CreateQualityTest(Int32.Parse(tb_prodID.Text), dt_DatePicker.DisplayDate, tb_TestActivities.Text, tb_ExpectedRes.Text,tb_Employee.Text, null, null);
+            Domain.DomainController.getDCT().GetQualityTestController().CreateQualityTest(Int32.Parse(tb_prodID.Text), dt_DatePicker.SelectedDate, tb_TestActivities.Text, tb_ExpectedRes.Text,tb_Employee.Text, null, null);
             resetFields();
         }
 
@@ -103,7 +106,7 @@ namespace ProjectJam
                     tb_TestActivities_chng.Text = b[1];
                     tb_comment_chng.Text = b[2];
                     tb_ExpectedRes_chng.Text = b[3];
-                    //dt_DatePicker.SelectedDate = b[4];
+                    dp_datepicker_chng.SelectedDate = DateTime.Parse(b[4]);
                     cb_approved_chng.IsChecked = Boolean.Parse(b[5]);
                     cb_TestDone_chng.IsChecked = Boolean.Parse(b[6]);
                     tb_Employee_chng.Text = b[7];
@@ -121,7 +124,12 @@ namespace ProjectJam
           
         }
 
-       
-
+        private void btn_approveResults_chng_Click(object sender, RoutedEventArgs e)
+        {
+            Domain.DomainController.getDCT().GetQualityTestController().ChangeAllQualityTest(int.Parse(tb_qualityTestID_chng.Text),
+                tb_TestActivities_chng.Text, tb_result_chng.Text, tb_ExpectedRes_chng.Text,
+                tb_comment_chng.Text, (DateTime)dp_datepicker_chng.SelectedDate, tb_Employee_chng.Text, (bool) cb_approved_chng.IsChecked, (bool)cb_TestDone_chng.IsChecked);
+            resetFields();
+        }
     }
 }
