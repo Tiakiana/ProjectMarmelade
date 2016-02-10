@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="DBC.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
@@ -63,12 +64,22 @@
     <Compile Include="DomainController.cs" />
     <Compile Include="DomainTest.cs" />
     <Compile Include="IQualityTest.cs" />
+    <Compile Include="Models\ProductionFacility.cs" />
+    <Compile Include="Models\ProductionPlan.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\Resource.cs" />
+    <Compile Include="Models\ResourceStock.cs" />
+    <Compile Include="Models\Storage.cs" />
+    <Compile Include="Persistents\DataManipulator.cs" />
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
     <Compile Include="Utility.cs" />
+    <Compile Include="Views\PlanView.xaml.cs">
+      <DependentUpon>PlanView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PlanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -109,6 +124,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
