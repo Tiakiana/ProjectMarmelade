@@ -11,5 +11,6 @@ namespace Persistance
     {
         IQualityTest getQualityTest(int ID);
         void saveQualityTest(IQualityTest iq);
+        void changeQualityTest(IQualityTest iq);
     }
 }

@@ -11,6 +11,19 @@ namespace Persistance
     {
         private List<IQualityTest> iQualityTests = new List<IQualityTest>();
 
+        public void changeQualityTest(IQualityTest iq)
+        {
+            for (int i = 0; i < iQualityTests.Count; i++)
+            {
+                if (iQualityTests[i].getID() == iq.getID())
+                {
+                    iQualityTests.Remove(iQualityTests[i]);
+                    iQualityTests.Add(iq);
+                    break;
+                }
+            }
+        }
+
         public IQualityTest getQualityTest(int ID)
         {
             Domain.IQualityTest iq = null;
