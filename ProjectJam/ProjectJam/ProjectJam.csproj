@@ -55,7 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Asset.cs" />
+    <Compile Include="AssetController.cs" />
+    <Compile Include="AssetDatabaseController.cs" />
     <Compile Include="DBC.cs" />
+    <Compile Include="Decreciation.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IDBController.cs" />
@@ -63,6 +67,7 @@
     <Compile Include="DomainController.cs" />
     <Compile Include="DomainTest.cs" />
     <Compile Include="IQualityTest.cs" />
+    <Compile Include="Maintenance.cs" />
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
