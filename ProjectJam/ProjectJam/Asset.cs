@@ -17,8 +17,8 @@ namespace MarmeladeAssets
         private decimal AssetPostedValue { get; set; }
         private int AssetLifeSpan { get; set; }
         private bool IsOperative { get; set; }
-        private List<Decreciation> AssetDecreciationList { get; set; }
-        private List<Maintenance> AssetMaintenanceList { get; set; }
+        private List<AssetDecreciation> AssetDecreciationList { get; set; }
+        private List<AssetMaintenance> AssetMaintenanceList { get; set; }
         
         // Constructors:
         public Asset()
@@ -31,8 +31,8 @@ namespace MarmeladeAssets
             this.AssetPostedValue = this.AssetPurchacePrice - this.AssetScrapValue;
             this.AssetLifeSpan = 1;
             this.IsOperative = false;
-            this.AssetDecreciationList = new List<Decreciation>();
-            this.AssetMaintenanceList = new List<Maintenance>();
+            this.AssetDecreciationList = new List<AssetDecreciation>();
+            this.AssetMaintenanceList = new List<AssetMaintenance>();
         }
 
         // Methods:

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarmeladeAssets
 {       enum MaintenanceStatus { Planned, InProgress, Done};
-    class Maintenance
+    class AssetMaintenance
     {
         // Properties
         private int MaintenanceID { get; set; }
@@ -15,7 +15,7 @@ namespace MarmeladeAssets
         private MaintenanceStatus maintenanceStatus { get; set; }
         
         // Constructors
-        public Maintenance()
+        public AssetMaintenance()
         {
             this.MaintenanceID = 1;// GET auto incremented ID from DB
             this.MaintenanceDescription = "NOT APPLIED";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarmeladeAssets
 {       enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod};
-    class Decreciation
+    class AssetDecreciation
     {
         // Properties
         private DecreciationType decreciationType { get; set; }
@@ -16,7 +16,7 @@ namespace MarmeladeAssets
         private int DecreciationLifeSpan { get; set; }
 
         // Constructors:
-        public Decreciation()
+        public AssetDecreciation()
         {
             this.decreciationType = DecreciationType.LinearyMethod;
             this.DecreciationValue = (DecreciationPurchasePrice - DecreciationScrapValue) / DecreciationLifeSpan;
