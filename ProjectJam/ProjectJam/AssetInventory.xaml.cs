@@ -57,5 +57,14 @@ namespace ProjectJam
             this.Close();
         }
 
+        private void homeButton_Click(object sender, RoutedEventArgs e)
+        {
+            JamFactoryUI newJamFactoryWindow = new JamFactoryUI();
+
+            newJamFactoryWindow.Show();
+
+            this.Close();
+
+        }
     }
 }

@@ -83,6 +83,9 @@
     <Compile Include="DomainTest.cs" />
     <Compile Include="IQualityTest.cs" />
     <Compile Include="AssetMaintenance.cs" />
+    <Compile Include="JamFactoryUI.xaml.cs">
+      <DependentUpon>JamFactoryUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AssetPlanMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JamFactoryUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
