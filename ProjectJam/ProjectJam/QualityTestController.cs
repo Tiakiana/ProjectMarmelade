@@ -37,10 +37,9 @@ namespace Domain
                 string qualityTestActivities, string expresults,
                  string employee, string comments, string results) {
 
-            IQualityTest iqt = Factory.GetFactory().GetQTF().CreateQualityTest(prodID, (DateTime) date, qualityTestActivities, expresults, employee, comments, results,false,false);
-            Persistance.DBController.getController().saveQualityTest(iqt);
+            IQualityTest iqt = Factory.GetFactory().GetQTF().CreateQualityTest(0,(DateTime) date, qualityTestActivities, expresults, employee, comments, results,false,false);
+            Persistance.DBController.getController().createQualityTest(prodID, iqt);
             return "underway";
-
         }
 
         internal string GetQualityTest(int ID)

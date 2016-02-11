@@ -8,12 +8,24 @@ namespace Domain
 {
     class QualityTest : IQualityTest
     {
-
         private int prodID;
         private DateTime date;
         private string qualityTestActivities, expResults, employee, comment, results;
         private bool done, approved;
-
+        public QualityTest(DateTime date,
+                string qualityTestActivities, string expResults,
+                 string employee)
+        {
+            this.prodID = -1;
+            this.date = date;
+            this.qualityTestActivities = qualityTestActivities;
+            this.expResults = expResults;
+            this.employee = employee;
+            this.results = null;
+            this.comment = null;
+            this.done = false;
+            this.approved = false;
+        }
         public QualityTest(int prodID, DateTime date,
                 string qualityTestActivities, string expResults,
                  string employee)
@@ -66,27 +78,53 @@ namespace Domain
             s[7] = employee;
             return s;
             }
-
-
         public void setComment(string comment)
         {
             this.comment = comment;
         }
-
         public void setResult(string results)
         {
             this.results = results;
         }
-
-
         public void setApproved(bool done)
         {
             approved = done;
         }
-
         public void setDone(bool cHecked)
         {
             done = cHecked;
+        }
+        public DateTime getCheckedDate()
+        {
+            return date;
+        }
+        public string getQTA()
+        {
+            return qualityTestActivities;
+        }
+        public string getER()
+        {
+            return expResults;
+        }
+        public string getEmployee()
+        {
+            return employee;
+        }
+        public string getComment()
+        {
+            return comment;
+        }
+        public string getResult()
+        {
+            return results;
+        }
+        public bool getDone()
+        {
+            return done;
+        }
+        public bool getApproved()
+        {
+            return approved;
         }
     }
 }
