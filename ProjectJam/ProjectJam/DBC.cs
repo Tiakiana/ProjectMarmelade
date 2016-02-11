@@ -34,21 +34,50 @@ namespace Persistance
 
         public IQualityTest getQualityTest(int ID)
         {
-            Domain.IQualityTest iq = null;
-            foreach (var item in iQualityTests)
+            IQualityTest result = null;
+
+            SqlConnection conn = getConnection();
+
+            SqlCommand command = new SqlCommand("LoadQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@QualityTestID", ID));
+            
+            SqlDataReader sdr = command.ExecuteReader();
+
+            while (sdr.Read())
             {
-                if (item.getID() == ID)
-                {
-                    iq = item;
-                }
+                DateTime date = Convert.ToDateTime(sdr["CheckedDate"]);
+                string qualityTestActivities = Convert.ToString(sdr["QualityTestActivities"]);
+                string expectedR = Convert.ToString(sdr["expectedResult"]);
+                string employee = Convert.ToString(sdr["employee"]);
+                bool done = true;
+                bool approved = true;
+               
+                result = Factory.GetFactory().GetQTF().CreateQualityTest(ID,date,qualityTestActivities,expectedR,employee,null,null,approved,done);
             }
-            return iq;
+            conn.Close();
+            conn.Dispose();
+            return result;
         }
 
         public void saveQualityTest(IQualityTest iq)
         {
-            
-            iQualityTests.Add(iq);
+            SqlConnection conn = getConnection();
+
+            SqlCommand command = new SqlCommand("approveQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@QualityID", iq.getID()));
+            command.Parameters.Add(new SqlParameter("@Comment", iq.getComment()));
+            command.Parameters.Add(new SqlParameter("@Result", iq.getResult()));
+            command.Parameters.Add(new SqlParameter("@Done", iq.getDone()));
+            command.Parameters.Add(new SqlParameter("@Approved", iq.getApproved()));
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+            conn.Dispose();
         }
 
         public void createQualityTest(int prodID, IQualityTest iq)

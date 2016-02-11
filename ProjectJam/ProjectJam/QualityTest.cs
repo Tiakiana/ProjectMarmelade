@@ -12,6 +12,20 @@ namespace Domain
         private DateTime date;
         private string qualityTestActivities, expResults, employee, comment, results;
         private bool done, approved;
+        public QualityTest(int prodID, DateTime date,
+                string qualityTestActivities, string expResults,
+                 string employee, bool approved, bool done)
+        {
+            this.prodID = -1;
+            this.date = date;
+            this.qualityTestActivities = qualityTestActivities;
+            this.expResults = expResults;
+            this.employee = employee;
+            this.results = null;
+            this.comment = null;
+            this.done = false;
+            this.approved = false;
+        }
         public QualityTest(DateTime date,
                 string qualityTestActivities, string expResults,
                  string employee)
