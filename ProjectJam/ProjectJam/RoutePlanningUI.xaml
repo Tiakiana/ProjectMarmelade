@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="RoutePlanningUI" Height="514" Width="716">
     <Grid HorizontalAlignment="Left" Width="286" Margin="4,0,-4,0">
+        <Grid HorizontalAlignment="Left" Height="483" Margin="-4,0,-417,0" VerticalAlignment="Top" Width="707">
+            <TextBlock x:Name="Opret_Ugeplan" HorizontalAlignment="Left" Height="36" Margin="302,24,0,0" TextWrapping="Wrap" Text="Opret Ugeplan" VerticalAlignment="Top" Width="160" FontSize="24"/>
+        </Grid>
 
     </Grid>
 </Window>
