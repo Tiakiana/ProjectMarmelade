@@ -7,9 +7,17 @@
         mc:Ignorable="d"
         Title="RoutePlanningUI" Height="514" Width="716">
     <Grid HorizontalAlignment="Left" Width="286" Margin="4,0,-4,0">
-        <Grid HorizontalAlignment="Left" Height="483" Margin="-4,0,-417,0" VerticalAlignment="Top" Width="707">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="479*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left" Height="483" Margin="-4,0,-417,0" VerticalAlignment="Top" Grid.RowSpan="2">
             <TextBlock x:Name="Opret_Ugeplan" HorizontalAlignment="Left" Height="36" Margin="302,24,0,0" TextWrapping="Wrap" Text="Opret Ugeplan" VerticalAlignment="Top" Width="160" FontSize="24"/>
         </Grid>
+        <TabControl x:Name="TABS" HorizontalAlignment="Left" Height="483" Grid.RowSpan="2" VerticalAlignment="Top" Margin="0,0,-423,0" Width="709" BorderBrush="White">
+            <TabItem Header="Work Sheet" Margin="89,0,-93,-2"/>
+            <TabItem Header="Week Planner" Margin="-73,0,69,-2"/>
+        </TabControl>
 
     </Grid>
 </Window>
