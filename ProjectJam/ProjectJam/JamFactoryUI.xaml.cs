@@ -52,6 +52,9 @@ namespace ProjectJam
         private void routePlanningButton_Click(object sender, RoutedEventArgs e)
         {
             //evt. ændre navnet på knap til et andet foretrukken navn
+            RoutePlanningUI routePlanningWindow = new RoutePlanningUI();
+            routePlanningWindow.Show();
+            this.Close();
         }
 
         private void optimizationButton_Click(object sender, RoutedEventArgs e)

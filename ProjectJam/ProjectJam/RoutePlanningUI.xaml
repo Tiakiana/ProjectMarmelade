@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectJam"
         mc:Ignorable="d"
-        Title="RoutePlanningUI" Height="300" Width="300">
-    <Grid>
-        
+        Title="RoutePlanningUI" Height="514" Width="716">
+    <Grid HorizontalAlignment="Left" Width="286" Margin="4,0,-4,0">
+
     </Grid>
 </Window>
