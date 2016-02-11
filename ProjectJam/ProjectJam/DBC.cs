@@ -51,8 +51,8 @@ namespace Persistance
                 string qualityTestActivities = Convert.ToString(sdr["QualityTestActivities"]);
                 string expectedR = Convert.ToString(sdr["expectedResult"]);
                 string employee = Convert.ToString(sdr["employee"]);
-                bool done = true;
-                bool approved = true;
+                bool done = (bool) sdr["done"];
+                bool approved = (bool)sdr["approved"]; ;
                
                 result = Factory.GetFactory().GetQTF().CreateQualityTest(ID,date,qualityTestActivities,expectedR,employee,null,null,approved,done);
             }
