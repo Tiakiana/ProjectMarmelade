@@ -130,6 +130,9 @@ namespace ProjectJam
                 tb_TestActivities_chng.Text, tb_result_chng.Text, tb_ExpectedRes_chng.Text,
                 tb_comment_chng.Text, (DateTime)dp_datepicker_chng.SelectedDate, tb_Employee_chng.Text, (bool) cb_approved_chng.IsChecked, (bool)cb_TestDone_chng.IsChecked);
             resetFields();
+
+            
+
         }
     }
 }

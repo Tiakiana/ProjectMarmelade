@@ -19,7 +19,7 @@ namespace Persistance
             conn.Open();
             return conn;
         }
-        public void changeQualityTest(IQualityTest iq)
+     /*   public void changeQualityTest(IQualityTest iq)
         {
             for (int i = 0; i < iQualityTests.Count; i++)
             {
@@ -31,7 +31,7 @@ namespace Persistance
                 }
             }
         }
-
+        */
         public IQualityTest getQualityTest(int ID)
         {
             IQualityTest result = null;
@@ -100,6 +100,43 @@ namespace Persistance
             conn.Close();
             conn.Dispose();
           
+        }
+
+        public void changeQualityTest(IQualityTest iq)
+        {
+            SqlConnection conn = getConnection();
+
+            SqlCommand command = new SqlCommand("UpdateQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            #region comments
+     /*
+    @QualityTestID INT,
+	@checkedDate DATE,
+	@QualityTestActivities varchar(255),
+	@ExpectedResult varchar(255),
+	@employee varchar(255),
+	@comment varchar(255),
+	@result varchar(255),
+	@done BIT,
+	@approved BIT
+    */
+            #endregion
+
+            command.Parameters.Add(new SqlParameter("@QualityTestID", iq.getID()));
+            command.Parameters.Add(new SqlParameter("@CheckedDate", iq.getCheckedDate()));
+            command.Parameters.Add(new SqlParameter("@QualityTestActivities", iq.getQTA()));
+            command.Parameters.Add(new SqlParameter("@ExpectedResult", iq.getER()));
+            command.Parameters.Add(new SqlParameter("@employee", iq.getEmployee()));
+            command.Parameters.Add(new SqlParameter("@done", iq.getDone()));
+            command.Parameters.Add(new SqlParameter("@approved", iq.getApproved()));
+            command.Parameters.Add(new SqlParameter("@result", iq.getResult()));
+            command.Parameters.Add(new SqlParameter("@comment", iq.getComment()));
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+            conn.Dispose();
+
         }
     }
 }
