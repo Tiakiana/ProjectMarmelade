@@ -67,6 +67,9 @@ namespace Domain
             
             Persistance.DBController.getController().changeQualityTest(Factory.GetFactory().GetQTF().CreateQualityTest(ID, date, testActivties, expResult, employee, comment, result, approved, done));
         }
-        
+        internal bool CheckProduction(int id) {
+
+            return Persistance.DBController.getController().CheckProduction(id);
+        }
     }
 }

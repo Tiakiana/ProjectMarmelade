@@ -138,5 +138,33 @@ namespace Persistance
             conn.Dispose();
 
         }
+
+        public bool CheckProduction(int id) {
+            int ID = -1;
+            SqlConnection conn = getConnection();
+
+
+            SqlCommand command = new SqlCommand("ProductionExists", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.Add(new SqlParameter("@ProdID", id));
+
+            SqlDataReader rd = command.ExecuteReader();
+            while (rd.Read())
+            {
+                ID = (int)rd["ProductionID"];
+
+            }
+            conn.Close();
+            conn.Dispose();
+            if (ID == -1)
+            {
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+
     }
 }

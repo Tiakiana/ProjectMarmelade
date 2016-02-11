@@ -134,5 +134,18 @@ namespace ProjectJam
             
 
         }
+
+        private void btn_CheckProduction_Click(object sender, RoutedEventArgs e)
+        {
+            if (Domain.DomainController.getDCT().GetQualityTestController().CheckProduction(Int32.Parse(tb_prodID.Text)))
+            {
+                MessageBox.Show("Production exists");
+            }
+            else
+	{
+                MessageBox.Show("Production Does not exist");
+
+            }
+        }
     }
 }
