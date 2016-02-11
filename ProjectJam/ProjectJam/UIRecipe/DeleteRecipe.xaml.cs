@@ -23,6 +23,12 @@ namespace ProjectJam
         public DeleteRecipe()
         {
             InitializeComponent();
+            //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+        }
+
+        private void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeInfoText.Text = "Recipe not found, therefore nothing was deleted";
         }
     }
 }

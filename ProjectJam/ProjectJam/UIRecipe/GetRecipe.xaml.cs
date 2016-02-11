@@ -20,9 +20,19 @@ namespace ProjectJam
     /// </summary>
     public partial class GetRecipe : Page
     {
+        //Controller _Con = new Controller();
         public GetRecipe()
         {
             InitializeComponent();
+            //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+        }
+
+        private void GetRecipeConfirmBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //string recipe = _Con.MethodToGetRecipe(int.Parse(GetRecipeText.Text));
+            //RecipeInfoText.Text = recipe;
+            RecipeInfoText.Text = "Recipe not found, please try again";
+
         }
     }
 }

@@ -23,6 +23,17 @@ namespace ProjectJam
         public JudgeRecipe()
         {
             InitializeComponent();
+            //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+        }
+
+        private void ChooseRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //RecipeDescription.Text = MethodThatReturnsRecipe();
+        }
+
+        private void JudgeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            JugdementBox.Text = "Judgement has been dealt!!";
         }
     }
 }
