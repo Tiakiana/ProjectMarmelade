@@ -77,7 +77,7 @@ namespace Domain
 
         public override string ToString()
         {
-            return "ID: " + prodID + " Date: " + date + "\nquality test activities: " + qualityTestActivities + " expected results: " + expResults + "\nemployee: " + employee + "\ncomments: " + comment + " results: " + results + "\nIs the test done? " + done + "\nIs the test approved? " + approved;
+            return "ID: " + prodID + " \nDate: " + date.ToShortDateString() + "\nquality test activities: " + qualityTestActivities + " \nexpected results: " + expResults + "\nemployee: " + employee + "\nIs the test done? " + done + "\nIs the test approved? " + approved;
         }
         public string[] ToString2()
         {
