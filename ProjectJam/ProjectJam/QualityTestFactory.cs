@@ -23,13 +23,9 @@ namespace Domain
                  string employee, string comment, string results, bool approved, bool done)
         {
             QualityTest qt;
-            if (comment == null && results == null && prodID == -1)
+            if (comment == null && results == null)
             {
-                qt = new QualityTest(date, qualityTestActivities, expresults, employee);
-            }
-            else if (comment == null && results == null)
-            {
-                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee);
+                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, approved, done);
 
             }
             else

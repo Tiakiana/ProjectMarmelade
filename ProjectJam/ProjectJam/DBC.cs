@@ -19,36 +19,65 @@ namespace Persistance
             conn.Open();
             return conn;
         }
-           public void changeQualityTest(IQualityTest iq)
-           {
-               for (int i = 0; i < iQualityTests.Count; i++)
-               {
-                   if (iQualityTests[i].getID() == iq.getID())
-                   {
-                       iQualityTests.Remove(iQualityTests[i]);
-                       iQualityTests.Add(iq);
-                       break;
-                   }
-               }
-           }
-           
-        public IQualityTest getQualityTest(int ID)
+        public void changeQualityTest(IQualityTest iq)
         {
-            Domain.IQualityTest iq = null;
-            foreach (var item in iQualityTests)
+            for (int i = 0; i < iQualityTests.Count; i++)
             {
-                if (item.getID() == ID)
+                if (iQualityTests[i].getID() == iq.getID())
                 {
-                    iq = item;
+                    iQualityTests.Remove(iQualityTests[i]);
+                    iQualityTests.Add(iq);
+                    break;
                 }
             }
-            return iq;
+        }
+
+        public IQualityTest getQualityTest(int ID)
+        {
+            IQualityTest result = null;
+
+            SqlConnection conn = getConnection();
+
+            SqlCommand command = new SqlCommand("LoadQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@QualityTestID", ID));
+            
+            SqlDataReader sdr = command.ExecuteReader();
+
+            while (sdr.Read())
+            {
+                DateTime date = Convert.ToDateTime(sdr["CheckedDate"]);
+                string qualityTestActivities = Convert.ToString(sdr["QualityTestActivities"]);
+                string expectedR = Convert.ToString(sdr["expectedResult"]);
+                string employee = Convert.ToString(sdr["employee"]);
+                bool done = true;
+                bool approved = true;
+               
+                result = Factory.GetFactory().GetQTF().CreateQualityTest(ID,date,qualityTestActivities,expectedR,employee,null,null,approved,done);
+            }
+            conn.Close();
+            conn.Dispose();
+            return result;
         }
 
         public void saveQualityTest(IQualityTest iq)
         {
+            SqlConnection conn = getConnection();
 
-            iQualityTests.Add(iq);
+            SqlCommand command = new SqlCommand("approveQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@QualityID", iq.getID()));
+            command.Parameters.Add(new SqlParameter("@Comment", iq.getComment()));
+            command.Parameters.Add(new SqlParameter("@Result", iq.getResult()));
+            command.Parameters.Add(new SqlParameter("@Done", iq.getDone()));
+            command.Parameters.Add(new SqlParameter("@Approved", iq.getApproved()));
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+            conn.Dispose();
         }
 
         public void createQualityTest(int prodID, IQualityTest iq)
@@ -70,44 +99,7 @@ namespace Persistance
 
             conn.Close();
             conn.Dispose();
-
-        }
-
-        public void updateQualityTest(int qualiID, IQualityTest iq)
-        {
-            SqlConnection conn = getConnection();
-
-            SqlCommand command = new SqlCommand("UpdateQualityTest", conn);
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-
-            /*
-            @QualityTestID INT,
-	@checkedDate DATE,
-	@QualityTestActivities varchar(255),
-	@ExpectedResult varchar(255),
-	@employee varchar(255),
-	@comment varchar(255),
-	@result varchar(255),
-	@done BIT,
-	@approved BIT
-    */
-
-
-            command.Parameters.Add(new SqlParameter("@QualityTestID", qualiID));
-            command.Parameters.Add(new SqlParameter("@CheckedDate", iq.getCheckedDate()));
-            command.Parameters.Add(new SqlParameter("@QualityTestActivities", iq.getQTA()));
-            command.Parameters.Add(new SqlParameter("@ExpectedResult", iq.getER()));
-            command.Parameters.Add(new SqlParameter("@employee", iq.getEmployee()));
-            command.Parameters.Add(new SqlParameter("@done", iq.getDone()));
-            command.Parameters.Add(new SqlParameter("@approved", iq.getApproved()));
-            command.Parameters.Add(new SqlParameter("@result", iq.getApproved()));
-            command.Parameters.Add(new SqlParameter("@comment", iq.getApproved()));
-
-            command.ExecuteNonQuery();
-
-            conn.Close();
-            conn.Dispose();
-
+          
         }
     }
 }
