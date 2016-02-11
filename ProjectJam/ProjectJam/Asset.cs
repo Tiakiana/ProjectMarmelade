@@ -21,16 +21,16 @@ namespace Domain
         private List<AssetMaintenance> AssetMaintenanceList { get; set; }
 
         // Constructors:
-        public Asset()
+        public Asset(int nextID,string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
         {
-            this.AssetID = 1;// Get autoincrement from DB
-            this.AssetName = "Not Applied";
-            this.AssetPurchaseDate = DateTime.Today;
-            this.AssetPurchacePrice = 1000;
-            this.AssetScrapValue = 0;
+            this.AssetID = nextID;
+            this.AssetName = name;
+            this.AssetPurchaseDate = purchaseDate;
+            this.AssetPurchacePrice = AssetPurchacePrice;
+            this.AssetScrapValue = scrapvalue;
             this.AssetPostedValue = this.AssetPurchacePrice - this.AssetScrapValue;
-            this.AssetLifeSpan = 1;
-            this.IsOperative = false;
+            this.AssetLifeSpan = lifeSpan;
+            this.IsOperative = false; // set to false. Should manually be set put to 'true' through other method
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
         }
@@ -40,6 +40,28 @@ namespace Domain
         {
             // DO STUFF
         }
+
+        public void addMaintenance(AssetMaintenance newMaintenance)
+        {
+            AssetMaintenanceList.Add(newMaintenance);
+        }
+
+        public void addDecreciation(AssetDecreciation newDecreciation)
+        {
+            AssetDecreciationList.Add(newDecreciation);
+        }
+
+        public void CompleteMaintenance(int mainID)
+        {
+            AssetMaintenanceList[mainID].CompleteMaintenance();
+            IsOperative = true;
+        }
+
+        public void PerformMaintenance(int mainID)
+        {
+            AssetMaintenanceList[mainID].PerformMaintenance();
+        }
+        
 
     }
 }

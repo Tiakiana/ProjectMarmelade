@@ -30,15 +30,17 @@ namespace Domain
             // DO STUFF
         }
 
-        //public Asset LoadAsset (int id)
-        //{
-        //    // Do stuff
-        //    return someAsset;
-        //}
-        //public void SaveAsset(Asset saveasset)
-        //{
-        //    // DO STUFF
-        //}
+        public Asset LoadAsset(int id)
+        {
+            // DO STUFF
+            // StoredProcedureCall
+            return someAsset;
+        }
+        public void SaveAsset(Asset saveasset)
+        {
+            // DO STUFF
+            // StoredProcedureCall
+        }
 
     }
 }
