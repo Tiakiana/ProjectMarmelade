@@ -16,15 +16,15 @@ namespace Domain
                 string qualityTestActivities, string expResults,
                  string employee, bool approved, bool done)
         {
-            this.prodID = -1;
+            this.prodID = prodID;
             this.date = date;
             this.qualityTestActivities = qualityTestActivities;
             this.expResults = expResults;
             this.employee = employee;
             this.results = null;
             this.comment = null;
-            this.done = false;
-            this.approved = false;
+            this.done = done;
+            this.approved = approved;
         }
         public QualityTest(DateTime date,
                 string qualityTestActivities, string expResults,
