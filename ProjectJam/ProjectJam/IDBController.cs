@@ -10,7 +10,10 @@ namespace Persistance
     interface IDBController
     {
         IQualityTest getQualityTest(int ID);
+        void createQualityTest(int prodID, IQualityTest iq);
         void saveQualityTest(IQualityTest iq);
         void changeQualityTest(IQualityTest iq);
+        bool CheckProduction(int id);
+        
     }
 }

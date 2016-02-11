@@ -25,7 +25,7 @@ namespace Domain
             QualityTest qt;
             if (comment == null && results == null)
             {
-                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee);
+                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, approved, done);
 
             }
             else
