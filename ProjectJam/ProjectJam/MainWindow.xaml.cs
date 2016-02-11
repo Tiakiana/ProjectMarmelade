@@ -20,12 +20,16 @@ namespace ProjectJam
     /// </summary>
     public partial class MainWindow : Window
     {
+        CreateRecipe cr = new CreateRecipe();
+        JudgeRecipe jr = new JudgeRecipe();
+        GetRecipe gr = new GetRecipe();
+        KnowlegdeBank kb = new KnowlegdeBank();
+        DeleteRecipe dr = new DeleteRecipe();
         public MainWindow()
         {
             InitializeComponent();
             Domain.DomainController.getDCT().onStart("M1");
-            Recipe rec = new Recipe();
-            RecipeFrame.Content = rec;
+
         }
         /*
         int prodID, DateTime date, 
@@ -36,6 +40,27 @@ namespace ProjectJam
         {
             DateTime? date = dt_DatePicker.SelectedDate;
             Domain.DomainController.getDCT().GetQualityTestController().CreateQualityTest(Int32.Parse(tb_prodID.Text), dt_DatePicker.DisplayDate, tb_TestActivities.Text, tb_ExpectedRes.Text, tb_Employee.Text, null, null);
+        }
+
+        private void CreateRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeFrame.Content = cr;
+        }
+        private void JudgeRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeFrame.Content = jr;
+        }
+        private void GetRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeFrame.Content = gr;
+        }
+        private void BankBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeFrame.Content = kb;
+        }
+        private void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeFrame.Content = dr;
         }
     }
 }

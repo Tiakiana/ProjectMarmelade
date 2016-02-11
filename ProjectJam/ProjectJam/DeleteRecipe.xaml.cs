@@ -13,29 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace ProjectJam
 {
     /// <summary>
-    /// Interaction logic for Recipe.xaml
+    /// Interaction logic for DeleteRecipe.xaml
     /// </summary>
-    public partial class Recipe : Page
+    public partial class DeleteRecipe : Page
     {
-        public Recipe()
+        public DeleteRecipe()
         {
             InitializeComponent();
-        }
-
-      
-
-        private void Backbtn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mw = new MainWindow();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
