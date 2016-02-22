@@ -34,6 +34,11 @@ namespace Domain
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
         }
+        //Overrides
+        public override string ToString()
+        {
+            return ""+AssetID+" "+AssetName+" "+AssetPurchaseDate+" "+AssetPurchacePrice+" "+AssetScrapValue+" "+AssetPostedValue+" "+AssetLifeSpan+" "+IsOperative;
+        }
 
         // Methods:
         public void CalculateDecreciations()
