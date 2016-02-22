@@ -76,6 +76,27 @@
 
                 </Grid>
             </TabItem>
+            <TabItem Header="Delopement">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57*"/>
+                        <ColumnDefinition Width="737*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Height="123" Margin="10,65,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
+                        <Button x:Name="CreateRecipeBtn" Content="Create Recipe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="CreateRecipeBtn_Click" />
+                        <Button x:Name="JudgeRecipeBtn" Content="Judge Recipe" Click="JudgeRecipeBtn_Click"/>
+                        <Button x:Name="GetRecipeBtn" Content="Get Recipe" Click="GetRecipeBtn_Click"/>
+                        <Button x:Name="DeleteRecipeBtn" Content="Delete Recipe" Click="DeleteRecipeBtn_Click"/>
+                        <Button x:Name="BankBtn" Content="Knowledge Bank" Click="BankBtn_Click"/>
+                    </StackPanel>
+                    <Label x:Name="RecipeLabel" Content="Recipe" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label x:Name="BrugerLabel" Content="Bruger: Hans" HorizontalAlignment="Left" Margin="326.667,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Frame x:Name="RecipeFrame" Background="WhiteSmoke" Content="" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="471" VerticalAlignment="Top" Width="579" Margin="114.667,41,0,0" Grid.Column="1"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="471" VerticalAlignment="Top" Width="579" Margin="114.667,41,0,0" Grid.Column="1"/>
+
+
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>
