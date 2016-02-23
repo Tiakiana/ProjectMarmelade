@@ -62,27 +62,27 @@ namespace Domain
 
         private int GetLastAssetID()
         {
-            int lastID;
+            int lastID = 0;
             // stored procedure call to get last Asset in DB
             return lastID;
         }
 
         private int GetLastMaintenanceID()
         {
-            int lastMainID;
+            int lastMainID = 0;
             // stored procedure call to get last Maintenance in DB
             return lastMainID;
         }
 
         private int GetLastDecreciationID()
         {
-            int lastDecreciationID;
+            int lastDecreciationID = 0;
             // stored procedure call to get last Decreciation in DB
             return lastDecreciationID;
         }
         private int getPlannedMaintenanceID()
         {
-            int plannedMaintenanceID;
+            int plannedMaintenanceID = 0;
             // stored procedure call to get planned maintenanceID in DB
             return plannedMaintenanceID;
         }
