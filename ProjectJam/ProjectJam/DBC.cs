@@ -19,19 +19,19 @@ namespace Persistance
             conn.Open();
             return conn;
         }
-     /*   public void changeQualityTest(IQualityTest iq)
-        {
-            for (int i = 0; i < iQualityTests.Count; i++)
-            {
-                if (iQualityTests[i].getID() == iq.getID())
-                {
-                    iQualityTests.Remove(iQualityTests[i]);
-                    iQualityTests.Add(iq);
-                    break;
-                }
-            }
-        }
-        */
+        /*   public void changeQualityTest(IQualityTest iq)
+           {
+               for (int i = 0; i < iQualityTests.Count; i++)
+               {
+                   if (iQualityTests[i].getID() == iq.getID())
+                   {
+                       iQualityTests.Remove(iQualityTests[i]);
+                       iQualityTests.Add(iq);
+                       break;
+                   }
+               }
+           }
+           */
         public IQualityTest getQualityTest(int ID)
         {
             IQualityTest result = null;
@@ -39,6 +39,34 @@ namespace Persistance
             SqlConnection conn = getConnection();
 
             SqlCommand command = new SqlCommand("LoadQualityTest", conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@QualityTestID", ID));
+
+            SqlDataReader sdr = command.ExecuteReader();
+
+            while (sdr.Read())
+            {
+                DateTime date = Convert.ToDateTime(sdr["CheckedDate"]);
+                string qualityTestActivities = Convert.ToString(sdr["QualityTestActivities"]);
+                string expectedR = Convert.ToString(sdr["expectedResult"]);
+                string employee = Convert.ToString(sdr["employee"]);
+                bool done = (bool)sdr["done"];
+                bool approved = (bool)sdr["approved"]; ;
+
+                result = Factory.GetFactory().GetQTF().CreateQualityTest(ID, date, qualityTestActivities, expectedR, employee, null, null, approved, done);
+            }
+            conn.Close();
+            conn.Dispose();
+            return result;
+        }
+        public IQualityTest getFullQualityTest(int ID)
+        {
+            IQualityTest result = null;
+
+            SqlConnection conn = getConnection();
+            //TODO lav en stored procedore der henter hele quality testen
+            SqlCommand command = new SqlCommand("LoadFullQualityTest", conn);
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
             command.Parameters.Add(new SqlParameter("@QualityTestID", ID));
@@ -51,10 +79,12 @@ namespace Persistance
                 string qualityTestActivities = Convert.ToString(sdr["QualityTestActivities"]);
                 string expectedR = Convert.ToString(sdr["expectedResult"]);
                 string employee = Convert.ToString(sdr["employee"]);
+                string comment = Convert.ToString(sdr["comment"]);
+                string results = Convert.ToString(sdr["result"]);
                 bool done = (bool) sdr["done"];
                 bool approved = (bool)sdr["approved"]; ;
                
-                result = Factory.GetFactory().GetQTF().CreateQualityTest(ID,date,qualityTestActivities,expectedR,employee,null,null,approved,done);
+                result = Factory.GetFactory().GetQTF().CreateQualityTest(ID,date,qualityTestActivities,expectedR,employee,comment,results,approved,done);
             }
             conn.Close();
             conn.Dispose();
