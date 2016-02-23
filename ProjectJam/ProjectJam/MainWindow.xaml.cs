@@ -110,6 +110,7 @@ namespace ProjectJam
                     cb_approved_chng.IsChecked = Boolean.Parse(b[5]);
                     cb_TestDone_chng.IsChecked = Boolean.Parse(b[6]);
                     tb_Employee_chng.Text = b[7];
+                    
                 }
                 catch (Exception)
                 {
@@ -126,26 +127,55 @@ namespace ProjectJam
 
         private void btn_approveResults_chng_Click(object sender, RoutedEventArgs e)
         {
-            Domain.DomainController.getDCT().GetQualityTestController().ChangeAllQualityTest(int.Parse(tb_qualityTestID_chng.Text),
-                tb_TestActivities_chng.Text, tb_result_chng.Text, tb_ExpectedRes_chng.Text,
-                tb_comment_chng.Text, (DateTime)dp_datepicker_chng.SelectedDate, tb_Employee_chng.Text, (bool) cb_approved_chng.IsChecked, (bool)cb_TestDone_chng.IsChecked);
-            resetFields();
 
+            try
+            {
+                Domain.DomainController.getDCT().GetQualityTestController().ChangeAllQualityTest(int.Parse(tb_qualityTestID_chng.Text),
+                tb_TestActivities_chng.Text, tb_result_chng.Text, tb_ExpectedRes_chng.Text,
+                tb_comment_chng.Text, (DateTime)dp_datepicker_chng.SelectedDate, tb_Employee_chng.Text, (bool)cb_approved_chng.IsChecked, (bool)cb_TestDone_chng.IsChecked);
+                resetFields();
+                MessageBox.Show("Changes Saved");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something Aint Right");
+                
+            }
+            
             
 
         }
 
         private void btn_CheckProduction_Click(object sender, RoutedEventArgs e)
         {
-            if (Domain.DomainController.getDCT().GetQualityTestController().CheckProduction(Int32.Parse(tb_prodID.Text)))
+            try
             {
-                MessageBox.Show("Production exists");
-            }
-            else
-	{
-                MessageBox.Show("Production Does not exist");
+                if (Domain.DomainController.getDCT().GetQualityTestController().CheckProduction(Int32.Parse(tb_prodID.Text)))
+                {
+                    MessageBox.Show("Production exists");
+                }
+                else
+                {
+                    MessageBox.Show("Production Does not exist");
 
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("You must enter a valid number. Use only numbers 0-9");
+            }
+            
+        }
+
+        private void btn_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            resetFields();
+        }
+
+        private void btn_Reset2_Click(object sender, RoutedEventArgs e)
+        {
+            resetFields();
         }
     }
 }
