@@ -15,8 +15,8 @@ namespace Domain
         private double DecreciationPurchasePrice { get; set; }
         private double DecreciationScrapValue { get; set; }
         private double DecreciationLifeSpan { get; set; }
-        public int DecriationPercent { get; set; }
-        public double DecriationInterest { get; set; }
+        private int DecriationPercent { get; set; }
+        private double DecriationInterest { get; set; }
 
         // Constructors:
         public AssetDecreciation()

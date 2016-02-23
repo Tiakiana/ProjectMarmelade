@@ -11,15 +11,18 @@ namespace Domain
     {   
         // Properties
         private SqlConnection AssetConnection { get; set; }
+        private List<Asset> AssetTestList { get; }//JUST A TESTER FOR FUNCTIONALITY
 
         //Methods
-        public void InsertAsset()
+        public void InsertAsset(Asset addedAsset)
         {
             // DO STUFF
+            AssetTestList.Add(addedAsset);
         }
-        public void ShowAssetInfo()
+        public void ShowAssetInfo(int id)
         {
             // DO STUFF
+            Console.WriteLine(AssetTestList[id].ToString());
         }
         public void PlanMaintenance()
         {
@@ -30,15 +33,19 @@ namespace Domain
             // DO STUFF
         }
 
-        //public Asset LoadAsset (int id)
-        //{
-        //    // Do stuff
-        //    return someAsset;
-        //}
-        //public void SaveAsset(Asset saveasset)
-        //{
-        //    // DO STUFF
-        //}
+        public Asset LoadAsset(int id)
+        {
+            // DO STUFF
+            // StoredProcedureCall
+            Asset someAsset = AssetTestList[id];
+            return someAsset;
+        }
+        public void SaveAsset(Asset saveasset)
+        {
+            // DO STUFF
+            // StoredProcedureCall
+            AssetTestList.Add(saveasset);
+        }
 
     }
 }

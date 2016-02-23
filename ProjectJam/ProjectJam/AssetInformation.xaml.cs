@@ -38,5 +38,10 @@ namespace ProjectJam
             this.Close();
 
         }
+
+        private void assetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

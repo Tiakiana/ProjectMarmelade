@@ -15,11 +15,11 @@ namespace Domain
         private MaintenanceStatus maintenanceStatus { get; set; }
         
         // Constructors
-        public AssetMaintenance()
+        public AssetMaintenance(int mainId,string description, DateTime plannedDate)
         {
-            this.MaintenanceID = 1;// GET auto incremented ID from DB
-            this.MaintenanceDescription = "NOT APPLIED";
-            this.PlannedMaintenanceDate = DateTime.Today;
+            this.MaintenanceID = mainId;
+            this.MaintenanceDescription = description;
+            this.PlannedMaintenanceDate = plannedDate;
             this.maintenanceStatus = MaintenanceStatus.Planned;
 
         }
@@ -28,14 +28,15 @@ namespace Domain
         {
             // DO STUFF
         }
-        public void MaintenanceDone()
+
+        public void CompleteMaintenance()
         {
-            // DO STUFF
+            maintenanceStatus = MaintenanceStatus.Done;
         }
 
-        //public void PerformMaintenance()
-        //{
-        //    // DO STUFF
-        //}
+        public void PerformMaintenance()
+        {
+            maintenanceStatus = MaintenanceStatus.InProgress;
+        }
     }
 }
