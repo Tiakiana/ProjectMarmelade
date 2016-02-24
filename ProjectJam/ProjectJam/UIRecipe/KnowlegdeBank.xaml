@@ -1,0 +1,17 @@
+﻿<Page x:Class="ProjectJam.KnowlegdeBank"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectJam"
+      mc:Ignorable="d" 
+      d:DesignHeight="471" d:DesignWidth="579"
+      Title="KnowlegdeBank">
+
+    <Grid>
+        <Label x:Name="KnolegdeLabel" Content="Bank of Knowledge" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="KnowledgeBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="194,51,0,0" TextWrapping="Wrap" Text="Ingredients will be displayed here, and you can chose one to get more information about it." VerticalAlignment="Top" Height="410" Width="374"/>
+        <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="410" Margin="193,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="375"/>
+
+    </Grid>
+</Page>

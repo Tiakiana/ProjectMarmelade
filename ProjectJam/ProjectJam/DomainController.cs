@@ -23,7 +23,7 @@ namespace Domain
         }
 
         public QualityTestController GetQualityTestController() {
-            return QualityTestController.getQTC();
+            return dct.GetQualityTestController();
         }
         public void onStart(string type)
         {

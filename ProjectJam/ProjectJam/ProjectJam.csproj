@@ -55,26 +55,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Asset.cs" />
-    <Compile Include="AssetCompletedMaintenance.xaml.cs">
-      <DependentUpon>AssetCompletedMaintenance.xaml</DependentUpon>
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeController.cs" />
+    <Compile Include="UIRecipe\DeleteRecipe.xaml.cs">
+      <DependentUpon>DeleteRecipe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetController.cs" />
-    <Compile Include="AssetDatabaseController.cs" />
-    <Compile Include="AssetInformation.xaml.cs">
-      <DependentUpon>AssetInformation.xaml</DependentUpon>
+    <Compile Include="UIRecipe\GetRecipe.xaml.cs">
+      <DependentUpon>GetRecipe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetInventory.xaml.cs">
-      <DependentUpon>AssetInventory.xaml</DependentUpon>
+    <Compile Include="UIRecipe\KnowlegdeBank.xaml.cs">
+      <DependentUpon>KnowlegdeBank.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetMakeAsset.xaml.cs">
-      <DependentUpon>AssetMakeAsset.xaml</DependentUpon>
+    <Compile Include="UIRecipe\JudgeRecipe.xaml.cs">
+      <DependentUpon>JudgeRecipe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetPlanMaintenance.xaml.cs">
-      <DependentUpon>AssetPlanMaintenance.xaml</DependentUpon>
+    <Compile Include="UIRecipe\CreateRecipe.xaml.cs">
+      <DependentUpon>CreateRecipe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBC.cs" />
-    <Compile Include="AssetDecreciation.cs" />
+    <Compile Include="DBController_1.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IDBController.cs" />
@@ -82,37 +81,29 @@
     <Compile Include="DomainController.cs" />
     <Compile Include="DomainTest.cs" />
     <Compile Include="IQualityTest.cs" />
-    <Compile Include="AssetMaintenance.cs" />
-    <Compile Include="JamFactoryUI.xaml.cs">
-      <DependentUpon>JamFactoryUI.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
     <Compile Include="Utility.cs" />
-    <Page Include="AssetCompletedMaintenance.xaml">
+    <Page Include="UIRecipe\DeleteRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetInformation.xaml">
+    <Page Include="UIRecipe\GetRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetInventory.xaml">
+    <Page Include="UIRecipe\KnowlegdeBank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetMakeAsset.xaml">
+    <Page Include="UIRecipe\JudgeRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetPlanMaintenance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="JamFactoryUI.xaml">
+    <Page Include="UIRecipe\CreateRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
