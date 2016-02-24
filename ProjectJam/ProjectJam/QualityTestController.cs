@@ -25,18 +25,51 @@ namespace Domain
             }
             return qtc;
         }
+        #region temporary variables;
+        //changing the result and comment of a quality test
+        IQualityTest result = null;
+        #endregion
 
 
         public QualityTestController()
         { }
-            internal string CreateQualityTest(int prodID, DateTime date, 
+            internal string CreateQualityTest(int prodID, DateTime? date, 
                 string qualityTestActivities, string expresults,
                  string employee, string comments, string results) {
-            Factory.GetFactory().GetQTF().CreateQualityTest(prodID, date, qualityTestActivities, expresults, employee, comments, results);
+
+            IQualityTest iqt = Factory.GetFactory().GetQTF().CreateQualityTest(0,(DateTime) date, qualityTestActivities, expresults, employee, comments, results,false,false);
+            Persistance.DBController.getController().createQualityTest(prodID, iqt);
             return "underway";
-
         }
 
-
+        internal string GetQualityTest(int ID)
+        {
+            result = Persistance.DBController.getController().getQualityTest(ID);
+            return result.ToString();
         }
+        internal string[] GetQualityTestAsArray(int ID) {
+            return Persistance.DBController.getController().getFullQualityTest(ID).ToString2();
+        }
+
+        internal string ChangeQualityTest(bool done, bool cHecked, string comment, string result)
+        {
+            this.result.setComment(comment);
+            this.result.setResult(result);
+            this.result.setDone(done);
+            this.result.setApproved(cHecked);
+            Persistance.DBController.getController().saveQualityTest(this.result);
+            return "The data has been saved";
+        }
+
+        internal void ChangeAllQualityTest(int ID, string testActivties, string result, string expResult, string comment
+            , DateTime date, string employee, bool approved, bool done)
+        {
+            
+            Persistance.DBController.getController().changeQualityTest(Factory.GetFactory().GetQTF().CreateQualityTest(ID, date, testActivties, expResult, employee, comment, result, approved, done));
+        }
+        internal bool CheckProduction(int id) {
+
+            return Persistance.DBController.getController().CheckProduction(id);
+        }
+    }
 }

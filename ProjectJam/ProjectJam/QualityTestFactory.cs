@@ -20,18 +20,17 @@ namespace Domain
 
         public IQualityTest CreateQualityTest(int prodID, DateTime date,
                 string qualityTestActivities, string expresults,
-                 string employee, string comment, string results)
+                 string employee, string comment, string results, bool approved, bool done)
         {
             QualityTest qt;
             if (comment == null && results == null)
             {
-                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee);
+                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, approved, done);
 
             }
             else
             {
-                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, comment, results);
-
+                qt = new QualityTest(prodID, date, qualityTestActivities, expresults, employee, comment, results, approved, done);
             }
 
             return qt;
