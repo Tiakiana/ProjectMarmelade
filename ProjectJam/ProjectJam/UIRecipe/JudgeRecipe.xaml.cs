@@ -20,10 +20,12 @@ namespace ProjectJam
     /// </summary>
     public partial class JudgeRecipe : Page
     {
+        RecipeController _Con = new RecipeController();
         public JudgeRecipe()
         {
             InitializeComponent();
             //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+            AllRecipeTextBox.Text = _Con.GetRecipeIDName();
         }
 
         private void ChooseRecipeBtn_Click(object sender, RoutedEventArgs e)

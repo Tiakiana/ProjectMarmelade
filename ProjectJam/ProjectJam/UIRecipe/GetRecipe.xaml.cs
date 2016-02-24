@@ -20,19 +20,25 @@ namespace ProjectJam
     /// </summary>
     public partial class GetRecipe : Page
     {
-        //Controller _Con = new Controller();
+        RecipeController _Con = new RecipeController();
         public GetRecipe()
         {
             InitializeComponent();
-            //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+            AllRecipeTextBox.Text = _Con.GetRecipeIDName();
         }
 
         private void GetRecipeConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
-            //string recipe = _Con.MethodToGetRecipe(int.Parse(GetRecipeText.Text));
-            //RecipeInfoText.Text = recipe;
-            RecipeInfoText.Text = "Recipe not found, please try again";
-
+            try
+            {
+                string recipe = _Con.ViewRecipe(int.Parse(GetRecipeText.Text));
+                RecipeInfoText.Text = recipe;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter only numbers as ID. " + ex.Message, "Error");
+                RecipeInfoText.Text = "Recipe not found, please try again";
+            }
         }
     }
 }

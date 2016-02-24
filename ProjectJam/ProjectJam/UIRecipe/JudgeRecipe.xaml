@@ -19,6 +19,7 @@
         <Button x:Name="ChooseRecipeBtn" Background="#FFE5E5E5" Content="Choose Recipe" HorizontalAlignment="Left" Margin="474,63,0,0" VerticalAlignment="Top" Width="95" Click="ChooseRecipeBtn_Click"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="120" Margin="263,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="386" Margin="10,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
+        <Label x:Name="Enter" Content="Enter ID" HorizontalAlignment="Left" Margin="259,38,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

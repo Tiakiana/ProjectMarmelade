@@ -55,6 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeController.cs" />
+    <Compile Include="UIRecipe\DeleteRecipe.xaml.cs">
+      <DependentUpon>DeleteRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\GetRecipe.xaml.cs">
+      <DependentUpon>GetRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\KnowlegdeBank.xaml.cs">
+      <DependentUpon>KnowlegdeBank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\JudgeRecipe.xaml.cs">
+      <DependentUpon>JudgeRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\CreateRecipe.xaml.cs">
+      <DependentUpon>CreateRecipe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DBController_1.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
@@ -69,6 +87,26 @@
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
     <Compile Include="Utility.cs" />
+    <Page Include="UIRecipe\DeleteRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRecipe\GetRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRecipe\KnowlegdeBank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRecipe\JudgeRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRecipe\CreateRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

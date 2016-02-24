@@ -6,26 +6,41 @@ using System.Threading.Tasks;
 
 namespace ProjectJam
 {
+    public enum Categori
+    {
+Discount = 1,
+Hverdag,
+Luksus
+    }
     class RecipeController
     {
-        public void CreateRecipe(string Head, string desc, string ing)
+        public void CreateRecipe(string Head, string desc, List<Ingredient> Ling)
         {
-
+            //DBcontroller der opretter opskriften i DB. 
         }
         public string ViewRecipe(int ID)
         {
+            //Hent opskrift enten fra DB eller liste. 
             return "";
         }
         public string GetRecipeIDName()
         {
+            //Henter navn og ID fra alle opskrifter og retunere en lang string som skal skrives ud. 
             return "";
         }
-        public bool JugdeRecipe(Recipe rec, string jugdement)
+        public bool JugdeRecipe(int ID, string jugdement)
         {
+            //En valgt opskrift får tilføjet en bedømmelse. 
+            return false;
+        }
+        public bool DeleteRecipe(int ID)
+        {
+            //sletter en opskrift fra DB
             return false;
         }
         public string ViewKnowlegde()
         {
+            //øhm... denne skal hente noget fra DB? 
             return "";
         }
     }

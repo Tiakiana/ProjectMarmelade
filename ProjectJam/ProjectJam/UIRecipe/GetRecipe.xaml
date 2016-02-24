@@ -17,5 +17,6 @@
         <TextBlock x:Name="RecipeInfoText" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,104,0,0" TextWrapping="Wrap" Text="Here the chosen recipes information will be displayed in detail." VerticalAlignment="Top" Height="345" Width="306"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="385" Margin="10,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="345" Margin="263,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <Label x:Name="Enter" Content="Enter ID" HorizontalAlignment="Left" Margin="259,38,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

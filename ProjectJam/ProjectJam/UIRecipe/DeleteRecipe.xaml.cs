@@ -20,15 +20,31 @@ namespace ProjectJam
     /// </summary>
     public partial class DeleteRecipe : Page
     {
+        RecipeController _Con = new RecipeController();
         public DeleteRecipe()
         {
             InitializeComponent();
-            //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
+            AllRecipeTextBox.Text = _Con.GetRecipeIDName();
         }
 
         private void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
-            RecipeInfoText.Text = "Recipe not found, therefore nothing was deleted";
+            try
+            {
+                if (_Con.DeleteRecipe(int.Parse(IDtoDelete.Text)))
+                {
+                    RecipeInfoText.Text = "Recipe deleted";
+                }
+                else
+                {
+                    RecipeInfoText.Text = "Recipe not found, therefore nothing was deleted";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter only numbers as ID. " + ex.Message, "Error");
+                RecipeInfoText.Text = "Recipe not found, therefore nothing was deleted";
+            }
         }
     }
 }
