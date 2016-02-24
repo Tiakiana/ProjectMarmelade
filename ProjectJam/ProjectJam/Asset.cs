@@ -9,17 +9,16 @@ namespace Domain
     class Asset
     {
         // Properties
-        private int AssetID { get; set; } 
-        public int assetId { get { return AssetID; } }       
-        private string AssetName { get; set; }
-        private DateTime AssetPurchaseDate { get; set; }
-        private decimal AssetPurchacePrice { get; set; }
-        private decimal AssetScrapValue { get; set; }
-        private decimal AssetPostedValue { get; set; }
-        private int AssetLifeSpan { get; set; }
-        private bool IsOperative { get; set; }
-        private List<AssetDecreciation> AssetDecreciationList { get; set; }
-        private List<AssetMaintenance> AssetMaintenanceList { get; set; }
+        public int AssetID { get; private set; } 
+        public string AssetName { get; private set; }
+        public DateTime AssetPurchaseDate { get; private set; }
+        public decimal AssetPurchacePrice { get; private set; }
+        public decimal AssetScrapValue { get; private set; }
+        public decimal AssetPostedValue { get; private set; }
+        public int AssetLifeSpan { get; private set; }
+        public bool IsOperative { get; private set; }
+        public List<AssetDecreciation> AssetDecreciationList { get; private set; }
+        public List<AssetMaintenance> AssetMaintenanceList { get; private set; }
 
         // Constructors:
         public Asset(string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)

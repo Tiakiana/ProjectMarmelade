@@ -48,7 +48,7 @@ namespace Domain
             return result.ToString();
         }
         internal string[] GetQualityTestAsArray(int ID) {
-            return Persistance.DBController.getController().getQualityTest(ID).ToString2();
+            return Persistance.DBController.getController().getFullQualityTest(ID).ToString2();
         }
 
         internal string ChangeQualityTest(bool done, bool cHecked, string comment, string result)

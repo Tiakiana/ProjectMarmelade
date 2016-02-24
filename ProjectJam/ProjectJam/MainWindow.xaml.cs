@@ -177,5 +177,12 @@ namespace ProjectJam
         {
             resetFields();
         }
+
+        private void btn_Back(object sender, RoutedEventArgs e)
+        {
+            JamFactoryUI jfui = new JamFactoryUI();
+            this.Close();
+            jfui.Show();
+        }
     }
 }

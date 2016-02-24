@@ -52,5 +52,7 @@ namespace Domain
             double k = (DecreciationPurchasePrice - DecreciationScrapValue) * DecriationInterest / ((1 - p) + DecreciationScrapValue * DecriationInterest);
             // DO STUFF
         }
+
+
     }
 }
