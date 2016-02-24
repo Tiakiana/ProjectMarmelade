@@ -41,7 +41,7 @@ namespace ProjectJam
             DateTime? date = dt_DatePicker.SelectedDate;
             Domain.DomainController.getDCT().GetQualityTestController().CreateQualityTest(Int32.Parse(tb_prodID.Text), dt_DatePicker.DisplayDate, tb_TestActivities.Text, tb_ExpectedRes.Text, tb_Employee.Text, null, null);
         }
-
+        #region UIRecipe
         private void CreateRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             RecipeFrame.Content = cr;
@@ -62,5 +62,6 @@ namespace ProjectJam
         {
             RecipeFrame.Content = dr;
         }
+        #endregion
     }
 }
