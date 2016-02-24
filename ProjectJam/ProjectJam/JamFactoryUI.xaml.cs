@@ -47,6 +47,9 @@ namespace ProjectJam
         private void productDevelopmentButton_Click(object sender, RoutedEventArgs e)
         {
             //evt. ændre navnet på knap til et andet foretrukken navn
+            Development devWindow = new Development();
+            devWindow.Show();
+            this.Close();
         }
 
         private void routePlanningButton_Click(object sender, RoutedEventArgs e)

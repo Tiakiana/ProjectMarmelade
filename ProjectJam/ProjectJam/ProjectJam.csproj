@@ -75,12 +75,16 @@
     </Compile>
     <Compile Include="DBC.cs" />
     <Compile Include="AssetDecreciation.cs" />
+    <Compile Include="Development.xaml.cs">
+      <DependentUpon>Development.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IDBController.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="DomainController.cs" />
     <Compile Include="DomainTest.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="IQualityTest.cs" />
     <Compile Include="AssetMaintenance.cs" />
     <Compile Include="JamFactoryUI.xaml.cs">
@@ -91,6 +95,23 @@
     <Compile Include="QualityTest.cs" />
     <Compile Include="QualityTestController.cs" />
     <Compile Include="QualityTestFactory.cs" />
+    <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeController.cs" />
+    <Compile Include="UIRecipe\CreateRecipe.xaml.cs">
+      <DependentUpon>CreateRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\DeleteRecipe.xaml.cs">
+      <DependentUpon>DeleteRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\GetRecipe.xaml.cs">
+      <DependentUpon>GetRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\JudgeRecipe.xaml.cs">
+      <DependentUpon>JudgeRecipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRecipe\KnowlegdeBank.xaml.cs">
+      <DependentUpon>KnowlegdeBank.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <Page Include="AssetCompletedMaintenance.xaml">
       <SubType>Designer</SubType>
@@ -112,6 +133,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Development.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="JamFactoryUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +153,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UIRecipe\CreateRecipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIRecipe\DeleteRecipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIRecipe\GetRecipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIRecipe\JudgeRecipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIRecipe\KnowlegdeBank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -152,6 +197,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="UIRecipe\desktop.ini" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
