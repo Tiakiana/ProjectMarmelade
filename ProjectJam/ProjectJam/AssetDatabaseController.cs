@@ -14,20 +14,18 @@ namespace Domain
         private List<Asset> AssetTestList { get; }//JUST A TESTER FOR FUNCTIONALITY
 
         //Methods
-        public void InsertAsset(Asset addedAsset)
-        {
-            // DO STUFF
-            AssetTestList.Add(addedAsset);
-        }
+        
         public void ShowAssetInfo(int id)
         {
             // DO STUFF
             Console.WriteLine(AssetTestList[id].ToString());
         }
+
         public void PlanMaintenance()
         {
             // DO STUFF
         }
+
         public void MaintenanceDone()
         {
             // DO STUFF
@@ -40,11 +38,20 @@ namespace Domain
             Asset someAsset = AssetTestList[id];
             return someAsset;
         }
+
         public void SaveAsset(Asset saveasset)
         {
             // DO STUFF
             // StoredProcedureCall
             AssetTestList.Add(saveasset);
+        }
+
+        public int GetLastAssetID()
+        {
+            // DO STUFF
+            // StoredProcedureCall
+            return AssetTestList.Last().assetId;
+            
         }
 
     }

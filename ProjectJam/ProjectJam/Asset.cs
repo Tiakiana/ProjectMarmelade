@@ -9,7 +9,8 @@ namespace Domain
     class Asset
     {
         // Properties
-        private int AssetID { get; set; }
+        private int AssetID { get; set; } 
+        public int assetId { get { return AssetID; } }       
         private string AssetName { get; set; }
         private DateTime AssetPurchaseDate { get; set; }
         private decimal AssetPurchacePrice { get; set; }
@@ -21,9 +22,9 @@ namespace Domain
         private List<AssetMaintenance> AssetMaintenanceList { get; set; }
 
         // Constructors:
-        public Asset(int nextID,string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
+        public Asset(string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
         {
-            this.AssetID = nextID;
+            
             this.AssetName = name;
             this.AssetPurchaseDate = purchaseDate;
             this.AssetPurchacePrice = AssetPurchacePrice;
@@ -56,15 +57,15 @@ namespace Domain
             AssetDecreciationList.Add(newDecreciation);
         }
 
-        public void CompleteMaintenance(int mainID)
+        public void CompleteMaintenance()
         {
-            AssetMaintenanceList[mainID].CompleteMaintenance();
-            IsOperative = true;
+            //AssetMaintenanceList.Last().
+            this.IsOperative = true;
         }
 
-        public void PerformMaintenance(int mainID)
+        public void PerformMaintenance()
         {
-            AssetMaintenanceList[mainID].PerformMaintenance();
+            // DOO STUUUFFF
         }
         
 

@@ -32,15 +32,14 @@ namespace Domain
         {
             // PLEASE TEST, GUYS (AND GIRL)
             GetAsset(assetID);
-            int newMainID = GetLastMaintenanceID ()+1;
-            AssetMaintenance tempMaintenance = new AssetMaintenance(newMainID, description, plannedDate);
+            AssetMaintenance tempMaintenance = new AssetMaintenance( description, plannedDate);
             CurrentAsset.addMaintenance(tempMaintenance);
         }
 
         public void PerformMaintenance(int assetID)
         {
             GetAsset(assetID);
-            CurrentAsset.PerformMaintenance(getPlannedMaintenanceID());
+            CurrentAsset.PerformMaintenance();
             // DO STUFF
 
         }
@@ -50,42 +49,44 @@ namespace Domain
             //PLEASE LOOK IT OVER, GUYS AND DOLL!!
             GetAsset(assetID);
             
-            CurrentAsset.CompleteMaintenance(GetLastMaintenanceID());
+            CurrentAsset.CompleteMaintenance();
         }
 
         private void CreateNewAsset(string name, DateTime purchaseDate, decimal purchasePrice, decimal scrapvalue, int lifeSpan)
         {   
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-            int nextID = GetLastAssetID() + 1;
-            CurrentAsset = new Asset(nextID, name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
+           
+            CurrentAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
         }
 
         private int GetLastAssetID()
-        {
-            int lastID;
+        { 
             // stored procedure call to get last Asset in DB
+            int lastID = DBcontroller.GetLastAssetID();
             return lastID;
         }
 
-        private int GetLastMaintenanceID()
-        {
-            int lastMainID;
-            // stored procedure call to get last Maintenance in DB
-            return lastMainID;
-        }
+        //private int GetLastMaintenanceID()
+        //{
+        //    int lastMainID;
+        //    // stored procedure call to get last Maintenance in DB
+            
+        //    return lastMainID;
+        //}
 
-        private int GetLastDecreciationID()
-        {
-            int lastDecreciationID;
-            // stored procedure call to get last Decreciation in DB
-            return lastDecreciationID;
-        }
-        private int getPlannedMaintenanceID()
-        {
-            int plannedMaintenanceID;
-            // stored procedure call to get planned maintenanceID in DB
-            return plannedMaintenanceID;
-        }
+        //private int GetLastDecreciationID()
+        //{
+        //    int lastDecreciationID;
+        //    // stored procedure call to get last Decreciation in DB
+        //    return lastDecreciationID;
+        //}
+
+        //private int getPlannedMaintenanceID()
+        //{
+        //    int plannedMaintenanceID;
+        //    // stored procedure call to get planned maintenanceID in DB
+        //    return plannedMaintenanceID;
+        //}
         
     }
 }

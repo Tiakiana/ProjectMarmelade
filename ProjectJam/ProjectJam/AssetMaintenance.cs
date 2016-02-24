@@ -15,9 +15,9 @@ namespace Domain
         private MaintenanceStatus maintenanceStatus { get; set; }
         
         // Constructors
-        public AssetMaintenance(int mainId,string description, DateTime plannedDate)
+        public AssetMaintenance(string description, DateTime plannedDate)
         {
-            this.MaintenanceID = mainId;
+            
             this.MaintenanceDescription = description;
             this.PlannedMaintenanceDate = plannedDate;
             this.maintenanceStatus = MaintenanceStatus.Planned;
