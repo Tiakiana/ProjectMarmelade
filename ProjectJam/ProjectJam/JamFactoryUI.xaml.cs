@@ -49,6 +49,7 @@ namespace ProjectJam
             //evt. ændre navnet på knap til et andet foretrukken navn
             Development devWindow = new Development();
             devWindow.Show();
+
             this.Close();
         }
 

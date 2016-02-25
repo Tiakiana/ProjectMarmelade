@@ -5,15 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectJam"
         mc:Ignorable="d"
-        Title="Development" Height="600" Width="800" Background="#FFE5E5E5">
-
+      
+        Title="Development"  Height="600" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="57*"/>
-            <ColumnDefinition Width="737*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Height="123" Margin="10,65,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
-            <Button x:Name="CreateRecipeBtn" Content="Create Recipe" VerticalAlignment="Top" Click="CreateRecipeBtn_Click" />
+        <StackPanel HorizontalAlignment="Left" Visibility="Visible" Height="123" Margin="10,65,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
+            <Button x:Name="CreateRecipeBtn" Content="Create Recipe" VerticalAlignment="Top" Click="CreateRecipeBtn_Click"/>
             <Button x:Name="JudgeRecipeBtn" Content="Judge Recipe" Click="JudgeRecipeBtn_Click"/>
             <Button x:Name="GetRecipeBtn" Content="Get Recipe" Click="GetRecipeBtn_Click"/>
             <Button x:Name="DeleteRecipeBtn" Content="Delete Recipe" Click="DeleteRecipeBtn_Click"/>
@@ -26,5 +22,4 @@
 
 
     </Grid>
-
 </Window>

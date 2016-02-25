@@ -59,12 +59,12 @@ namespace Domain
             CurrentAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
         }
 
-        private int GetLastAssetID()
-        { 
-            // stored procedure call to get last Asset in DB
-            int lastID = DBcontroller.GetLastAssetID();
-            return lastID;
-        }
+        //private int GetLastAssetID()
+        //{ 
+        //    // stored procedure call to get last Asset in DB
+        //    int lastID = DBcontroller.GetLastAssetID();
+        //    return lastID;
+        //}
 
         //private int GetLastMaintenanceID()
         //{
