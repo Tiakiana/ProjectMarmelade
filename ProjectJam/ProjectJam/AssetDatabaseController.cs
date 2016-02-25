@@ -12,7 +12,14 @@ namespace Domain
     {   
         // Properties
         private SqlConnection AssetConnection { get; set; }
-        private List<Asset> AssetTestList { get; }//JUST A TESTER FOR FUNCTIONALITY
+        private List<Asset> AssetTestList{ get; set; }//JUST A TESTER FOR FUNCTIONALITY
+
+        // Constructor
+        public AssetDatabaseController()
+        {
+            AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            AssetTestList = new List<Asset>();
+        }
 
         //Methods
         
@@ -43,15 +50,18 @@ namespace Domain
         public void SaveAsset(Asset saveasset)
         {
             // DO STUFF
+            
             AssetTestList.Add(saveasset);// blot til test: Skriver til en liste // skriver ikke til databasen.
             // StoredProcedureCall
-            AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
             try
             {
+               
                 AssetConnection.Open();
                 // DO SHIT to database
                 SqlCommand cmd = new SqlCommand("spInsertAsset", AssetConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.Add(new SqlParameter("@AssetName",saveasset.AssetName ));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice",saveasset.AssetPurchacePrice ));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", saveasset.AssetPurchaseDate.ToString()));
@@ -60,8 +70,6 @@ namespace Domain
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
                 cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
                 
-
-
                 cmd.ExecuteNonQuery();
 
             }

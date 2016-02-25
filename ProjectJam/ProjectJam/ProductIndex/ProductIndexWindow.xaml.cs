@@ -25,21 +25,21 @@ namespace View
         }
         private void PNameSelectBox_Loaded(object sender, RoutedEventArgs e)
         {
-            var pNameSelectBox = sender as ComboBox;
-            pNameSelectBox.ItemsSource = PI.pNameList;
-            pNameSelectBox.SelectedIndex = 0;
+            //var pNameSelectBox = sender as ComboBox;
+            //pNameSelectBox.ItemsSource = PI.pNameList;
+            //pNameSelectBox.SelectedIndex = 0;
         }
         private void PTypeSelectBox_Loaded(object sender, RoutedEventArgs e)
         {
-            var pTypeSelectBox = sender as ComboBox;
-            pTypeSelectBox.ItemsSource = PI.pTypeList;
-            pTypeSelectBox.SelectedIndex = 0;
+            //var pTypeSelectBox = sender as ComboBox;
+            //pTypeSelectBox.ItemsSource = PI.pTypeList;
+            //pTypeSelectBox.SelectedIndex = 0;
         }
         private void PDocumationSelectBox_Loaded(object sender, RoutedEventArgs e)
         {
-            var pDocumationSelectBox = sender as ComboBox;
-            pDocumationSelectBox.ItemsSource = PI.pDocumationList;
-            pDocumationSelectBox.SelectedIndex = 0;
+            //var pDocumationSelectBox = sender as ComboBox;
+            //pDocumationSelectBox.ItemsSource = PI.pDocumationList;
+            //pDocumationSelectBox.SelectedIndex = 0;
         }
         private void Finder_Click(object sender, RoutedEventArgs e)
         {
