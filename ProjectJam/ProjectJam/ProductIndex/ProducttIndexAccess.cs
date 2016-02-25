@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Controls.Primitives;
 
 namespace TechnicalServices.DatabaseHandler
 {
     class ProducttIndexAccess : ProductAccess
     {
         public string GetProductNames = "GetProductNames";
-        public string GetProtuctNames = "GetProtuctNames";
+        public string GetProductTypes = "GetProductTypes";
         public string GetpDocumationTypes = "GetpDocumationTypes";
         public string GetIndex(string s)
         {
@@ -19,7 +20,7 @@ namespace TechnicalServices.DatabaseHandler
             SqlConnection conn = new SqlConnection(dataBaseAccess);
             try
             {
-                    SqlCommand cmd;
+                SqlCommand cmd;
                 SqlDataReader reader;
                 cmd = new SqlCommand(s, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -39,7 +40,18 @@ namespace TechnicalServices.DatabaseHandler
             }
             catch (Exception)
             {
-                throw;
+                if (s == GetProductNames)
+                {
+                    data = "Jordbær;hindbar";
+                }
+                if (s == GetProductTypes)
+                {
+                    data = "Hverdag;Discount;Luxus";
+                }
+                if (s == GetpDocumationTypes)
+                {
+                    data = "Correspondance;QualityAssurance";
+                }             
             }
             finally
             {
