@@ -51,7 +51,6 @@ namespace ProjectJam
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInsertAsset", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(new SqlParameter("@AssetName", nameTexBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", purchasePriceTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", purchaseDateTextBox));
