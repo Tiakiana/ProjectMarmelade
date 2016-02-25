@@ -11,18 +11,29 @@ namespace Domain
     class AssetDatabaseController
     {   
         // Properties
-        private SqlConnection AssetConnection { get; set; }
+
         private List<Asset> AssetTestList{ get; set; }//JUST A TESTER FOR FUNCTIONALITY
 
         // Constructor
         public AssetDatabaseController()
         {
-            AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            // AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
             AssetTestList = new List<Asset>();
         }
 
+        public void ConnSqlFromDbc()
+        {
+           
+            //Persistance.DBC getSqlCon = new Persistance.DBC();
+
+            //getSqlCon.AssetDbConnection();
+
+
+        }
+
+
         //Methods
-        
+
         public void ShowAssetInfo(int id)
         {
             // DO STUFF
@@ -47,47 +58,47 @@ namespace Domain
             return someAsset;
         }
 
-        public void SaveAsset(Asset saveasset)
-        {
-            // DO STUFF
+        //public void SaveAsset(Asset saveasset)
+        //{
+        //    // DO STUFF
             
-            AssetTestList.Add(saveasset);// blot til test: Skriver til en liste // skriver ikke til databasen.
-            // StoredProcedureCall
-            //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
-            try
-            {
-                AssetConnection.Open();
-                // DO SHIT to database
-                SqlCommand cmd = new SqlCommand("spInsertAsset", AssetConnection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@AssetName",saveasset.AssetName ));
-                cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice",saveasset.AssetPurchacePrice ));
-                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", saveasset.AssetPurchaseDate.ToString()));
-                cmd.Parameters.Add(new SqlParameter("@AssetScrapValue",saveasset.AssetScrapValue ));
-                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue",saveasset.AssetPostedValue ));
-                cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
-                cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
+        //    AssetTestList.Add(saveasset);// blot til test: Skriver til en liste // skriver ikke til databasen.
+        //    // StoredProcedureCall
+        //    //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+        //    try
+        //    {
+
+        //        SqlConnection conn = ConnSqlFromDbc();
+        //        // DO SHIT to database
+        //        SqlCommand cmd = new SqlCommand("spInsertAsset", AssetConnection);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        cmd.Parameters.Add(new SqlParameter("@AssetName",saveasset.AssetName ));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice",saveasset.AssetPurchacePrice ));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", saveasset.AssetPurchaseDate.ToString()));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetScrapValue",saveasset.AssetScrapValue ));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetPostedValue",saveasset.AssetPostedValue ));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
+        //        cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
                 
+        //        cmd.ExecuteNonQuery();
 
+        //    }
+        //    catch (SqlException e)
+        //    {
 
-                cmd.ExecuteNonQuery();
-
-            }
-            catch (SqlException e)
-            {
-
-                Console.WriteLine("whooops: " + e.Message);
-            }
-            finally
-            {
-                AssetConnection.Close();
-                AssetConnection.Dispose();
-            }
+        //        Console.WriteLine("whooops: " + e.Message);
+        //    }
+        //    finally
+        //    {
+        //        AssetConnection.Close();
+        //        AssetConnection.Dispose();
+        //    }
             
 
 
 
-        }
+        //}
 
         
 

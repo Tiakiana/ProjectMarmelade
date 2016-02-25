@@ -16,10 +16,10 @@ using Controller;
 
 namespace View
 {    
-    public partial class ProductIndexWindow : Window
+    public partial class ProductIndexW : Window
     {
         ProductIndex PI = new ProductIndex();
-        public ProductIndexWindow()
+        public ProductIndexW()
         {
             InitializeComponent();            
         }
@@ -43,7 +43,7 @@ namespace View
         }
         private void Finder_Click(object sender, RoutedEventArgs e)
         {
-            WindowData wd = new WindowData(PI.ShowProductDocumation(PNameSelectBox.Text, PTypeSelectBox.Text, PDocumationSelectBox.Text);
+            WindowData wd = new WindowData(PI.ShowProductDocumation(PNameSelectBox.Text, PTypeSelectBox.Text, PDocumationSelectBox.Text));
             wd.Show();
         }      
     }

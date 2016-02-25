@@ -17,7 +17,6 @@ namespace Domain
         {
             DBcontroller.SaveAsset(CurrentAsset);
         }
-
         public void GetAsset(int assetID)
         {
             CurrentAsset = DBcontroller.LoadAsset(assetID);
