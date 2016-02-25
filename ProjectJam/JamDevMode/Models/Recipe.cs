@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectJam.Models
 {
-    class Recipe
+    public class Recipe
     {
         public int Id { get; private set; }
         public List<Resource> Ingredients { get; set; }

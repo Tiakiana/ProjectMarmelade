@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProjectJam.Models
 {
-    class Resource
+    public class Resource
     {
-        public int Id { get; private set; }
         public string Name { get; set; }
         public string Type { get; set; }
 
-        public double Price { get; set; }
+        public decimal Price { get; set; }
 
         public Resource()
         {
 
         }
 
-        public Resource(string name, string type, double price, int id = 0)
+        public Resource(string name, string type, decimal price)
         {
             Name = name;
             Type = type;
             Price = price;
-            if (id != 0)
-            {
-                Id = id;
-            }
         }
 
         public List<Resource> GetSources()

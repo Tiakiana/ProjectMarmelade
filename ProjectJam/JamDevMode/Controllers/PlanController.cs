@@ -7,7 +7,7 @@ using ProjectJam.Models;
 
 namespace ProjectJam.Controllers
 {
-    static class PlanController
+    public static class PlanController
     {
         // Generate Production plan
         static ProductionPlan plan = new ProductionPlan();
@@ -16,8 +16,7 @@ namespace ProjectJam.Controllers
         
         public static void DoProductionPlan()
         {
-            //plan.GeneratePlan();
-            plan.TestPlan();
+            plan.GeneratePlan();
         }
         
 

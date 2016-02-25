@@ -10,25 +10,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ProjectJam.Controllers;
+using ProjectJam.Views;
 
-namespace ProjectJam.Views
+namespace ProjectJam
 {
     /// <summary>
-    /// Interaction logic for PlanView.xaml
+    /// Interaction logic for Screen.xaml
     /// </summary>
-    public partial class PlanView : UserControl
+    public partial class Screen : Window
     {
-        public PlanView()
+        private Navigator nav = new Navigator();
+        public Screen()
         {
             InitializeComponent();
+            Startup();
         }
 
-        private void buttonPlaning_Click(object sender, RoutedEventArgs e)
+        private void Startup()
         {
-            PlanController.DoProductionPlan();
+            // Instantiate Parent window for navigator
+            nav.ParentWindow = this;
+
+            nav.Next(new PlanView());
+        }
+
+        private void Run()
+        {
+
         }
     }
 }
