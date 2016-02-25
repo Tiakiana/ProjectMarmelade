@@ -16,7 +16,7 @@
         <Label x:Name="statusLabel" Content="Status:" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="statusComboBox" HorizontalAlignment="Left" Margin="104,240,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
         <TextBox x:Name="purchaseDateTextBox" HorizontalAlignment="Left" Height="23" Margin="104,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nameTexBox" HorizontalAlignment="Left" Height="23" Margin="104,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="104,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="purchasePriceTextBox" HorizontalAlignment="Left" Height="23" Margin="104,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="postedValueTextBox" HorizontalAlignment="Left" Height="23" Margin="104,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="purchaseDateLabel" Content="Purchase date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,113,0,0"/>

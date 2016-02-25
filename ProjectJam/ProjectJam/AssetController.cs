@@ -10,7 +10,7 @@ namespace Domain
     {
         //Properties:
         private Asset CurrentAsset { get; set; }
-        AssetDatabaseController DBcontroller = new AssetDatabaseController();
+        Persistance.DBC DBcontroller = new Persistance.DBC();
 
         // Methods:
         public void InsertNewAsset()
@@ -57,7 +57,7 @@ namespace Domain
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
             Asset tempAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
             //CurrentAsset = tempAsset;
-            DBcontroller.SaveAsset(tempAsset);
+             DBcontroller.SaveAsset(tempAsset);
         }
 
         //private int GetLastAssetID()

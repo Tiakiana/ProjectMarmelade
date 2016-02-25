@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Domain;
 namespace ProjectJam
 {
     /// <summary>
@@ -19,6 +19,7 @@ namespace ProjectJam
     /// </summary>
     public partial class AssetMakeAsset : Window
     {
+        AssetController myAssetController = new AssetController();
         public AssetMakeAsset()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace ProjectJam
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
             //insert values til database
+            myAssetController.CreateNewAsset(nameTextBox.Text,DateTime.Parse( purchaseDateTextBox.Text),decimal.Parse(purchasePriceTextBox.Text),decimal.Parse(scrapValueTextBox.Text),int.Parse(lifeSpanTextBox.Text));
             MessageBox.Show("New asset was created", "Succes");
         }
 
