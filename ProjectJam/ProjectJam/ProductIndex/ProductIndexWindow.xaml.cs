@@ -43,7 +43,7 @@ namespace View
         }
         private void Finder_Click(object sender, RoutedEventArgs e)
         {
-            WindowData wd = new WindowData(PI.ShowProductDocumation(PNameSelectBox.Text, PTypeSelectBox.Text, PDocumationSelectBox.Text);
+            WindowData wd = new WindowData(PI.ShowProductDocumation(PNameSelectBox.Text, PTypeSelectBox.Text, PDocumationSelectBox.Text));
             wd.Show();
         }      
     }
