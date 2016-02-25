@@ -90,6 +90,20 @@
     <Compile Include="JamFactoryUI.xaml.cs">
       <DependentUpon>JamFactoryUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductIndex\Correspondance.cs" />
+    <Compile Include="ProductIndex\ProductAccess.cs" />
+    <Compile Include="ProductIndex\ProductDocumationAccess.cs" />
+    <Compile Include="ProductIndex\ProductIndex.cs" />
+    <Compile Include="ProductIndex\ProductIndexWindow.xaml.cs">
+      <DependentUpon>ProductIndexWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductIndex\ProductInfo .cs" />
+    <Compile Include="ProductIndex\ProducttIndexAccess.cs" />
+    <Compile Include="ProductIndex\QualityAssurance.cs" />
+    <Compile Include="ProductIndex\Recipe.cs" />
+    <Compile Include="ProductIndex\WindowData.xaml.cs">
+      <DependentUpon>WindowData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
@@ -153,6 +167,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProductIndex\ProductIndexWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProductIndex\WindowData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UIRecipe\CreateRecipe.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
