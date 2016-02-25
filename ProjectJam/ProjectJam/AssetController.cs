@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class AssetController
+    public class AssetController
     {
         //Properties:
         private Asset CurrentAsset { get; set; }
@@ -52,11 +52,12 @@ namespace Domain
             CurrentAsset.CompleteMaintenance();
         }
 
-        private void CreateNewAsset(string name, DateTime purchaseDate, decimal purchasePrice, decimal scrapvalue, int lifeSpan)
-        {   
+        public void CreateNewAsset(string name, DateTime purchaseDate, decimal purchasePrice, decimal scrapvalue, int lifeSpan)
+        {
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-           
+            
             CurrentAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
+            DBcontroller.SaveAsset(CurrentAsset);
         }
 
         //private int GetLastAssetID()
