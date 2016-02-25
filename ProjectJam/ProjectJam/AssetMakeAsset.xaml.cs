@@ -37,6 +37,7 @@ namespace ProjectJam
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
+            InsertAsset();
             //insert values til database
             MessageBox.Show("New asset was created", "Succes");
         }
@@ -57,7 +58,7 @@ namespace ProjectJam
                 cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", scrapValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", postedValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", lifeSpanTextBox.Text));
-                //cmd.Parameters.Add(new SqlParameter("@AssetStatus", saveasset.IsOperative.ToString()));
+                //cmd.Parameters.Add(new SqlParameter("@AssetStatus", textBoxTestStatus.Text));
 
                 cmd.ExecuteNonQuery();
 
