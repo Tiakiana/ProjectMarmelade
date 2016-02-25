@@ -38,5 +38,11 @@ namespace ProjectJam
             //insert values til database
             MessageBox.Show("New asset was created", "Succes");
         }
+
+        public void InsertAsset()
+        {
+
+        }
+
     }
 }
