@@ -19,7 +19,7 @@
             <ComboBoxItem Content="No" />
         </ComboBox>
         <TextBox x:Name="purchaseDateTextBox" HorizontalAlignment="Left" Height="23" Margin="104,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nameTexBox" HorizontalAlignment="Left" Height="23" Margin="104,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="104,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="purchasePriceTextBox" HorizontalAlignment="Left" Height="23" Margin="104,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="postedValueTextBox" HorizontalAlignment="Left" Height="23" Margin="104,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="purchaseDateLabel" Content="Purchase date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,113,0,0"/>

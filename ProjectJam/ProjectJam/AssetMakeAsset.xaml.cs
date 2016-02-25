@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Domain;
 namespace ProjectJam
 {
     /// <summary>
@@ -21,6 +21,7 @@ namespace ProjectJam
     /// </summary>
     public partial class AssetMakeAsset : Window
     {
+        AssetController myAssetController = new AssetController();
         public AssetMakeAsset()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace ProjectJam
         {
             InsertAsset();
             //insert values til database
+            myAssetController.CreateNewAsset(nameTextBox.Text,DateTime.Parse( purchaseDateTextBox.Text),decimal.Parse(purchasePriceTextBox.Text),decimal.Parse(scrapValueTextBox.Text),int.Parse(lifeSpanTextBox.Text));
             MessageBox.Show("New asset was created", "Succes");
         }
 
@@ -51,22 +53,21 @@ namespace ProjectJam
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInsertAsset", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new SqlParameter("@AssetName", nameTexBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@AssetName", nameTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", purchasePriceTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", purchaseDateTextBox));
                 cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", scrapValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", postedValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", lifeSpanTextBox.Text));
-                //cmd.Parameters.Add(new SqlParameter("@AssetStatus", textBoxTestStatus.Text));
+                cmd.Parameters.Add(new SqlParameter("@AssetStatus", statusComboBox.Text));
 
                 cmd.ExecuteNonQuery();
 
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 // note the type of the exeption
-                Console.WriteLine("UPS " + e.Message);
+                MessageBox.Show("UPS " + e.Message);
             }
             finally
             {
