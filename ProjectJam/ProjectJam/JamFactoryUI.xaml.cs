@@ -67,7 +67,7 @@ namespace ProjectJam
 
         private void productButton_Click(object sender, RoutedEventArgs e)
         {
-            View.ProductIndexWindow pw = new View.ProductIndexWindow();
+            View.ProductIndexW pw = new View.ProductIndexW();
             pw.Show();
         }
     }
