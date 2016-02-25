@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace ProjectJam
 {
     /// <summary>
@@ -61,6 +63,12 @@ namespace ProjectJam
         private void optimizationButton_Click(object sender, RoutedEventArgs e)
         {
             //evt. ændre navnet på knap til et andet foretrukken navn
+        }
+
+        private void productButton_Click(object sender, RoutedEventArgs e)
+        {
+            View.ProductIndexWindow pw = new View.ProductIndexWindow();
+            pw.Show();
         }
     }
 }

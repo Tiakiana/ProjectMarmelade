@@ -13,7 +13,7 @@
         <Button x:Name="productDevelopmentButton" Content="Product development" HorizontalAlignment="Left" Margin="40,136,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="productDevelopmentButton_Click"/>
         <Button x:Name="routePlanningButton" Content="Route planning" HorizontalAlignment="Left" Margin="215,136,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="routePlanningButton_Click"/>
         <Button x:Name="optimizationButton" Content="Optimization" HorizontalAlignment="Left" Margin="40,195,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="optimizationButton_Click"/>
-        <Button x:Name="productButton" Content="Products" HorizontalAlignment="Left" Margin="215,195,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button x:Name="productButton" Content="Products" HorizontalAlignment="Left" Margin="215,195,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="productButton_Click"/>
 
     </Grid>
 </Window>
