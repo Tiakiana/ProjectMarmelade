@@ -9,21 +9,21 @@ namespace Domain
     class Asset
     {
         // Properties
-        private int AssetID { get; set; }
-        private string AssetName { get; set; }
-        private DateTime AssetPurchaseDate { get; set; }
-        private decimal AssetPurchacePrice { get; set; }
-        private decimal AssetScrapValue { get; set; }
-        private decimal AssetPostedValue { get; set; }
-        private int AssetLifeSpan { get; set; }
-        private bool IsOperative { get; set; }
-        private List<AssetDecreciation> AssetDecreciationList { get; set; }
-        private List<AssetMaintenance> AssetMaintenanceList { get; set; }
+        public int AssetID { get; private set; } 
+        public string AssetName { get; private set; }
+        public DateTime AssetPurchaseDate { get; private set; }
+        public decimal AssetPurchacePrice { get; private set; }
+        public decimal AssetScrapValue { get; private set; }
+        public decimal AssetPostedValue { get; private set; }
+        public int AssetLifeSpan { get; private set; }
+        public bool IsOperative { get; private set; }
+        public List<AssetDecreciation> AssetDecreciationList { get; private set; }
+        public List<AssetMaintenance> AssetMaintenanceList { get; private set; }
 
         // Constructors:
-        public Asset(int nextID,string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
+        public Asset(string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
         {
-            this.AssetID = nextID;
+            
             this.AssetName = name;
             this.AssetPurchaseDate = purchaseDate;
             this.AssetPurchacePrice = AssetPurchacePrice;
@@ -56,15 +56,15 @@ namespace Domain
             AssetDecreciationList.Add(newDecreciation);
         }
 
-        public void CompleteMaintenance(int mainID)
+        public void CompleteMaintenance()
         {
-            AssetMaintenanceList[mainID].CompleteMaintenance();
-            IsOperative = true;
+            //AssetMaintenanceList.Last().
+            this.IsOperative = true;
         }
 
-        public void PerformMaintenance(int mainID)
+        public void PerformMaintenance()
         {
-            AssetMaintenanceList[mainID].PerformMaintenance();
+            // DOO STUUUFFF
         }
         
 

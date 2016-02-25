@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Domain
 {
@@ -14,20 +15,18 @@ namespace Domain
         private List<Asset> AssetTestList { get; }//JUST A TESTER FOR FUNCTIONALITY
 
         //Methods
-        public void InsertAsset(Asset addedAsset)
-        {
-            // DO STUFF
-            AssetTestList.Add(addedAsset);
-        }
+        
         public void ShowAssetInfo(int id)
         {
             // DO STUFF
             Console.WriteLine(AssetTestList[id].ToString());
         }
+
         public void PlanMaintenance()
         {
             // DO STUFF
         }
+
         public void MaintenanceDone()
         {
             // DO STUFF
@@ -40,12 +39,49 @@ namespace Domain
             Asset someAsset = AssetTestList[id];
             return someAsset;
         }
+
         public void SaveAsset(Asset saveasset)
         {
             // DO STUFF
+            AssetTestList.Add(saveasset);// blot til test: Skriver til en liste // skriver ikke til databasen.
             // StoredProcedureCall
-            AssetTestList.Add(saveasset);
+            AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            try
+            {
+                AssetConnection.Open();
+                // DO SHIT to database
+                SqlCommand cmd = new SqlCommand("spInsertAsset", AssetConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@AssetName",saveasset.AssetName ));
+                cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice",saveasset.AssetPurchacePrice ));
+                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", saveasset.AssetPurchaseDate.ToString()));
+                cmd.Parameters.Add(new SqlParameter("@AssetScrapValue",saveasset.AssetScrapValue ));
+                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue",saveasset.AssetPostedValue ));
+                cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
+                cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
+                
+
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+
+                Console.WriteLine("whooops: " + e.Message);
+            }
+            finally
+            {
+                AssetConnection.Close();
+                AssetConnection.Dispose();
+            }
+            
+
+
+
         }
+
+        
 
     }
 }

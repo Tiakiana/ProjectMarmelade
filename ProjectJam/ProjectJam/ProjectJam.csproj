@@ -73,6 +73,7 @@
     <Compile Include="AssetPlanMaintenance.xaml.cs">
       <DependentUpon>AssetPlanMaintenance.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AssetTestClass.cs" />
     <Compile Include="DBC.cs" />
     <Compile Include="AssetDecreciation.cs" />
     <Compile Include="Development.xaml.cs">
