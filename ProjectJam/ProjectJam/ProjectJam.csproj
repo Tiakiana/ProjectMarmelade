@@ -111,6 +111,7 @@
     <Compile Include="QualityTestFactory.cs" />
     <Compile Include="Recipe.cs" />
     <Compile Include="RecipeController.cs" />
+    <Compile Include="RecipeDBController.cs" />
     <Compile Include="UIRecipe\CreateRecipe.xaml.cs">
       <DependentUpon>CreateRecipe.xaml</DependentUpon>
     </Compile>
