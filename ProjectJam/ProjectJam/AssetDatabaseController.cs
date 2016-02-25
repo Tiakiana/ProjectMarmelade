@@ -56,10 +56,12 @@ namespace Domain
             //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
             try
             {
+               
                 AssetConnection.Open();
                 // DO SHIT to database
                 SqlCommand cmd = new SqlCommand("spInsertAsset", AssetConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.Add(new SqlParameter("@AssetName",saveasset.AssetName ));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice",saveasset.AssetPurchacePrice ));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", saveasset.AssetPurchaseDate.ToString()));
@@ -68,8 +70,6 @@ namespace Domain
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
                 cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
                 
-
-
                 cmd.ExecuteNonQuery();
 
             }
