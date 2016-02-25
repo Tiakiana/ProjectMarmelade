@@ -42,7 +42,6 @@ namespace Domain
             GetAsset(assetID);
             CurrentAsset.PerformMaintenance(getPlannedMaintenanceID());
             // DO STUFF
-
         }
 
         public void CompleteMaintenance(int assetID)
@@ -80,6 +79,7 @@ namespace Domain
             // stored procedure call to get last Decreciation in DB
             return lastDecreciationID;
         }
+
         private int getPlannedMaintenanceID()
         {
             int plannedMaintenanceID = 0;
