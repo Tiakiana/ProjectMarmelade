@@ -14,6 +14,7 @@ namespace Domain
             AssetController testcontroller = new AssetController();
             DateTime myDate = new DateTime(2015, 2, 1);
             testcontroller.CreateNewAsset("Bæskubber", myDate, 10000, 1000, 10);
+
         }
     }
 }
