@@ -24,17 +24,13 @@ namespace ProjectJam
         GetRecipe gr = new GetRecipe();
         KnowlegdeBank kb = new KnowlegdeBank();
         DeleteRecipe dr = new DeleteRecipe();
-        public void MainWindow()
+
+        public Development()
         {
             InitializeComponent();
             Domain.DomainController.getDCT().onStart("M1");
-
         }
-        /*
-        int prodID, DateTime date, 
-                string qualityTestActivities, string expresults, string results,
-                string comments, string comment, string employee)
-    */
+
         #region UIRecipe
         private void CreateRecipeBtn_Click(object sender, RoutedEventArgs e)
         {

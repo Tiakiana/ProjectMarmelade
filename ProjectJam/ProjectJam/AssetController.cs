@@ -54,9 +54,9 @@ namespace Domain
         public void CreateNewAsset(string name, DateTime purchaseDate, decimal purchasePrice, decimal scrapvalue, int lifeSpan)
         {
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-            
-            CurrentAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
-            DBcontroller.SaveAsset(CurrentAsset);
+            Asset tempAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
+            //CurrentAsset = tempAsset;
+            DBcontroller.SaveAsset(tempAsset);
         }
 
         //private int GetLastAssetID()
