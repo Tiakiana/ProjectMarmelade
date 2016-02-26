@@ -31,7 +31,7 @@ namespace Model
         public override string ToString()
         {
             string s = "Navne: " + name + ";" + "Type: " + type;
-            for (int i = 0; i < sizeCost.Length; i++)
+            for (int i = 0; i < sizeCost.Length/2; i++)
             {
                 s = s + ";" + "Størrelse: " + sizeCost[i, 0].ToString() + "g, Prise: " + sizeCost[i, 1].ToString() + "kr";
             }

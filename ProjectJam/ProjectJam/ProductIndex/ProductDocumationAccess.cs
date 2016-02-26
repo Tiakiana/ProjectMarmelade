@@ -32,7 +32,10 @@ namespace TechnicalServices.DatabaseHandler
             }
             catch (Exception)
             {
-                throw;
+                dataA[0, 0] = 120;
+                dataA[0, 1] = 30;
+                dataA[1,0] = 200;
+                dataA[1, 1] = 45;
             }
             finally
             {
@@ -62,7 +65,10 @@ namespace TechnicalServices.DatabaseHandler
             }
             catch (Exception)
             {
-                throw;
+                List<string> subList = new List<string>();
+                subList.Add("Hindbær");
+                subList.Add("0,5");
+                list.Add(subList);
             }
             finally
             {
@@ -89,7 +95,7 @@ namespace TechnicalServices.DatabaseHandler
             }
             catch (Exception)
             {
-                throw;
+                d = 0.45;
             }
             finally
             {

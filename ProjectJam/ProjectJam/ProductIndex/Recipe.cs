@@ -6,8 +6,12 @@ namespace Model
     class Recipe
     {
         List<List<string>> IList = new List<List<string>>();
+        string name;
+        string type;
         public Recipe(string pName, string pType)
         {
+            name = pName;
+            type = pType;
             ProductDocumationAccess p = new ProductDocumationAccess();
             IList = p.GetIngredients(pName);
             CalculateUse(p.GetAmoughtIngredients(pType));
@@ -25,7 +29,12 @@ namespace Model
         }
         public override string ToString()
         {
-            return base.ToString();
+            string s = "Navne: " + name + ";" + "Type: " + type;
+            for (int i = 0; i < IList.Count; i++)
+            {
+                s = s + ";Ingredient: " + IList[i][0].ToString() + ";Amought: " + IList[i][1].ToString() + "Kg";
+            }
+            return s;
         }
 
     }

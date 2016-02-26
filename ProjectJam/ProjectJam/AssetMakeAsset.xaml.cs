@@ -59,15 +59,15 @@ namespace ProjectJam
                 cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", scrapValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", postedValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", lifeSpanTextBox.Text));
-                //cmd.Parameters.Add(new SqlParameter("@AssetStatus", textBoxTestStatus.Text));
+                cmd.Parameters.Add(new SqlParameter("@AssetStatus", statusComboBox.Text));
 
                 cmd.ExecuteNonQuery();
 
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 // note the type of the exeption
-                Console.WriteLine("UPS " + e.Message);
+                MessageBox.Show("UPS " + e.Message);
             }
             finally
             {
