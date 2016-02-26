@@ -19,7 +19,7 @@ namespace Domain
         }
         public void GetAsset(int assetID)
         {
-            CurrentAsset = DBcontroller.LoadAsset(assetID);
+            //CurrentAsset = DBcontroller.LoadAsset(assetID);
         }
 
         public void ShowAssetInfo()
