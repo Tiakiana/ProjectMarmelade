@@ -40,8 +40,8 @@ namespace ProjectJam
         {
             InsertAsset();
             //insert values til database
-            myAssetController.CreateNewAsset(nameTextBox.Text,DateTime.Parse( purchaseDateTextBox.Text),decimal.Parse(purchasePriceTextBox.Text),decimal.Parse(scrapValueTextBox.Text),int.Parse(lifeSpanTextBox.Text));
-            MessageBox.Show("New asset was created", "Succes");
+            //myAssetController.CreateNewAsset(nameTextBox.Text,DateTime.Parse( purchaseDateTextBox.Text),decimal.Parse(purchasePriceTextBox.Text),decimal.Parse(scrapValueTextBox.Text),int.Parse(lifeSpanTextBox.Text));
+          
         }
 
         public void InsertAsset()
@@ -55,7 +55,7 @@ namespace ProjectJam
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@AssetName", nameTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", purchasePriceTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", purchaseDateTextBox));
+                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", purchaseDateTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", scrapValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", postedValueTextBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", lifeSpanTextBox.Text));
@@ -63,6 +63,7 @@ namespace ProjectJam
 
                 cmd.ExecuteNonQuery();
 
+                MessageBox.Show("New asset was created", "Succes");
             }
             catch (Exception e)
             {
