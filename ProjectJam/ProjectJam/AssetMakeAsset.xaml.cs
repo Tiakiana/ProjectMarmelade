@@ -38,46 +38,23 @@ namespace ProjectJam
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            InsertAsset();
+
             //insert values til database
-            //myAssetController.CreateNewAsset(nameTextBox.Text,DateTime.Parse( purchaseDateTextBox.Text),decimal.Parse(purchasePriceTextBox.Text),decimal.Parse(scrapValueTextBox.Text),int.Parse(lifeSpanTextBox.Text));
-          
+            myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), 1, int.Parse(lifeSpanTextBox.Text), statusComboBox.Text);
+            ClearTextbox();
+            MessageBox.Show("Asset was created", "Succes");
         }
 
-        public void InsertAsset()
+        public void ClearTextbox()
         {
-            SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
-        
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("spInsertAsset", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@AssetName", nameTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", purchasePriceTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", purchaseDateTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", scrapValueTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", postedValueTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", lifeSpanTextBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@AssetStatus", statusComboBox.Text));
-
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("New asset was created", "Succes");
-            }
-            catch (Exception e)
-            {
-                // note the type of the exeption
-                MessageBox.Show("UPS " + e.Message);
-            }
-            finally
-            {
-                conn.Close();
-                conn.Dispose();
-            }
+            nameTextBox.Text = String.Empty;
+            purchasePriceTextBox.Text = String.Empty;
+            purchaseDateTextBox.Text = String.Empty;
+            scrapValueTextBox.Text = String.Empty;
+            lifeSpanTextBox.Text = String.Empty;
+            statusComboBox.Text = String.Empty;
         }
 
-     
     }
 
 }

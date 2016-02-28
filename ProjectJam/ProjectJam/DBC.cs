@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+
 using System.Data.SqlClient;
 
 
@@ -212,12 +213,12 @@ namespace Persistance
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", inAsset.AssetPurchacePrice));
                 cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", inAsset.AssetPurchaseDate.ToString()));
                 cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", inAsset.AssetScrapValue));
-                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", inAsset.AssetPostedValue));
+                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", inAsset.PostedValue.ToString()));
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", inAsset.AssetLifeSpan));
                 cmd.Parameters.Add(new SqlParameter("@AssetStatus", inAsset.IsOperative.ToString()));
 
                 cmd.ExecuteNonQuery();
-
+                
             }
             catch (SqlException e)
             {

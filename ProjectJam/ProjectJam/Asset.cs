@@ -11,26 +11,28 @@ namespace Domain
         // Properties
         public int AssetID { get; private set; } 
         public string AssetName { get; private set; }
-        public DateTime AssetPurchaseDate { get; private set; }
+        public string AssetPurchaseDate { get; private set; }
         public decimal AssetPurchacePrice { get; private set; }
         public decimal AssetScrapValue { get; private set; }
         public decimal AssetPostedValue { get; private set; }
         public int AssetLifeSpan { get; private set; }
-        public bool IsOperative { get; private set; }
+        public string IsOperative { get; private set; }
+        public decimal PostedValue { get; private set; }
         public List<AssetDecreciation> AssetDecreciationList { get; private set; }
         public List<AssetMaintenance> AssetMaintenanceList { get; private set; }
 
         // Constructors:
-        public Asset(string name, DateTime purchaseDate, decimal purchasePrice,decimal scrapvalue, int lifeSpan)
+        public Asset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue, decimal postedvalue, int lifeSpan, string isOperative)
         {
             
-            this.AssetName = name;
+            this.AssetName = name; 
             this.AssetPurchaseDate = purchaseDate;
-            this.AssetPurchacePrice = AssetPurchacePrice;
+            this.AssetPurchacePrice = purchasePrice;
             this.AssetScrapValue = scrapvalue;
-            this.AssetPostedValue = this.AssetPurchacePrice - this.AssetScrapValue;
+            //this.AssetPostedValue = this.AssetPurchacePrice - this.AssetScrapValue;
             this.AssetLifeSpan = lifeSpan;
-            this.IsOperative = false; // set to false. Should manually be set put to 'true' through other method
+            this.IsOperative = isOperative;
+            this.PostedValue = postedvalue;
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
         }
@@ -59,7 +61,7 @@ namespace Domain
         public void CompleteMaintenance()
         {
             //AssetMaintenanceList.Last().
-            this.IsOperative = true;
+            //this.IsOperative = true;
         }
 
         public void PerformMaintenance()

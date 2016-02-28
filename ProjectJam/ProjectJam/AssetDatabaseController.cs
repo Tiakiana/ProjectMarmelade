@@ -9,8 +9,9 @@ using System.Data;
 namespace Domain
 {
     class AssetDatabaseController
-    {   
+    {
         // Properties
+        Persistance.DBC DBcontroller = new Persistance.DBC();
 
         private List<Asset> AssetTestList{ get; set; }//JUST A TESTER FOR FUNCTIONALITY
 
@@ -21,18 +22,13 @@ namespace Domain
             AssetTestList = new List<Asset>();
         }
 
-        public void ConnSqlFromDbc()
-        {
-           
-            //Persistance.DBC getSqlCon = new Persistance.DBC();
-
-            //getSqlCon.AssetDbConnection();
-
-
-        }
-
-
         //Methods
+
+        public void InsertAsset()
+        {
+
+        
+        }
 
         public void ShowAssetInfo(int id)
         {

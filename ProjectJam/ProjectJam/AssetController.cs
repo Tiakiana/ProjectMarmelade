@@ -51,12 +51,12 @@ namespace Domain
             CurrentAsset.CompleteMaintenance();
         }
 
-        public void CreateNewAsset(string name, DateTime purchaseDate, decimal purchasePrice, decimal scrapvalue, int lifeSpan)
+        public void CreateNewAsset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue, decimal postedvalue, int lifeSpan, string isoperative)
         {
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-            Asset tempAsset = new Asset(name, purchaseDate, purchasePrice, scrapvalue, lifeSpan);
+            Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue,postedvalue, lifeSpan, isoperative);
             //CurrentAsset = tempAsset;
-             DBcontroller.SaveAsset(tempAsset);
+            DBcontroller.SaveAsset(tempAsset);
         }
 
         //private int GetLastAssetID()
