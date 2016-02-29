@@ -27,8 +27,8 @@ namespace ProjectJam
         }
         public string GetRecipeIDName()
         {
+            return RecDBCon.GetRecIDName();
             //Henter navn og ID fra alle opskrifter og retunere en lang string som skal skrives ud. 
-            return "";
         }
         public bool JugdeRecipe(int ID, string jugdement)
         {
