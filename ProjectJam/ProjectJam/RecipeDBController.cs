@@ -47,5 +47,11 @@ namespace ProjectJam
 
             return ReturnString;
         }
+
+        public string GetAllRecipes()
+        {
+
+            return "";
+        }
     }
 }
