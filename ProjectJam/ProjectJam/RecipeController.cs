@@ -20,6 +20,15 @@ namespace ProjectJam
         }
         public string ViewRecipe(int ID)
         {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             //Hent opskrift enten fra DB eller liste. 
             return "";
         }

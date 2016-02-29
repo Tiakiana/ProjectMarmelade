@@ -22,5 +22,25 @@ namespace ProjectJam
             conn.Close();
             //Opretter opskriften i DB. 
         }
+
+        public void ViewRecipe(int ID)
+        {
+            conn.Open();
+            string TheSQLCommand = string.Format("EXEC[get recipe] @getid = {0}", ID);
+            SqlCommand cmdProc = new SqlCommand(TheSQLCommand, conn);
+
+            string result = "";
+
+            using (SqlDataReader reader = cmdProc.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    result = result + reader.GetInt32(0) + "ID";  
+                }
+            }
+
+            conn.Close();
+
+        }
     }
 }
