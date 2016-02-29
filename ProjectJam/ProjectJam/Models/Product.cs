@@ -31,7 +31,6 @@ namespace ProjectJam.Models
         /// Weight will auto set by size definition
         /// </summary>
         public double Weight { get; private set; }
-
         public double Price { get; private set; }
         public ProductType Type { get; private set; }
         public Recipe Ingredient { get; private set; }

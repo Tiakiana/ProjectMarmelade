@@ -18,9 +18,13 @@ namespace ProjectJam.Models
 
         public double TotalCost { get; private set; }
 
+        public double TotalRevenue { get; private set; }
+
         public TimeSpan TotalTime { get; private set; }
 
-        
+        public int TotalProduction { get; private set; }
+
+        private int averagePerMin = 0;
 
         /// <summary>
         /// Product line use for production's optimization
@@ -41,13 +45,29 @@ namespace ProjectJam.Models
         {
             // Unprecise counter
             // Convert hour to seconds
-            double totalSeconds = (((ContainerMass * 1000) / TargetProduct.Weight) / GlassPerHour) * 3600;
+            TotalProduction = (int)Math.Floor((ContainerMass * 1000) / TargetProduct.Weight);
+            double totalSeconds = (TotalProduction / GlassPerHour) * 3600;
+
             // Convert seconds to ticks for more precise time calculation (Damn unclear data)
             long ticks = Convert.ToInt64(totalSeconds * 10000000);
 
             // Define total production time for the product
             TotalTime = new TimeSpan(ticks);
 
+            // Revenue total 
+            TotalRevenue = TotalProduction * TargetProduct.Price;
         }
+
+        public double RevenueStatistic(int minutes)
+        {
+            if (averagePerMin == 0)
+            {
+                 averagePerMin = (int)Math.Floor(TotalProduction / TotalTime.TotalMinutes);
+            }
+
+            return (averagePerMin * TargetProduct.Price) * minutes;
+        }
+
+
     }
 }

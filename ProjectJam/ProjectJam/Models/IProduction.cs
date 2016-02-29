@@ -32,6 +32,14 @@ namespace ProjectJam.Models
         /// Target product for production
         /// </summary>
         Product TargetProduct { get; set; }
-        
+        /// <summary>
+        /// Total Revenue
+        /// </summary>
+        double TotalRevenue { get; }
+        /// <summary>
+        /// Total Products of production
+        /// </summary>
+        int TotalProduction { get; }
+
     }
 }
