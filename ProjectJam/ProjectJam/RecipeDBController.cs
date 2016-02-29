@@ -54,13 +54,20 @@ namespace ProjectJam
             conn.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("EXEC [get recipe] @getid = ID", conn);
+                SqlCommand cmd = new SqlCommand("get recipe", conn);
+
+                //Defines the commandtype
+                cmd.CommandType = CommandType.StoredProcedure;
+                //Defines the parameter
+                cmd.Parameters.Add(new SqlParameter("@getid", ID));
+                //executes the command
+                cmd.ExecuteNonQuery();
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
-                {
-                    ReturnString = ReturnString + " ID: " + reader.GetInt32(0) + "\n";
-                    //ReturnString = ReturnString + "ID: " + reader.GetInt32(0); +" Header: " + reader.GetString(1) + "Message: " + reader.GetString(2) + "Ingredience: " + reader.GetString(3) + "Date: " + reader.GetDateTime(4) + "\n";
+                { 
+                    ReturnString = ReturnString + "ID: " + reader.GetInt32(0) + "\nHeader: " + reader.GetString(1) + "\nMessage: " + reader.GetString(2) + "\nIngredience: " + reader.GetString(3) + "\nDate: " + reader.GetDateTime(4) + "\n";
                 }
                 reader.Close();
             }
