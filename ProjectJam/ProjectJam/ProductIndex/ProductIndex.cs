@@ -36,11 +36,11 @@ namespace Controller
                 }
                 else if (pDocumation == "Correspondance")
                 {
-
+                    return "Not yet in program";
                 }
                 else if (pDocumation == "QualityAssurance")
                 {
-
+                    return "Not yet in program";
                 }
                 //database metode til at give data tilbage i en string
             }
@@ -58,7 +58,7 @@ namespace Controller
         public void MakepTypeList()
         {
             ProducttIndexAccess p = new ProducttIndexAccess();
-            String[] a = p.GetIndex(p.GetProtuctNames).Split(';');             
+            String[] a = p.GetIndex(p.GetProductTypes).Split(';');             
             foreach (var item in a)
             {
                 pTypeList.Add(item);

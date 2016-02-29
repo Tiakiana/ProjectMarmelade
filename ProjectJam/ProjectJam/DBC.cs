@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+
 using System.Data.SqlClient;
+
 
 namespace Persistance
 {
@@ -15,6 +17,7 @@ namespace Persistance
         private SqlConnection getConnection()
         {
             // It's a local database sorry :)
+
             SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
             conn.Open();
             return conn;
@@ -192,6 +195,40 @@ namespace Persistance
             }
             else {
                 return true;
+            }
+
+        }
+
+        public void SaveAsset(Asset inAsset)
+        {
+            SqlConnection conn = getConnection();
+            // StoredProcedureCall
+            //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            try
+            {
+                // DO SHIT to database
+                SqlCommand cmd = new SqlCommand("spInsertAsset", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@AssetName", inAsset.AssetName));
+                cmd.Parameters.Add(new SqlParameter("@AssetPurchasePrice", inAsset.AssetPurchacePrice));
+                cmd.Parameters.Add(new SqlParameter("@AssetPurchaseDate", inAsset.AssetPurchaseDate.ToString()));
+                cmd.Parameters.Add(new SqlParameter("@AssetScrapValue", inAsset.AssetScrapValue));
+                cmd.Parameters.Add(new SqlParameter("@AssetPostedValue", inAsset.PostedValue.ToString()));
+                cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", inAsset.AssetLifeSpan));
+                cmd.Parameters.Add(new SqlParameter("@AssetStatus", inAsset.IsOperative.ToString()));
+
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (SqlException e)
+            {
+
+                Console.WriteLine("whooops: " + e.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
             }
 
         }
