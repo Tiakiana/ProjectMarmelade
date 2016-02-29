@@ -5,16 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectJam.Persistents;
 
+
 namespace ProjectJam.Models
 {
     class ProductionPlan
     {
+        public int NumberOfTank { get; set; }
+        public int MassPerTank { get; set; }
+        
         List<Product> productLine = new List<Product>();
+        //List<int> productMass = new List<int>();
+        //Dictionary<>
+
+        public ProductionPlan()
+        {
+            PlanDefault();
+
+        }
+
+        public ProductionPlan(int tankCapacity, int mass)
+        {
+            NumberOfTank = tankCapacity;
+            MassPerTank = mass;
+
+            PlanDefault();
+        }
 
         public void GeneratePlan()
         {
             //productLine = Product.GetProducts();
-            Product item = new Product(1, Product.ProductType.Daily, 10, new Recipe());
+            DataFactory factor = new DataFactory();
+            productLine = factor.PullProducts();
+
+
+            
         }
 
         public void TestPlan()
@@ -46,7 +70,17 @@ namespace ProjectJam.Models
 
         }
 
-
+        private void PlanDefault()
+        {
+            if (MassPerTank <= 0)
+            {
+                MassPerTank = 200;
+            }
+            if (NumberOfTank <= 0)
+            {
+                NumberOfTank = 2;
+            }
+        }
 
         private void CalculatePlan()
         {

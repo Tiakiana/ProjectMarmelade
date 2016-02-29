@@ -23,6 +23,35 @@ namespace ProjectJam.Persistents
             }
         }
 
+        public List<Product> PullProducts()
+        {
+            // Generate Ingredients
+            List<Resource> resources = new List<Resource>();
+            resources.Add(new Resource("Jordbær", "Frugt", 10));
+            resources.Add(new Resource("Solbær", "Frugt", 10));
+            resources.Add(new Resource("Hinbær", "Frugt", 10));
+            resources.Add(new Resource("Sukker", "Andet", 10));
+            resources.Add(new Resource("Salt", "Andet", 10));
+            resources.Add(new Resource("Mel", "Andet", 10));
+
+            List<Recipe> recipes = new List<Recipe>();
+            recipes.Add(new Recipe(1, resources));
+            recipes.Add(new Recipe(2, resources));
+            recipes.Add(new Recipe(3, resources));
+            recipes.Add(new Recipe(4, resources));
+            recipes.Add(new Recipe(5, resources));
+            recipes.Add(new Recipe(6, resources));
+
+            List<Product> items = new List<Product>();
+            items.Add(new Product(1, Product.ProductType.Premium, 130, recipes[0]));
+            items.Add(new Product(1, Product.ProductType.Premium, 300, recipes[1]));
+            items.Add(new Product(1, Product.ProductType.Daily, 130, recipes[2]));
+            items.Add(new Product(1, Product.ProductType.Daily, 300, recipes[3]));
+            items.Add(new Product(1, Product.ProductType.Discount, 500, recipes[4]));
+
+            return items;
+        }
+
         public List<Product> GetProducts(int number = 5, bool autofill = true, Recipe content = null)
         {
             //Product item = new Product(1, Product.ProductType.Daily, 10, new Recipe());

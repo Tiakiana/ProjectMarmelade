@@ -65,9 +65,12 @@
     <Compile Include="DomainTest.cs" />
     <Compile Include="IQualityTest.cs" />
     <Compile Include="Models\IPlan.cs" />
+    <Compile Include="Models\IProduction.cs" />
+    <Compile Include="Models\IResource.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductionFacility.cs" />
     <Compile Include="Models\ProductionPlan.cs" />
+    <Compile Include="Models\ProductLine.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\ResourceStock.cs" />

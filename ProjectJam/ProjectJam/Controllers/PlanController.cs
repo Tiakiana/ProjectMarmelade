@@ -13,6 +13,11 @@ namespace ProjectJam.Controllers
         static ProductionPlan plan = new ProductionPlan();
 
         static List<ProductionPlan> planList = new List<ProductionPlan>();
+
+        public static void Preparation()
+        {
+
+        }
         
         public static void DoProductionPlan()
         {
