@@ -62,16 +62,15 @@ namespace ProjectJam
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Failed");
-
-
             }
 
             return false;
         }
         public string ViewKnowlegde()
         {
-            //øhm... denne skal hente noget fra DB? 
-            return "";
+            string viden = RecDBCon.viewKnowledge(); 
+            
+            return viden;
         }
         public void Updater()
         {

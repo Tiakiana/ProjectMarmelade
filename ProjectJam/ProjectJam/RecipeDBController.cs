@@ -65,5 +65,21 @@ namespace ProjectJam
             //Close connection
             conn.Close();
         }
+
+        public string viewKnowledge()
+        {
+            string getString = "";
+            conn.Open();
+            SqlCommand cmdGet = new SqlCommand("select * from bankOfKnowledge", conn);
+            SqlDataReader reader01 = cmdGet.ExecuteReader();
+            while (reader01.Read())
+            {
+                getString = getString + " ID: " + reader01.GetInt32(0) +  "Comments: " + reader01.GetString(1) + " Taste ID:" +  reader01.GetInt32(2) + " Dato: " + reader01.GetDateTime(3) + "\n";
+            }
+            reader01.Close();
+            conn.Close();
+
+            return getString;
+        }
     }
 }
