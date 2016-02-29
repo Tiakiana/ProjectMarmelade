@@ -47,5 +47,14 @@ namespace ProjectJam
 
             return ReturnString;
         }
+        public void savejudgement(int ID, string judgement)
+        {
+            conn.Open();
+            string TheSQLCommand = string.Format("EXEC [Judge recipe] @Recipe = {0}, @Judgement = {1}, @Date = {2}", ID, judgement, DateTime.Today.ToString());
+
+            SqlCommand cmd = new SqlCommand(TheSQLCommand, conn);
+
+            
+        }
     }
 }
