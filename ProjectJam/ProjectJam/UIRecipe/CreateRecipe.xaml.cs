@@ -20,9 +20,14 @@ namespace ProjectJam
     /// </summary>
     public partial class CreateRecipe : Page
     {
+        RecipeController _Con = new RecipeController();
         public CreateRecipe()
         {
             InitializeComponent();
+        }
+        private void CreateUserRecipeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _Con.CreateRecipe(HeaderBox.Text, DescBox.Text, IngredientBox.Text);
         }
     }
 }

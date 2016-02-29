@@ -14,9 +14,11 @@ namespace ProjectJam
     }
     class RecipeController
     {
-        public void CreateRecipe(string Head, string desc, string ingredient, Categori cat)
+        RecipeDBController RecDBCon = new RecipeDBController();
+        public void CreateRecipe(string Head, string desc, string ingredient)
         {
             //DBcontroller der opretter opskriften i DB. 
+            RecDBCon.CreateRecipe(Head, desc, ingredient);
         }
         public string ViewRecipe(int ID)
         {
