@@ -53,6 +53,18 @@ namespace ProjectJam
         public bool DeleteRecipe(int ID)
         {
             //sletter en opskrift fra DB
+            try
+            {
+                DeleteRecipe slette = new DeleteRecipe();
+                int id = Convert.ToInt32(slette.IDtoDelete.Text);
+                id = ID;
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred: '{0}'", e);
+            }
+
             return false;
         }
         public string ViewKnowlegde()
