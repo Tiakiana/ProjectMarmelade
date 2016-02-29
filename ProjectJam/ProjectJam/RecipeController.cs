@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Diagnostics;
+
 
 namespace ProjectJam
 {
@@ -31,6 +34,9 @@ namespace ProjectJam
         public bool JugdeRecipe(int ID, string jugdement)
         {
             //En valgt opskrift får tilføjet en bedømmelse. 
+            // indsæt viewrecipe metode.
+            
+
             return false;
         }
         public bool DeleteRecipe(int ID)
