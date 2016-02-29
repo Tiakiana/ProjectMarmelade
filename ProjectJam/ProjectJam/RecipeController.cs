@@ -44,8 +44,9 @@ namespace ProjectJam
         }
         public bool JugdeRecipe(int ID, string jugdement)
         {
-            //En valgt opskrift får tilføjet en bedømmelse. 
+            // En valgt opskrift får tilføjet en bedømmelse. 
             // indsæt viewrecipe metode.
+           
             
 
             return false;
