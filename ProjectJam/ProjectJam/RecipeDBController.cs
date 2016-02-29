@@ -47,14 +47,23 @@ namespace ProjectJam
 
             return ReturnString;
         }
-        public void savejudgement(int ID, string judgement)
+        public void DeleteRecipe(int ID)
         {
+            //Open connection
             conn.Open();
-            string TheSQLCommand = string.Format("EXEC [Judge recipe] @Recipe = {0}, @Judgement = {1}, @Date = {2}", ID, judgement, DateTime.Today.ToString());
 
-            SqlCommand cmd = new SqlCommand(TheSQLCommand, conn);
+            //Useing the delete recipe stored procedure. Takes in 1 value.
+            SqlCommand command = new SqlCommand("Delete recipe", conn);
 
-            
+            //Defines the commandtype
+            command.CommandType = CommandType.StoredProcedure;
+            //Defines the parameter
+            command.Parameters.Add(new SqlParameter("@deleteID", ID));
+            //executes the command
+            command.ExecuteNonQuery();
+
+            //Close connection
+            conn.Close();
         }
     }
 }
