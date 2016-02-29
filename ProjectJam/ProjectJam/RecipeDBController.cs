@@ -47,11 +47,23 @@ namespace ProjectJam
 
             return ReturnString;
         }
-
-        public string GetAllRecipes()
+        public void DeleteRecipe(int ID)
         {
+            //Open connection
+            conn.Open();
 
-            return "";
+            //Useing the delete recipe stored procedure. Takes in 1 value.
+            SqlCommand command = new SqlCommand("Delete recipe", conn);
+
+            //Defines the commandtype
+            command.CommandType = CommandType.StoredProcedure;
+            //Defines the parameter
+            command.Parameters.Add(new SqlParameter("@deleteID", ID));
+            //executes the command
+            command.ExecuteNonQuery();
+
+            //Close connection
+            conn.Close();
         }
     }
 }
