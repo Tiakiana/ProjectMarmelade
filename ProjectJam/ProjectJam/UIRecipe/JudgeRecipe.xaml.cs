@@ -20,22 +20,34 @@ namespace ProjectJam
     /// </summary>
     public partial class JudgeRecipe : Page
     {
+        RecipeController recipeCon = new RecipeController();
+
         RecipeController _Con = new RecipeController();
         public JudgeRecipe()
         {
             InitializeComponent();
             //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
             AllRecipeTextBox.Text = _Con.GetRecipeIDName();
+
+
+            RecipeDescription.Text = recipeCon.GetRecipeIDName();
         }
 
+        /// <summary>
+        /// finds recipe from choosen id
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChooseRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
-            //RecipeDescription.Text = MethodThatReturnsRecipe();
+            string viewResult = recipeCon.ViewRecipe(Int32.Parse(GetRecipeText.Text));
+            RecipeDescription.Text = viewResult;
         }
 
         private void JudgeBtn_Click(object sender, RoutedEventArgs e)
         {
             JugdementBox.Text = "Judgement has been dealt!!";
         }
+
     }
 }
