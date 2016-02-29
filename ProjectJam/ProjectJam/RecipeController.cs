@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Windows;
 
 
 namespace ProjectJam
@@ -44,10 +45,9 @@ namespace ProjectJam
         }
         public bool JugdeRecipe(int ID, string jugdement)
         {
-            // En valgt opskrift får tilføjet en bedømmelse. 
+            //En valgt opskrift får tilføjet en bedømmelse. 
             // indsæt viewrecipe metode.
-           
-            
+
 
             return false;
         }
@@ -56,14 +56,14 @@ namespace ProjectJam
             //sletter en opskrift fra DB
             try
             {
-                DeleteRecipe slette = new DeleteRecipe();
-                int id = Convert.ToInt32(slette.IDtoDelete.Text);
-                id = ID;
+                RecDBCon.DeleteRecipe(ID);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: '{0}'", e);
+                MessageBox.Show(ex.Message, "Failed");
+
+
             }
 
             return false;
@@ -72,6 +72,10 @@ namespace ProjectJam
         {
             //øhm... denne skal hente noget fra DB? 
             return "";
+        }
+        public void Updater()
+        {
+
         }
     }
 }
