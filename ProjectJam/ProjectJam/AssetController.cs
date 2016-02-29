@@ -51,10 +51,10 @@ namespace Domain
             CurrentAsset.CompleteMaintenance();
         }
 
-        public void CreateNewAsset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue, decimal postedvalue, int lifeSpan, string isoperative)
+        public void CreateNewAsset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue,  int lifeSpan, string isoperative, DecreciationType inDecreciation)
         {
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-            Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue,postedvalue, lifeSpan, isoperative);
+            Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue, lifeSpan, isoperative, inDecreciation);
             //CurrentAsset = tempAsset;
             DBcontroller.SaveAsset(tempAsset);
         }
