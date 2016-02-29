@@ -11,10 +11,12 @@
     <Grid>
         <Label x:Name="RecipeLabel" Content="Create Recipe" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="HeadlineLabel" Content="Headline of the recipe" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Height="28" Width="149"/>
-        <TextBox x:Name="textBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Height="23" Margin="164,83,0,0" TextWrapping="Wrap" Text="Header of the recipe" VerticalAlignment="Top" Width="405" BorderThickness="1" BorderBrush="Black"/>
-        <TextBox x:Name="JugdementBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="164,111,0,0" TextWrapping="Wrap" Text="Description of the recipe" VerticalAlignment="Top" Height="99" Width="405" BorderThickness="1" BorderBrush="Black"/>
-        <Button x:Name="CreateUserRecipeBtn" Content="Create" HorizontalAlignment="Left" Margin="482,411,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="HeaderBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Height="23" Margin="164,83,0,0" TextWrapping="Wrap" Text="Header of the recipe" VerticalAlignment="Top" Width="405" BorderThickness="1" BorderBrush="Black"/>
+        <TextBox x:Name="DescBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="164,111,0,0" TextWrapping="Wrap" Text="Description of the recipe" VerticalAlignment="Top" Height="99" Width="405" BorderThickness="1" BorderBrush="Black"/>
+        <Button x:Name="CreateUserRecipeBtn" Content="Create" HorizontalAlignment="Left" Margin="482,411,0,0" VerticalAlignment="Top" Width="83" Click="CreateUserRecipeBtn_Click"/>
         <Label x:Name="DescriptionLabel" Content="Description of the recipe" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Height="28" Width="149"/>
+        <Label x:Name="IngreLabel" Content="Type in ingredience" HorizontalAlignment="Left" Margin="27,215,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="IngredientBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Height="26" Margin="164,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="405" BorderThickness="1" BorderBrush="Black"/>
 
     </Grid>
 </Page>

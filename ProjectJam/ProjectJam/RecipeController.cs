@@ -14,9 +14,11 @@ namespace ProjectJam
     }
     class RecipeController
     {
-        public void CreateRecipe(string Head, string desc, string ingredient, Categori cat)
+        RecipeDBController RecDBCon = new RecipeDBController();
+        public void CreateRecipe(string Head, string desc, string ingredient)
         {
             //DBcontroller der opretter opskriften i DB. 
+            RecDBCon.CreateRecipe(Head, desc, ingredient);
         }
         public string ViewRecipe(int ID)
         {
@@ -34,8 +36,8 @@ namespace ProjectJam
         }
         public string GetRecipeIDName()
         {
+            return RecDBCon.GetRecIDName();
             //Henter navn og ID fra alle opskrifter og retunere en lang string som skal skrives ud. 
-            return "";
         }
         public bool JugdeRecipe(int ID, string jugdement)
         {
