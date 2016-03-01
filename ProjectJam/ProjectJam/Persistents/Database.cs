@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using ProjectJam.Models;
 
 namespace ProjectJam.Persistents
 {
@@ -14,19 +15,19 @@ namespace ProjectJam.Persistents
         public static string ConnectString { get; set; }
 
         public string Query { get; set; }
+        public int AffectedRows { get; private set; }
+        public int InsertId { get; private set; }
+
         public Dictionary<string, object> Parameters { get; set; }
 
         private SqlConnection connection;
         private SqlCommand command;
+        private static SqlConnection clone = null;
         
 
         public Database()
         {
             establish();
-            using (IDatabase data = new Data())
-            {
-                
-            }
         }
 
         public Database(string query)
@@ -45,7 +46,7 @@ namespace ProjectJam.Persistents
 
         public void Execute()
         {
-
+            
         }
 
         public void Fetch()
@@ -61,7 +62,15 @@ namespace ProjectJam.Persistents
             }
             else
             {
-                connection = new SqlConnection(ConnectString);
+                if (clone == null)
+                {
+                    clone = new SqlConnection(ConnectString);
+                    connection = clone;
+                }
+                else
+                {
+                    connection = clone;
+                }
                 connection.Open();
             }
         }
