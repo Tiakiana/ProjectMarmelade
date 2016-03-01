@@ -42,20 +42,20 @@ namespace ProjectJam
             switch (decreciationTypeComboBox.Text)
             {
                 case "Lineary":
-                    tempDecType = Domain.DecreciationType.LinearyMethod;
+                    tempDecType = Domain.DecreciationType.Lineary;
                     break;
                 case "Balance":
-                    tempDecType = Domain.DecreciationType.BalanceMethod;
+                    tempDecType = Domain.DecreciationType.Balance;
                     break;
                 case "Annuity":
-                    tempDecType = Domain.DecreciationType.AnnuityMethod;
+                    tempDecType = Domain.DecreciationType.Annuity;
                     break;
                 default:
                     break;
             }
             //insert values til database
             myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), int.Parse(lifeSpanTextBox.Text), statusComboBox.Text,tempDecType);
-
+        
             ClearTextbox();
             MessageBox.Show("Asset was created", "Succes");
         }
@@ -68,6 +68,8 @@ namespace ProjectJam
             scrapValueTextBox.Text = String.Empty;
             lifeSpanTextBox.Text = String.Empty;
             statusComboBox.Text = String.Empty;
+            decreciationTypeComboBox.Text = String.Empty;
+
         }
 
     }

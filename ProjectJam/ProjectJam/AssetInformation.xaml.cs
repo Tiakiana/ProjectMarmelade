@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +24,44 @@ namespace ProjectJam
         public AssetInformation()
         {
             InitializeComponent();
+            fill_combo();
         }
 
         private void showButton_Click(object sender, RoutedEventArgs e)
         {
-            //mulgivis unødvendig
+            
+        }
+
+        public void fill_combo()
+        {
+            SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
+            
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * from Asset";
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    string Asset = "Id: " + rdr.GetInt32(0) + " Name: " + rdr.GetString(1);
+                    assetComboBox.Items.Add(Asset);
+                }
+
+            }
+            catch (SqlException es)
+            {
+                Console.WriteLine("UPS " + es.Message);
+                Console.ReadLine();
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)

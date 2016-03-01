@@ -8,9 +8,9 @@
         Title="AssetInformation" Height="300" Width="300">
     <Grid>
         <Label x:Name="assetLabel" Content="Asset: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,43,0,0"/>
-        <ComboBox x:Name="assetComboBox" HorizontalAlignment="Left" Margin="70,47,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="assetComboBox_SelectionChanged"/>
+        <ComboBox x:Name="assetComboBox" HorizontalAlignment="Left" Margin="70,47,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="assetComboBox_SelectionChanged"/>
         <Button x:Name="showButton" Content="Show" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="75" Click="showButton_Click"/>
-        <ListBox x:Name="assetInformationListBox" HorizontalAlignment="Left" Height="155" Margin="125,90,0,0" VerticalAlignment="Top" Width="145"/>
+        <ListBox x:Name="assetInformationListBox" HorizontalAlignment="Left" Height="155" Margin="105,90,0,0" VerticalAlignment="Top" Width="165"/>
         <Label x:Name="assetInformationTitleLabel" Content="Asset information" HorizontalAlignment="Left" Margin="70,6,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="50" Click="backButton_Click"/>
 
