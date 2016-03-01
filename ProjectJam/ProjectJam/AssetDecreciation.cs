@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod };
+    public enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod };
     class AssetDecreciation
     {
         // Properties
-        private DecreciationType decreciationType { get; set; }
-        private double DecreciationValue { get; set; }
-        private double DecreciationPurchasePrice { get; set; }
-        private double DecreciationScrapValue { get; set; }
-        private double DecreciationLifeSpan { get; set; }
-        private int DecriationPercent { get; set; }
-        private double DecriationInterest { get; set; }
+        public DecreciationType decreciationType { get;private set; }
+        public decimal DecreciationValue { get; private set; }
+        public int DecreciationYear { get; private set; }
+        // ER DISSE PROPERTIES NØDVENDIGE, ELLER SKAL DE VÆRE INPUT-PARAMETRE?
+        private decimal DecreciationPurchasePrice { get; set; }
+        private decimal DecreciationScrapValue { get; set; }
+        private decimal DecreciationLifeSpan { get; set; }
+        private decimal DecriationPercent { get; set; }
+        private decimal DecriationInterest { get; set; }
+
 
         // Constructors:
-        public AssetDecreciation()
+        public AssetDecreciation(DecreciationType decrecType)
         {
-            this.decreciationType = DecreciationType.LinearyMethod;
-            this.DecreciationValue = (DecreciationPurchasePrice - DecreciationScrapValue) / DecreciationLifeSpan;
-            this.DecreciationPurchasePrice = 1000;
-            this.DecreciationScrapValue = 0;
-            this.DecreciationLifeSpan = 1;
+            this.decreciationType = decrecType;
+            this.DecreciationValue = 0;
+            this.DecreciationYear = 2016;
         }
 
         //Methods:
@@ -47,9 +48,13 @@ namespace Domain
             //dn = d1(1 + i)n - 1
             
             //mellemregning for at skrive (1+i)^-n om til p
-            double p = Math.Pow((1 + DecriationInterest), -DecreciationLifeSpan);
+           
+            // decimal p = Math.Pow((1 + DecriationInterest), -DecreciationLifeSpan);
+            
             //Den anden formel
-            double k = (DecreciationPurchasePrice - DecreciationScrapValue) * DecriationInterest / ((1 - p) + DecreciationScrapValue * DecriationInterest);
+           
+            // decimal k = (DecreciationPurchasePrice - DecreciationScrapValue) * DecriationInterest / ((1 - p) + DecreciationScrapValue * DecriationInterest);
+            
             // DO STUFF
         }
 

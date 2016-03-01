@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Domain;
+
 namespace ProjectJam
 {
     /// <summary>
@@ -21,7 +21,7 @@ namespace ProjectJam
     /// </summary>
     public partial class AssetMakeAsset : Window
     {
-        AssetController myAssetController = new AssetController();
+        Domain.AssetController myAssetController = new Domain.AssetController();
         public AssetMakeAsset()
         {
             InitializeComponent();
@@ -38,9 +38,24 @@ namespace ProjectJam
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Domain.DecreciationType tempDecType = new Domain.DecreciationType();
+            switch (decreciationTypeComboBox.Text)
+            {
+                case "Lineary":
+                    tempDecType = Domain.DecreciationType.LinearyMethod;
+                    break;
+                case "Balance":
+                    tempDecType = Domain.DecreciationType.BalanceMethod;
+                    break;
+                case "Annuity":
+                    tempDecType = Domain.DecreciationType.AnnuityMethod;
+                    break;
+                default:
+                    break;
+            }
             //insert values til database
-            myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), 1, int.Parse(lifeSpanTextBox.Text), statusComboBox.Text);
+            myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), int.Parse(lifeSpanTextBox.Text), statusComboBox.Text,tempDecType);
+
             ClearTextbox();
             MessageBox.Show("Asset was created", "Succes");
         }

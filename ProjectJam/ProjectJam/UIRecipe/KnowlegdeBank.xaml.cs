@@ -23,6 +23,8 @@ namespace ProjectJam
         public KnowlegdeBank()
         {
             InitializeComponent();
+            RecipeController con = new RecipeController();
+            KnowledgeBox.Text = con.ViewKnowlegde();
         }
     }
 }

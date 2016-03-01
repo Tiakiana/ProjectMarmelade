@@ -28,18 +28,21 @@ namespace ProjectJam
         }
         public string ViewRecipe(int ID)
         {
+            string result = "";
             try
             {
-
+                result = RecDBCon.GetAllRecipes(ID);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                
+                Console.WriteLine("An error occurred: '{0}'", e);
             }
             //Hent opskrift enten fra DB eller liste. 
-            return "";
+
+            return result;
         }
+
         public string GetRecipeIDName()
         {
             return RecDBCon.GetRecIDName();
@@ -65,16 +68,15 @@ namespace ProjectJam
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Failed");
-
-
             }
 
             return false;
         }
         public string ViewKnowlegde()
         {
-            //øhm... denne skal hente noget fra DB? 
-            return "";
+            string viden = RecDBCon.viewKnowledge(); 
+            
+            return viden;
         }
 
         public void Updater()
