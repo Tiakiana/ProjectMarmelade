@@ -29,20 +29,51 @@ namespace ProjectJam
 
         private void showButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("spCompoundAssDesc", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                
+                cmd.Parameters.Add(new SqlParameter("@AssetId", int.Parse(assetComboBox.SelectedValue.ToString().Substring(4,2))));
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    string Asset = " Decreciation type: " + rdr["DecreciationType"];
+                    assetInformationListBox.Items.Add(Asset);
+                    
+                }
+
+            }
+            catch (SqlException ee)
+            {
+
+                Console.WriteLine("whooops: " + ee.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
         }
 
         public void fill_combo()
         {
+
             SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
-            
             try
             {
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * from Asset";
+                cmd.CommandText = @"SELECT * from Asset";
 
                 SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -50,6 +81,7 @@ namespace ProjectJam
                 {
                     string Asset = "Id: " + rdr.GetInt32(0) + " Name: " + rdr.GetString(1);
                     assetComboBox.Items.Add(Asset);
+
                 }
 
             }
@@ -62,6 +94,9 @@ namespace ProjectJam
             {
                 conn.Close();
             }
+
+
+
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
