@@ -115,5 +115,24 @@ namespace ProjectJam
             //Close connection
             conn.Close();
         }
+        public void Judgerecipe(int ID, string Judgement)
+        {
+            conn.Open();
+                try
+            {
+                string TheSQLCommand = string.Format("EXEC [Judge recipe] @Recipe = '{0}', @Judgement = '{1}', @Date = '{2}'", ID, Judgement, DateTime.Today.ToString());
+                SqlCommand JudgeCmd = new SqlCommand(TheSQLCommand, conn);
+                JudgeCmd.ExecuteNonQuery();
+                MessageBox.Show("Judgement has been saved ");
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Judgement not Created " + e.Message, "Failed");
+            }
+           
+
+        }
+        
     }
 }

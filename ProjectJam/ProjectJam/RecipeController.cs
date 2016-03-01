@@ -50,11 +50,22 @@ namespace ProjectJam
         }
         public bool JugdeRecipe(int ID, string jugdement)
         {
-            //En valgt opskrift får tilføjet en bedømmelse. 
-            // indsæt viewrecipe metode.
+            try
+            {
+                RecDBCon.Judgerecipe(ID, jugdement);
+                
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message, "Shit failed");
+            }
+            return true;
 
 
-            return false;
+
+
+       
         }
         public bool DeleteRecipe(int ID)
         {

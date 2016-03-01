@@ -46,8 +46,23 @@ namespace ProjectJam
 
         private void JudgeBtn_Click(object sender, RoutedEventArgs e)
         {
-            JugdementBox.Text = "Judgement has been dealt!!";
+            try
+            {
+                recipeCon.JugdeRecipe(int.Parse(GetRecipeText.Text), JugdementBox.Text);
+
+                JugdementBox.Text = "Judgement has been dealt!!";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Judgement not Created " + ex.Message, "Failed");
+            }
+           
         }
 
+        private void GetRecipeText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
