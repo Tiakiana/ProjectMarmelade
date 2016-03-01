@@ -199,14 +199,21 @@ namespace Persistance
 
         }
 
+        #region Asset
         public void SaveAsset(Asset inAsset)
         {
             SqlConnection conn = getConnection();
             // StoredProcedureCall
-            //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
+            
             try
             {
-                // DO SHIT to database
+                
+                SqlCommand command = new SqlCommand("sp_Decreciation_insert", conn);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@decType", inAsset.AssetDecreciationList[0].decreciationType.ToString()));
+                command.Parameters.Add(new SqlParameter("@decYear", inAsset.AssetDecreciationList[0].DecreciationYear));
+                command.Parameters.Add(new SqlParameter("@decValue", inAsset.AssetDecreciationList[0].DecreciationValue));
+
                 SqlCommand cmd = new SqlCommand("spInsertAsset", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@AssetName", inAsset.AssetName));
@@ -232,6 +239,7 @@ namespace Persistance
             }
 
         }
+        #endregion
 
     }
 }

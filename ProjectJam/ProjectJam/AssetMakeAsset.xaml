@@ -25,6 +25,12 @@
         <TextBox x:Name="lifeSpanTextBox" HorizontalAlignment="Left" Height="23" Margin="104,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,295,0,0" Click="backButton_Click"/>
         <Button x:Name="createButton" Content="Create" HorizontalAlignment="Left" Margin="206,295,0,0" VerticalAlignment="Top" Width="75" Click="createButton_Click"/>
+        <Label x:Name="decreciationTypeLabel" Content="Decreciation Type" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="decreciationTypeComboBox" HorizontalAlignment="Left" Height="15" Margin="132,246,0,0" VerticalAlignment="Top" Width="127">
+            <ComboBoxItem Content="Lineary" HorizontalAlignment="Left" Width="125"/>
+            <ComboBoxItem Content="Balance" HorizontalAlignment="Left" Width="125"/>
+            <ComboBoxItem Content="Annuity" HorizontalAlignment="Left" Width="125"/>
+        </ComboBox>
 
     </Grid>
 </Window>

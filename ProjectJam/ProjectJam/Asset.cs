@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
+    
     class Asset
     {
         // Properties
@@ -20,26 +21,30 @@ namespace Domain
         public decimal PostedValue { get; private set; }
         public List<AssetDecreciation> AssetDecreciationList { get; private set; }
         public List<AssetMaintenance> AssetMaintenanceList { get; private set; }
+        public DecreciationType AssetDecreciationType { get; private set; }
 
         // Constructors:
-        public Asset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue, decimal postedvalue, int lifeSpan, string isOperative)
+        public Asset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue,  int lifeSpan, string isOperative, DecreciationType decreciationtype)
         {
             
             this.AssetName = name; 
             this.AssetPurchaseDate = purchaseDate;
             this.AssetPurchacePrice = purchasePrice;
             this.AssetScrapValue = scrapvalue;
-            //this.AssetPostedValue = this.AssetPurchacePrice - this.AssetScrapValue;
             this.AssetLifeSpan = lifeSpan;
             this.IsOperative = isOperative;
-            this.PostedValue = postedvalue;
+            this.PostedValue = purchasePrice;
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
+            this.AssetDecreciationType = decreciationtype;
+            AssetDecreciation firstDecreciation = new AssetDecreciation(AssetDecreciationType);
+            AssetDecreciationList.Add(firstDecreciation);
+
         }
         //Overrides
         public override string ToString()
         {
-            return ""+AssetID+" "+AssetName+" "+AssetPurchaseDate+" "+AssetPurchacePrice+" "+AssetScrapValue+" "+AssetPostedValue+" "+AssetLifeSpan+" "+IsOperative;
+            return ""+AssetID+" "+AssetName+" "+AssetPurchaseDate+" "+AssetPurchacePrice+" "+AssetScrapValue+" "+AssetPostedValue+" "+AssetLifeSpan+" "+IsOperative+" "+AssetDecreciationType;
         }
 
         // Methods:
