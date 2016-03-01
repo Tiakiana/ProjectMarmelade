@@ -44,11 +44,11 @@ namespace ProjectJam
 
                 while (rdr.Read())
                 {
-                    string Asset = " Decreciation type: " + rdr["DecreciationType"];
+                    string Asset = "Id: " + rdr["AssetId"] + "\nName: " + rdr["AssetName"]  + "\nStatus: " + rdr["AssetStatus"] + "\nDecreciation type: " + rdr["DecreciationType"] + "\nDecreciation: " + rdr["DecreciationValue"] ;
                     assetInformationListBox.Items.Add(Asset);
                     
                 }
-
+                
             }
             catch (SqlException ee)
             {
