@@ -225,6 +225,7 @@ namespace Persistance
                 cmd.Parameters.Add(new SqlParameter("@AssetStatus", inAsset.IsOperative.ToString()));
 
                 cmd.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 
             }
             catch (SqlException e)
