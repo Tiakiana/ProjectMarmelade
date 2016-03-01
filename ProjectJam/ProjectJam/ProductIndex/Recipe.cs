@@ -32,8 +32,9 @@ namespace Model
             string s = "Navne: " + name + ";" + "Type: " + type;
             for (int i = 0; i < IList.Count; i++)
             {
-                s = s + ";Ingredient: " + IList[i][0].ToString() + ";Amought: " + IList[i][1].ToString() + "Kg";
+                s = s + ";Ingrediens: " + IList[i][0].ToString() + ". Vægt: " + IList[i][1].ToString() + "Kg";
             }
+            s = s + ";Ingrediens: Sukker. Vægt: 2250Kg";
             return s;
         }
 
