@@ -34,7 +34,6 @@ namespace ProjectJam
                 if (_Con.DeleteRecipe(int.Parse(IDtoDelete.Text)))
                 {
                     RecipeInfoText.Text = "Recipe deleted";
-                    AllRecipeTextBox.Text = _Con.GetRecipeIDName();
                 }
                 else
                 {
