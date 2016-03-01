@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 
 
 namespace ProjectJam
@@ -23,21 +24,25 @@ namespace ProjectJam
         {
             //DBcontroller der opretter opskriften i DB. 
             RecDBCon.CreateRecipe(Head, desc, ingredient);
+            Updater();
         }
         public string ViewRecipe(int ID)
         {
+            string result = "";
             try
             {
-
+                result = RecDBCon.GetAllRecipes(ID);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                
+                Console.WriteLine("An error occurred: '{0}'", e);
             }
             //Hent opskrift enten fra DB eller liste. 
-            return "";
+
+            return result;
         }
+
         public string GetRecipeIDName()
         {
             return RecDBCon.GetRecIDName();
@@ -68,22 +73,23 @@ namespace ProjectJam
             try
             {
                 RecDBCon.DeleteRecipe(ID);
+                //Updater();
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Failed");
-
-
             }
 
             return false;
         }
         public string ViewKnowlegde()
         {
-            //øhm... denne skal hente noget fra DB? 
-            return "";
+            string viden = RecDBCon.viewKnowledge(); 
+            
+            return viden;
         }
+
         public void Updater()
         {
 
