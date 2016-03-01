@@ -22,7 +22,7 @@ namespace ProjectJam.Controllers
         public static void DoProductionPlan()
         {
             //plan.GeneratePlan();
-            plan.TestPlan();
+            
         }
         
 

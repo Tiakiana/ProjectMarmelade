@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectJam.Models
 {
+    
     class Product
     {
         public enum ProductType { Discount, Daily, Premium }

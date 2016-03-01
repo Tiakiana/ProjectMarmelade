@@ -54,7 +54,7 @@ namespace ProjectJam.Models
             // Define total production time for the product
             TotalTime = new TimeSpan(ticks);
 
-            // Revenue total 
+            // Total revenue
             TotalRevenue = TotalProduction * TargetProduct.Price;
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectJam.Persistents
 {
-    class DataManipulator
+    class DbResource
     {
     }
 }

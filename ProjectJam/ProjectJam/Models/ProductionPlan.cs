@@ -10,81 +10,56 @@ namespace ProjectJam.Models
 {
     class ProductionPlan
     {
-        public int NumberOfTank { get; set; }
-        public int MassPerTank { get; set; }
-        
-        List<Product> productLine = new List<Product>();
-        //List<int> productMass = new List<int>();
-        //Dictionary<>
+        const int AverageTime = 60;
 
-        public ProductionPlan()
+        public int Id { get; private set; }
+
+        public int ContainerCapacity { get; set; }
+        public int ProduceRatePerHour { get; set; }
+        public int ProductionTime { get; set; }
+
+        private int MostValuableIndex = -1;
+        public List<ProductLine> ItemLines { get; private set; }
+
+
+        public ProductionPlan(int capacity = 500, int ratePerHour = 200, int productionTime = 240)
         {
-            PlanDefault();
-
-        }
-
-        public ProductionPlan(int tankCapacity, int mass)
-        {
-            NumberOfTank = tankCapacity;
-            MassPerTank = mass;
-
-            PlanDefault();
+            ContainerCapacity = capacity;
+            ProduceRatePerHour = ratePerHour;
+            ProductionTime = productionTime;
         }
 
         public void GeneratePlan()
         {
-            //productLine = Product.GetProducts();
-            DataFactory factor = new DataFactory();
-            productLine = factor.PullProducts();
+            // Pull every products from database
+            List<Product> items = Product.GetProducts();
 
+            // Initiate ProductLine list
+            ItemLines = new List<ProductLine>();
 
+            // Prepare ProductLine for calculation
+            // Initiate ProductLine Calculation - Calculate()
+            foreach (Product item in items)
+            {
+                ProductLine line = new ProductLine(item, ContainerCapacity, ProduceRatePerHour, ProductionTime);
+                line.Calculate();
+
+                ItemLines.Add(line);
+            }
+
+            // Re-order ProductLine as Most profitable first
+            IEnumerable<ProductLine> temp = ItemLines.OrderByDescending(x => x.RevenueStatistic(AverageTime));
+            ItemLines = temp.ToList();
+
+            // Prepare to save to database
             
+
+            // -DONE
         }
 
-        public void TestPlan()
-        {
-            DataFactory data = new DataFactory();
-
-            // Pull false data
-            productLine = data.GetProducts(20);
-
-            foreach (Product item in productLine)
-            {
-                Console.WriteLine("Item {0}: ", item.Type.ToString());
-                
-                foreach (Resource source in item.Ingredient.Ingredients)
-                {
-                    Console.WriteLine("Resource: {0}", source.Name);
-                }
-            }
-
-        }
-
-        public Product OptimizeProduction()
-        {
-            return new Product();
-        }
-
-        public void GetRevenue(Product item)
+        public void GetMostProfitableProduct()
         {
 
-        }
-
-        private void PlanDefault()
-        {
-            if (MassPerTank <= 0)
-            {
-                MassPerTank = 200;
-            }
-            if (NumberOfTank <= 0)
-            {
-                NumberOfTank = 2;
-            }
-        }
-
-        private void CalculatePlan()
-        {
-            
         }
     }
 }
