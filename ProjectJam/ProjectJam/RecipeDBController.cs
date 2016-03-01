@@ -29,7 +29,10 @@ namespace ProjectJam
             {
                 MessageBox.Show("Recipe not Created " + ex.Message, "Failed");
             }
-            conn.Close();
+            finally
+            {
+                conn.Close();
+            }
             //Opretter opskriften i DB. 
         }
         public string GetRecIDName()
@@ -127,12 +130,12 @@ namespace ProjectJam
             }
             catch (Exception e)
             {
-
                 MessageBox.Show("Judgement not Created " + e.Message, "Failed");
             }
-           
-
-        }
-        
+            finally
+            {
+                conn.Close();
+            }
+        }        
     }
 }

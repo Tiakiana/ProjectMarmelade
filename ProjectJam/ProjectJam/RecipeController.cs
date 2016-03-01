@@ -60,12 +60,7 @@ namespace ProjectJam
 
                 MessageBox.Show(e.Message, "Shit failed");
             }
-            return true;
-
-
-
-
-       
+            return true;       
         }
         public bool DeleteRecipe(int ID)
         {
@@ -89,7 +84,6 @@ namespace ProjectJam
             
             return viden;
         }
-
         public void Updater()
         {
 
