@@ -40,6 +40,7 @@ namespace ProjectJam
         {
 
             //insert values til database
+            
             myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), 1, int.Parse(lifeSpanTextBox.Text), statusComboBox.Text);
             ClearTextbox();
             MessageBox.Show("Asset was created", "Succes");
