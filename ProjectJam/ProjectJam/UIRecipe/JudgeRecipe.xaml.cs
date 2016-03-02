@@ -51,9 +51,6 @@ namespace ProjectJam
             JugdementBox.Text = "Judgement has been dealt!!";
         }
 
-        private void GetRecipeText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
     }
 }
