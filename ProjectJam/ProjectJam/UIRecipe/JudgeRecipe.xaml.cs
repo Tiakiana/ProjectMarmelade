@@ -51,7 +51,7 @@ namespace ProjectJam
             catch (Exception ex)
             {
 
-                MessageBox.Show("Judgement not Created " + ex.Message, "Failed");
+                MessageBox.Show("Judgement not Created " + ex.Message);
             }
 
         }
