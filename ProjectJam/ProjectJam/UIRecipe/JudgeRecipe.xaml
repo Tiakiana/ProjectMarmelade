@@ -13,9 +13,9 @@
         <TextBlock x:Name="AllRecipeTextBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Height="386" Margin="10,63,0,0" TextWrapping="Wrap" Text="All recipes ID's will be listed here" VerticalAlignment="Top" Width="181"/>
 
         <TextBlock x:Name="RecipeDescription" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,104,0,0" TextWrapping="Wrap" Text=" Recipe description will be here" VerticalAlignment="Top" Height="120" Width="306"/>
-        <TextBox x:Name="JugdementBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,249,0,0" TextWrapping="Wrap" Text="Judgement will be typed here" VerticalAlignment="Top" Height="175" Width="306" BorderThickness="1" BorderBrush="Black" TextChanged="JugdementBox_TextChanged"/>
+        <TextBox x:Name="JugdementBox" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,249,0,0" TextWrapping="Wrap" Text="Judgement will be typed here" VerticalAlignment="Top" Height="175" Width="306" BorderThickness="1" BorderBrush="Black"/>
         <Button x:Name="JudgeBtn" Content="Judge" HorizontalAlignment="Left" Margin="474,429,0,0" VerticalAlignment="Top" Width="95" Click="JudgeBtn_Click"/>
-        <TextBox x:Name="GetRecipeText" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="19" Width="114" BorderThickness="1" BorderBrush="Black" TextChanged="GetRecipeText_TextChanged"/>
+        <TextBox x:Name="GetRecipeText" Background="#FFE5E5E5" HorizontalAlignment="Left" Margin="263,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="19" Width="114" BorderThickness="1" BorderBrush="Black"/>
         <Button x:Name="ChooseRecipeBtn" Background="#FFE5E5E5" Content="Choose Recipe" HorizontalAlignment="Left" Margin="474,63,0,0" VerticalAlignment="Top" Width="95" Click="ChooseRecipeBtn_Click"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="120" Margin="263,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="386" Margin="10,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
