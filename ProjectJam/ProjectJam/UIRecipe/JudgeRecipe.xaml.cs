@@ -28,6 +28,9 @@ namespace ProjectJam
             InitializeComponent();
             //AllRecipeTextBox.Text = MethodThatReturnsAllRecipe()
             AllRecipeTextBox.Text = _Con.GetRecipeIDName();
+
+
+            RecipeDescription.Text = recipeCon.GetRecipeIDName();
         }
 
         /// <summary>
@@ -54,7 +57,7 @@ namespace ProjectJam
 
                 MessageBox.Show("Judgement not Created " + ex.Message, "Failed");
             }
-
+           
         }
 
         
