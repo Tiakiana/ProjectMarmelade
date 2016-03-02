@@ -24,7 +24,6 @@ namespace ProjectJam
         {
             //DBcontroller der opretter opskriften i DB. 
             RecDBCon.CreateRecipe(Head, desc, ingredient);
-            Updater();
         }
         public string ViewRecipe(int ID)
         {
@@ -35,7 +34,7 @@ namespace ProjectJam
             }
             catch (Exception e)
             {
-                
+
                 Console.WriteLine("An error occurred: '{0}'", e);
             }
             //Hent opskrift enten fra DB eller liste. 
@@ -53,7 +52,7 @@ namespace ProjectJam
             try
             {
                 RecDBCon.Judgerecipe(ID, jugdement);
-                
+
             }
             catch (Exception e)
             {
@@ -61,11 +60,6 @@ namespace ProjectJam
                 MessageBox.Show(e.Message, "Shit failed");
             }
             return true;
-
-
-
-
-       
         }
         public bool DeleteRecipe(int ID)
         {
@@ -85,14 +79,13 @@ namespace ProjectJam
         }
         public string ViewKnowlegde()
         {
-            string viden = RecDBCon.viewKnowledge(); 
-            
+            string viden = RecDBCon.viewKnowledge();
+
             return viden;
         }
-
-        public void Updater()
+        public void Updater(TextBlock TB)
         {
-
+            TB.Text = GetRecipeIDName();
         }
     }
 }

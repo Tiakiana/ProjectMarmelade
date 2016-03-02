@@ -200,6 +200,11 @@ namespace Persistance
         }
 
         #region Asset
+        public void SelectAsset(Asset SelectedAsset)
+        {
+
+        }
+
         public void SaveAsset(Asset inAsset)
         {
             SqlConnection conn = getConnection();
@@ -224,8 +229,10 @@ namespace Persistance
                 cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan", inAsset.AssetLifeSpan));
                 cmd.Parameters.Add(new SqlParameter("@AssetStatus", inAsset.IsOperative.ToString()));
 
-                cmd.ExecuteNonQuery();
                 
+                command.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
             }
             catch (SqlException e)
             {
@@ -239,6 +246,7 @@ namespace Persistance
             }
 
         }
+
         #endregion
 
     }

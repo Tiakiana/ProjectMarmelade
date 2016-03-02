@@ -24,6 +24,7 @@ namespace ProjectJam
         GetRecipe gr = new GetRecipe();
         KnowlegdeBank kb = new KnowlegdeBank();
         DeleteRecipe dr = new DeleteRecipe();
+        RecipeController _Con = new RecipeController();
 
         public Development()
         {
@@ -35,21 +36,26 @@ namespace ProjectJam
         private void CreateRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
             RecipeFrame.Content = cr;
+            //cr er en page for CreateRecipe
         }
         private void JudgeRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
+            _Con.Updater(jr.AllRecipeTextBox);
             RecipeFrame.Content = jr;
         }
         private void GetRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
+            _Con.Updater(gr.AllRecipeTextBox);
             RecipeFrame.Content = gr;
         }
         private void BankBtn_Click(object sender, RoutedEventArgs e)
         {
+            kb.KnowledgeBox.Text = _Con.ViewKnowlegde();
             RecipeFrame.Content = kb;
         }
         private void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
         {
+            _Con.Updater(dr.AllRecipeTextBox);
             RecipeFrame.Content = dr;
         }
         #endregion

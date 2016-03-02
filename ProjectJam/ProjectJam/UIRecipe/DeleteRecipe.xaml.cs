@@ -24,7 +24,6 @@ namespace ProjectJam
         public DeleteRecipe()
         {
             InitializeComponent();
-            AllRecipeTextBox.Text = _Con.GetRecipeIDName();
         }
 
         private void DeleteRecipeBtn_Click(object sender, RoutedEventArgs e)
@@ -44,6 +43,10 @@ namespace ProjectJam
             {
                 MessageBox.Show("Enter only numbers as ID. " + ex.Message, "Error");
                 RecipeInfoText.Text = "Recipe not found, therefore nothing was deleted";
+            }
+            finally
+            {
+                _Con.Updater(AllRecipeTextBox);
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public enum DecreciationType { LinearyMethod, BalanceMethod, AnnuityMethod };
+    public enum DecreciationType { Lineary, Balance, Annuity };
     class AssetDecreciation
     {
         // Properties

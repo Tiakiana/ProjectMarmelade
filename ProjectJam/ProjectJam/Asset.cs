@@ -37,7 +37,7 @@ namespace Domain
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
             this.AssetDecreciationType = decreciationtype;
-            AssetDecreciation firstDecreciation = new AssetDecreciation(AssetDecreciationType);
+            AssetDecreciation firstDecreciation = new AssetDecreciation(decreciationtype);
             AssetDecreciationList.Add(firstDecreciation);
 
         }
