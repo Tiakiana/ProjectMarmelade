@@ -13,20 +13,20 @@
         <Label x:Name="purchasePrizeLabel" Content="Purchase price:" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lifeSpanLabel" Content="Lifespan:" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top"/>
         <Label x:Name="statusLabel" Content="Status:" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="statusComboBox" HorizontalAlignment="Left" Margin="104,212,0,0" VerticalAlignment="Top" Width="120" Height="20" >
+        <ComboBox x:Name="statusComboBox" HorizontalAlignment="Left" Margin="132,212,0,0" VerticalAlignment="Top" Width="120" Height="20" >
             <ComboBoxItem Content="Operative"/>
             <ComboBoxItem Content="Not operative" />
         </ComboBox>
-        <TextBox x:Name="purchaseDateTextBox" HorizontalAlignment="Left" Height="23" Margin="104,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="104,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="purchasePriceTextBox" HorizontalAlignment="Left" Height="23" Margin="104,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="purchaseDateTextBox" HorizontalAlignment="Left" Height="23" Margin="132,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="132,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="purchasePriceTextBox" HorizontalAlignment="Left" Height="23" Margin="132,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="purchaseDateLabel" Content="Purchase date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,113,0,0"/>
-        <TextBox x:Name="scrapValueTextBox" HorizontalAlignment="Left" Height="23" Margin="104,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="lifeSpanTextBox" HorizontalAlignment="Left" Height="23" Margin="104,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="scrapValueTextBox" HorizontalAlignment="Left" Height="23" Margin="132,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="lifeSpanTextBox" HorizontalAlignment="Left" Height="23" Margin="132,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,295,0,0" Click="backButton_Click"/>
         <Button x:Name="createButton" Content="Create" HorizontalAlignment="Left" Margin="206,295,0,0" VerticalAlignment="Top" Width="75" Click="createButton_Click"/>
-        <Label x:Name="decreciationTypeLabel" Content="Decreciation Type" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="decreciationTypeComboBox" HorizontalAlignment="Left" Height="15" Margin="132,246,0,0" VerticalAlignment="Top" Width="127">
+        <Label x:Name="decreciationTypeLabel" Content="Decreciation Type:" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="decreciationTypeComboBox" HorizontalAlignment="Left" Height="20" Margin="132,246,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Lineary" HorizontalAlignment="Left" Width="125"/>
             <ComboBoxItem Content="Balance" HorizontalAlignment="Left" Width="125"/>
             <ComboBoxItem Content="Annuity" HorizontalAlignment="Left" Width="125"/>

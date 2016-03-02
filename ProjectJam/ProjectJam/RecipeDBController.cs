@@ -29,7 +29,10 @@ namespace ProjectJam
             {
                 MessageBox.Show("Recipe not Created " + ex.Message, "Failed");
             }
-            conn.Close();
+            finally
+            {
+                conn.Close();
+            }
             //Opretter opskriften i DB. 
         }
         public string GetRecIDName()
@@ -90,7 +93,7 @@ namespace ProjectJam
             SqlDataReader reader01 = cmdGet.ExecuteReader();
             while (reader01.Read())
             {
-                getString = getString + " ID: " + reader01.GetInt32(0) +  "Comments: " + reader01.GetString(1) + " Taste ID:" +  reader01.GetInt32(2) + " Dato: " + reader01.GetDateTime(3) + "\n";
+                getString = getString + "Jugdement ID: " + reader01.GetInt32(0) + " Recipe ID: " + reader01.GetInt32(1) +  "\nComments: " + reader01.GetString(2) + "\nJudge date: " + reader01.GetDateTime(3) + "\n \n";
             }
             reader01.Close();
             conn.Close();
@@ -127,12 +130,12 @@ namespace ProjectJam
             }
             catch (Exception e)
             {
-
                 MessageBox.Show("Judgement not Created " + e.Message, "Failed");
             }
-           
-
-        }
-        
+            finally
+            {
+                conn.Close();
+            }
+        }        
     }
 }

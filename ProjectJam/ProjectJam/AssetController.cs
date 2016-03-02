@@ -24,7 +24,7 @@ namespace Domain
 
         public void ShowAssetInfo()
         {
-            // DO STUFF
+            
         }
 
         public void PlanMaintenance(int assetID, string description, DateTime plannedDate)
@@ -55,6 +55,7 @@ namespace Domain
         {
             //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
             Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue, lifeSpan, isoperative, inDecreciation);
+
             //CurrentAsset = tempAsset;
             DBcontroller.SaveAsset(tempAsset);
         }
