@@ -8,7 +8,7 @@
         Title="JamFactoryUI" Height="327" Width="384">
     <Grid>
         <Label x:Name="jamFactoryUiTitle" Content="Jam Factory APS" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="assetInventoryButton" Content="Asset inventory" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="assetInventoryButton_Click"/>
+        <Button x:Name="assetInventoryButton" Content="Anlægskartotek" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="assetInventoryButton_Click"/>
         <Button x:Name="qualityAssuranceButton" Content="Quality assurance" HorizontalAlignment="Left" Margin="215,75,0,0" VerticalAlignment="Top" Width="120" Height="25" RenderTransformOrigin="0.133,0.75" Click="qualityAssuranceButton_Click"/>
         <Button x:Name="productDevelopmentButton" Content="Product development" HorizontalAlignment="Left" Margin="40,136,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="productDevelopmentButton_Click"/>
         <Button x:Name="routePlanningButton" Content="Route planning" HorizontalAlignment="Left" Margin="215,136,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="routePlanningButton_Click"/>

@@ -44,9 +44,8 @@ namespace ProjectJam
 
                 while (rdr.Read())
                 {
-                    string Asset = "Id: " + rdr["AssetId"] + "\nName: " + rdr["AssetName"]  + "\nStatus: " + rdr["AssetStatus"] + "\nDecreciation type: " + rdr["DecreciationType"] + "\nDecreciation: " + rdr["DecreciationValue"] ;
+                    string Asset = "Id: " + rdr["AssetId"] + "\nNavn: " + rdr["AssetName"]  + "\nStatus: " + rdr["AssetStatus"] + "\nAfskrivningsmetode: " + rdr["DecreciationType"] + "\nAfskriving: " + rdr["DecreciationValue"] ;
                     assetInformationListBox.Items.Add(Asset);
-                    
                 }
                 
             }
@@ -79,9 +78,8 @@ namespace ProjectJam
 
                 while (rdr.Read())
                 {
-                    string Asset = "Id: " + rdr.GetInt32(0) + " Name: " + rdr.GetString(1);
+                    string Asset = "Id: " + rdr.GetInt32(0) + " Navn: " + rdr.GetString(1);
                     assetComboBox.Items.Add(Asset);
-
                 }
 
             }

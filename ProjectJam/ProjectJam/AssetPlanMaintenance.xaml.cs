@@ -27,10 +27,10 @@ namespace ProjectJam
         private void confirmPlanMaintenanceButton_Click(object sender, RoutedEventArgs e)
         {
             // insert selected values in messagebox
-            if (MessageBox.Show("Plan maintenance for: \n AssetId \n AssetName \n date \n description", "Plan Maintenance", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Planlæg vedligeholdelse for: \n AnlægsId \n AssetName \n Dato \n Beskrivelse", "Planlæg vedligeholdelse", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 // do yes stuff
-                MessageBox.Show("Maintenance planned");
+                MessageBox.Show("Vedligeholdelse planlagt");
             }
             else
             {

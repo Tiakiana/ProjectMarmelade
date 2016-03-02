@@ -57,7 +57,7 @@ namespace ProjectJam
             myAssetController.CreateNewAsset(nameTextBox.Text, decimal.Parse(purchasePriceTextBox.Text), purchaseDateTextBox.Text, decimal.Parse(scrapValueTextBox.Text), int.Parse(lifeSpanTextBox.Text), statusComboBox.Text,tempDecType);
         
             ClearTextbox();
-            MessageBox.Show("Asset was created", "Succes");
+            MessageBox.Show("Anlæg oprettet", "Succes");
         }
 
         public void ClearTextbox()
