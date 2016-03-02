@@ -44,7 +44,7 @@ namespace ProjectJam
 
                 while (rdr.Read())
                 {
-                    string Asset = "Id: " + rdr["AssetId"] + "\nNavn: " + rdr["AssetName"]  + "\nStatus: " + rdr["AssetStatus"] + "\nAfskrivningsmetode: " + rdr["DecreciationType"] + "\nAfskriving: " + rdr["DecreciationValue"] ;
+                    string Asset = "Id: " + rdr["AssetId"] + "\nNavn: " + rdr["AssetName"] + "\nKøbs dato: " + rdr["AssetPurchaseDate"] + "\nLevetid: " + rdr["AssetLifeSpan"] + "\nAfskrivningsmetode: " + rdr["DecreciationType"] + "\nAfskriving: " + rdr["DecreciationValue"] + "\nStatus: " + rdr["AssetStatus"] ;
                     assetInformationListBox.Items.Add(Asset);
                 }
                 

@@ -41,14 +41,14 @@ namespace ProjectJam
             Domain.DecreciationType tempDecType = new Domain.DecreciationType();
             switch (decreciationTypeComboBox.Text)
             {
-                case "Lineary":
-                    tempDecType = Domain.DecreciationType.Lineary;
+                case "Lineær":
+                    tempDecType = Domain.DecreciationType.Lineær;
                     break;
-                case "Balance":
-                    tempDecType = Domain.DecreciationType.Balance;
+                case "Saldo":
+                    tempDecType = Domain.DecreciationType.Saldo;
                     break;
-                case "Annuity":
-                    tempDecType = Domain.DecreciationType.Annuity;
+                case "Annuitet":
+                    tempDecType = Domain.DecreciationType.Annuitet;
                     break;
                 default:
                     break;
