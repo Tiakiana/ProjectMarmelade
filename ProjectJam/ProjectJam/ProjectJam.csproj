@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\DataFactory.cs" />
     <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="DBC.cs" />
     <Compile Include="Employee.cs" />
@@ -83,6 +84,9 @@
     <Compile Include="Persistents\RecipeRepository.cs" />
     <Compile Include="Persistents\Repository.cs" />
     <Compile Include="Persistents\ResourceRepository.cs" />
+    <Compile Include="Popup.xaml.cs">
+      <DependentUpon>Popup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Production.cs" />
     <Compile Include="ProductionFactory.cs" />
     <Compile Include="QualityTest.cs" />
@@ -92,6 +96,15 @@
       <DependentUpon>Screen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
+    <Compile Include="Views\AddProductView.xaml.cs">
+      <DependentUpon>AddProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddRecipeView.xaml.cs">
+      <DependentUpon>AddRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddResourceView.xaml.cs">
+      <DependentUpon>AddResourceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Navigator.cs" />
     <Compile Include="Views\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
@@ -108,7 +121,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Popup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddRecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddResourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

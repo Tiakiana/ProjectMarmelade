@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace ProjectJam.Views
 {
-    class Navigator
+    public class Navigator
     {
         public Window ParentWindow { get; set; }
 

@@ -21,6 +21,7 @@ namespace ProjectJam.Views
     /// </summary>
     public partial class PlanView : UserControl
     {
+        private Popup popWin;
         public PlanView()
         {
             InitializeComponent();
@@ -29,6 +30,27 @@ namespace ProjectJam.Views
         private void buttonPlaning_Click(object sender, RoutedEventArgs e)
         {
             PlanController.DoProductionPlan();
+        }
+
+        private void buttonAddResource_Click(object sender, RoutedEventArgs e)
+        {
+            popWin = new Popup(new AddResourceView());
+            popWin.Show();
+            popWin.Activate();
+        }
+
+        private void buttonAddRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            popWin = new Popup(new AddRecipeView());
+            popWin.Show();
+            popWin.Activate();
+        }
+
+        private void buttonAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            popWin = new Popup(new AddProductView());
+            popWin.Show();
+            popWin.Activate();
         }
     }
 }

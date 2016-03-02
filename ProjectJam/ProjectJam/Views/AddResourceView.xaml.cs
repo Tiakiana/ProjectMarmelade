@@ -10,29 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ProjectJam.Views;
 
-namespace ProjectJam
+namespace ProjectJam.Views
 {
     /// <summary>
-    /// Interaction logic for Screen.xaml
+    /// Interaction logic for AddResourceView.xaml
     /// </summary>
-    public partial class Screen : Window
+    public partial class AddResourceView : UserControl
     {
-        public Navigator Guide = new Navigator();
-        public Screen()
+        public AddResourceView()
         {
             InitializeComponent();
-            Startup();
         }
 
-        private void Startup()
+        private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {
-            // Instantiate Parent window for navigator
-            Guide.ParentWindow = this;
-
-            Guide.Next(new PlanView());
+            
         }
     }
 }

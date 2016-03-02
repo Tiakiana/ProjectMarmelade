@@ -18,7 +18,7 @@ namespace ProjectJam.Persistents
         /// </summary>
         /// <param name="item">Input object</param>
         /// <param name="id">Inserted ID (Primary Key)</param>
-        void Insert(T item, out int id);
+        void Insert(ref T item);
         /// <summary>
         /// Update data
         /// </summary>

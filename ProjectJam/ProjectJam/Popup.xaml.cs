@@ -16,23 +16,22 @@ using ProjectJam.Views;
 namespace ProjectJam
 {
     /// <summary>
-    /// Interaction logic for Screen.xaml
+    /// Interaction logic for Popup.xaml
     /// </summary>
-    public partial class Screen : Window
+    public partial class Popup : Window
     {
         public Navigator Guide = new Navigator();
-        public Screen()
+
+        public Popup(UserControl viewControl, double width = 350, double height = 500)
         {
             InitializeComponent();
-            Startup();
-        }
 
-        private void Startup()
-        {
-            // Instantiate Parent window for navigator
+            this.Width = width;
+            this.Height = height;
+
             Guide.ParentWindow = this;
-
-            Guide.Next(new PlanView());
+            Guide.Next(viewControl);
         }
+
     }
 }

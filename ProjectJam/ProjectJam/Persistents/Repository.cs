@@ -13,9 +13,9 @@ namespace ProjectJam.Persistents
 
         }
 
-        public virtual void Insert(T item, out int id)
+        public virtual void Insert(ref T item)
         {
-            id = 0;
+            item = default(T);
         }
 
         public virtual void Update(T item)

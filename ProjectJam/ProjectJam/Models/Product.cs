@@ -23,7 +23,10 @@ namespace ProjectJam.Models
         /// <para>This id got from database, if not defined or id equal to 0, Auto detect as new data</para>
         /// </summary>
         public int Id { get; private set; }
-
+        /// <summary>
+        /// Product's name
+        /// </summary>
+        public string Name { get; private set; }
         /// <summary>
         /// Product size auto manage the weight of the product
         /// </summary>

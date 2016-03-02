@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="ProjectJam.Views.AddResourceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectJam.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="350">
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto">
+            <StackPanel Width="Auto" Height="30">
+                
+            </StackPanel>
+            <StackPanel Width="Auto" Height="40">
+                <Label x:Name="titlePage" Content="Create resource" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Width="Auto" Height="30" Orientation="Horizontal">
+                <StackPanel Width="150" Height="20">
+                    <Label x:Name="labelName" Content="Name"  HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+                <StackPanel Width="200" Height="20">
+                    <TextBox x:Name="textboxName" Width="150" Height="20" HorizontalAlignment="Left" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="Auto" Height="30" Orientation="Horizontal">
+                <StackPanel Width="150" Height="20">
+                    <Label x:Name="labelType" Content="Type"  HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+                <StackPanel Width="200" Height="20">
+                    <TextBox x:Name="textboxType" Width="150" Height="20" HorizontalAlignment="Left" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="Auto" Height="30" Orientation="Horizontal">
+                <StackPanel Width="150" Height="20">
+                    <Label x:Name="labelPrice" Content="Price"  HorizontalAlignment="Right" Margin="0 0 20 0"/>
+                </StackPanel>
+                <StackPanel Width="200" Height="20">
+                    <TextBox x:Name="textboxPrice" Width="150" Height="20" HorizontalAlignment="Left" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="Auto" Height="30" Orientation="Horizontal">
+                <StackPanel Width="150" Height="20">
+                    
+                </StackPanel>
+                <StackPanel Width="200" Height="20">
+                    <Button x:Name="buttonAccept" Content="Accept" Padding="10 0" Height="20" HorizontalAlignment="Left" Click="buttonAccept_Click" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

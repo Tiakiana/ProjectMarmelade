@@ -10,7 +10,10 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" Height="Auto" Margin="10" VerticalAlignment="Stretch" Width="Auto">
             <TabItem Header="Production plan">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="buttonPlaning" Content="Run" HorizontalAlignment="Left" Margin="156,72,0,0" VerticalAlignment="Top" Width="75" Click="buttonPlaning_Click"/>
+                    <Button x:Name="buttonPlaning" Content="Run" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top" Width="75" Click="buttonPlaning_Click"/>
+                    <Button x:Name="buttonAddResource" Content="Add Resource" HorizontalAlignment="Center" Margin="0,119,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.432,0.342" Click="buttonAddResource_Click"/>
+                    <Button x:Name="buttonAddRecipe" Content="Add Recipe" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Width="100" Click="buttonAddRecipe_Click"/>
+                    <Button x:Name="buttonAddProduct" Content="Add Product" HorizontalAlignment="Center" Margin="135,172,135,0" VerticalAlignment="Top" Width="100" Click="buttonAddProduct_Click"/>
 
                 </Grid>
             </TabItem>
