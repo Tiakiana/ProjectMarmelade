@@ -59,7 +59,7 @@ namespace ProjectJam
 
         
             ClearTextbox();
-            MessageBox.Show("Asset was created", "Succes");
+            MessageBox.Show("Anlæg oprettet", "Succes");
         }
 
         public void ClearTextbox()

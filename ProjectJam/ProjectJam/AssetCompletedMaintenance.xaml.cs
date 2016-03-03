@@ -35,10 +35,10 @@ namespace ProjectJam
         private void completeButton_Click(object sender, RoutedEventArgs e)
         {
             // insert selected values in messagebox
-            if (MessageBox.Show("Pleas confirm that: \n AssetId \n AssetName \n has been maintained", "Maintenance", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Godkend at: \n AssetId \n AssetName \n er blevet vedligeholdt", "Vedligeholdelse", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 // do yes stuff 
-                MessageBox.Show("Asset back in the game");
+                MessageBox.Show("Anlægget er i drift");
             }
             else
             {

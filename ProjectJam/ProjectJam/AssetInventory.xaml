@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="AssetInventory" Height="272" Width="379">
     <Grid>
-        <Label x:Name="assetInventoryLabel" Content="Asset inventory" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,10,0,0" FontSize="26.667"/>
-        <Button x:Name="completedMaintenanceButton" Content="Completed maintenance" HorizontalAlignment="Left" Margin="206,125,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="completedMaintenanceButton_Click"/>
-        <Button x:Name="planMaintenanceButton" Content="Plan maintenance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="206,75,0,0" Height="35" Click="planMaintenanceButton_Click"/>
-        <Button x:Name="assetInformationButton" Content="Asset information" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="assetInformationButton_Click"/>
-        <Button x:Name="newAssetButton" Content="New asset" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="newAssetButton_Click"/>
-        <Button x:Name="homeButton" Content="Home" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="75" Click="homeButton_Click"/>
+        <Label x:Name="assetInventoryLabel" Content="Anlægskartotek" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,10,0,0" FontSize="26.667"/>
+        <Button x:Name="completedMaintenanceButton" Content="Udført vedligeholdelse" HorizontalAlignment="Left" Margin="206,125,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="completedMaintenanceButton_Click"/>
+        <Button x:Name="planMaintenanceButton" Content="Planlæg vedligeholdelse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="206,75,0,0" Height="35" Click="planMaintenanceButton_Click"/>
+        <Button x:Name="assetInformationButton" Content="Anlægs information" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="assetInformationButton_Click"/>
+        <Button x:Name="newAssetButton" Content="Nyt anlæg" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="newAssetButton_Click"/>
+        <Button x:Name="homeButton" Content="Hjem" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="75" Click="homeButton_Click"/>
 
     </Grid>
 </Window>

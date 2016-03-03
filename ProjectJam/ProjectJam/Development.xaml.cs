@@ -59,5 +59,12 @@ namespace ProjectJam
             RecipeFrame.Content = dr;
         }
         #endregion
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            JamFactoryUI main = new JamFactoryUI();
+            main.Show();
+            this.Close();
+        }
     }
 }
