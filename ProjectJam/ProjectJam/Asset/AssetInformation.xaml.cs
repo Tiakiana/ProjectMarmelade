@@ -25,7 +25,6 @@ namespace ProjectJam
 
         public AssetInformation()
         {
-
             InitializeComponent();
             newAssetController = new Domain.AssetController();
             fill_combo();

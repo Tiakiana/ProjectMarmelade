@@ -12,7 +12,6 @@ namespace Domain
         internal Asset CurrentAsset { get; private set; }
         Persistance.DBC DBcontroller = new Persistance.DBC();
         
-
         // Methods:
         public void InsertNewAsset()
         {

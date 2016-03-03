@@ -55,26 +55,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Asset.cs" />
-    <Compile Include="AssetCompletedMaintenance.xaml.cs">
+    <Compile Include="Asset\Asset.cs" />
+    <Compile Include="Asset\AssetCompletedMaintenance.xaml.cs">
       <DependentUpon>AssetCompletedMaintenance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetController.cs" />
-    <Compile Include="AssetDatabaseController.cs" />
-    <Compile Include="AssetInformation.xaml.cs">
+    <Compile Include="Asset\AssetController.cs" />
+    <Compile Include="Asset\AssetDatabaseController.cs" />
+    <Compile Include="Asset\AssetInformation.xaml.cs">
       <DependentUpon>AssetInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetInventory.xaml.cs">
+    <Compile Include="Asset\AssetInventory.xaml.cs">
       <DependentUpon>AssetInventory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetMakeAsset.xaml.cs">
+    <Compile Include="Asset\AssetMakeAsset.xaml.cs">
       <DependentUpon>AssetMakeAsset.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AssetPlanMaintenance.xaml.cs">
+    <Compile Include="Asset\AssetPlanMaintenance.xaml.cs">
       <DependentUpon>AssetPlanMaintenance.xaml</DependentUpon>
     </Compile>
     <Compile Include="DBC.cs" />
-    <Compile Include="AssetDecreciation.cs" />
+    <Compile Include="Asset\AssetDecreciation.cs" />
     <Compile Include="Development.xaml.cs">
       <DependentUpon>Development.xaml</DependentUpon>
     </Compile>
@@ -86,7 +86,7 @@
     <Compile Include="DomainTest.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="IQualityTest.cs" />
-    <Compile Include="AssetMaintenance.cs" />
+    <Compile Include="Asset\AssetMaintenance.cs" />
     <Compile Include="JamFactoryUI.xaml.cs">
       <DependentUpon>JamFactoryUI.xaml</DependentUpon>
     </Compile>
@@ -128,23 +128,23 @@
       <DependentUpon>KnowlegdeBank.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
-    <Page Include="AssetCompletedMaintenance.xaml">
+    <Page Include="Asset\AssetCompletedMaintenance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetInformation.xaml">
+    <Page Include="Asset\AssetInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetInventory.xaml">
+    <Page Include="Asset\AssetInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetMakeAsset.xaml">
+    <Page Include="Asset\AssetMakeAsset.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AssetPlanMaintenance.xaml">
+    <Page Include="Asset\AssetPlanMaintenance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
