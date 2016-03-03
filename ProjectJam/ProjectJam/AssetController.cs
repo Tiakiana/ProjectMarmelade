@@ -9,8 +9,9 @@ namespace Domain
     public class AssetController
     {
         //Properties:
-        private Asset CurrentAsset { get; set; }
+        internal Asset CurrentAsset { get; private set; }
         Persistance.DBC DBcontroller = new Persistance.DBC();
+        
 
         // Methods:
         public void InsertNewAsset()
@@ -19,17 +20,19 @@ namespace Domain
         }
         public void GetAsset(int assetID)
         {
-           // CurrentAsset = DBcontroller.LoadAsset(assetID);
+           CurrentAsset =  DBcontroller.LoadAsset(assetID);
+
         }
 
-        public void ShowAssetInfo()
+        public List<string> ShowAssetInfo()
         {
-            
+            List<string> assetStringReturnList = DBcontroller.ShowAssetInfo();
+            return assetStringReturnList;
         }
 
         public void PlanMaintenance(int assetID, string description, DateTime plannedDate)
         {
-            // PLEASE TEST, GUYS (AND GIRL)
+
             GetAsset(assetID);
             AssetMaintenance tempMaintenance = new AssetMaintenance( description, plannedDate);
             CurrentAsset.addMaintenance(tempMaintenance);
@@ -39,13 +42,12 @@ namespace Domain
         {
             GetAsset(assetID);
             CurrentAsset.PerformMaintenance();
-            // DO STUFF
 
         }
 
         public void CompleteMaintenance(int assetID)
         {
-            //PLEASE LOOK IT OVER, GUYS AND DOLL!!
+
             GetAsset(assetID);
             
             CurrentAsset.CompleteMaintenance();
@@ -53,41 +55,11 @@ namespace Domain
 
         public void CreateNewAsset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue,  int lifeSpan, string isoperative, DecreciationType inDecreciation)
         {
-            //PLEASE TO BE TESTING OR READ THROUGH; GUYS (AND GIRL)
-            Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue, lifeSpan, isoperative, inDecreciation);
 
-            //CurrentAsset = tempAsset;
+            Asset tempAsset = new Asset(name, purchasePrice, purchaseDate, scrapvalue, lifeSpan, isoperative, inDecreciation);
             DBcontroller.SaveAsset(tempAsset);
         }
 
-        //private int GetLastAssetID()
-        //{ 
-        //    // stored procedure call to get last Asset in DB
-        //    int lastID = DBcontroller.GetLastAssetID();
-        //    return lastID;
-        //}
 
-        //private int GetLastMaintenanceID()
-        //{
-        //    int lastMainID;
-        //    // stored procedure call to get last Maintenance in DB
-            
-        //    return lastMainID;
-        //}
-
-        //private int GetLastDecreciationID()
-        //{
-        //    int lastDecreciationID;
-        //    // stored procedure call to get last Decreciation in DB
-        //    return lastDecreciationID;
-        //}
-
-        //private int getPlannedMaintenanceID()
-        //{
-        //    int plannedMaintenanceID;
-        //    // stored procedure call to get planned maintenanceID in DB
-        //    return plannedMaintenanceID;
-        //}
-        
     }
 }

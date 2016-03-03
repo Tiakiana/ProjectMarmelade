@@ -13,7 +13,7 @@ namespace Domain
         // Properties
         Persistance.DBC DBcontroller = new Persistance.DBC();
 
-        private List<Asset> AssetTestList{ get; set; }//JUST A TESTER FOR FUNCTIONALITY
+        private List<Asset> AssetTestList { get; set; }//JUST A TESTER FOR FUNCTIONALITY
 
         // Constructor
         public AssetDatabaseController()
@@ -27,13 +27,41 @@ namespace Domain
         public void InsertAsset()
         {
 
-        
+
         }
 
-        public void ShowAssetInfo(int id)
+        public List<string> ShowAssetInfo()
         {
-            // DO STUFF
-            Console.WriteLine(AssetTestList[id].ToString());
+            List<string> assetStringList = new List<string>();
+            SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * from Asset";
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    string tempAsset = "Id: " + rdr.GetInt32(0) + " Name: " + rdr.GetString(1);
+                    assetStringList.Add(tempAsset);
+                }
+
+            }
+            catch (SqlException es)
+            {
+                Console.WriteLine("UPS " + es.Message);
+                Console.ReadLine();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return assetStringList;
         }
 
         public void PlanMaintenance()
@@ -46,18 +74,83 @@ namespace Domain
             // DO STUFF
         }
 
-        public Asset LoadAsset(int id)
+        public Asset LoadAsset(int inAssetID)
         {
-            // DO STUFF
+            Asset returnAsset;
+            string tempname = "UNKNOWN/VOID";
+            decimal tempprice = 1000;
+            string tempdate = "01/01/1000";
+            decimal scrapvalue = 10;
+            int lifespan = 0;
+            string status = "false";
+            Domain.DecreciationType type = Domain.DecreciationType.Lineær;
+
             // StoredProcedureCall
-            Asset someAsset = AssetTestList[id];
-            return someAsset;
+            SqlConnection conn = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db; User ID = ejl49_usr; Password = Baz1nga49");
+
+            try
+            {
+                conn.Open();
+
+                //SqlCommand cmd = new SqlCommand();
+                //cmd.Connection = conn;
+                //cmd.CommandText = "SELECT * from Asset";
+
+                SqlCommand comd = new SqlCommand("spCompoundAssDesc", conn);
+                comd.CommandType = CommandType.StoredProcedure;
+
+                comd.Parameters.Add(new SqlParameter("@AssetId", inAssetID));
+
+                SqlDataReader rdr = comd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    tempname = rdr["AssetName"].ToString();
+                    tempprice = decimal.Parse(rdr["AssetPurchasePrice"].ToString());
+                    tempdate = rdr["AssetPurchaseDate"].ToString();
+                    scrapvalue = decimal.Parse(rdr["AssetScrapValue"].ToString());
+                    lifespan = int.Parse(rdr["AssetLifeSpan"].ToString());
+                    status = rdr["AssetStatus"].ToString();
+                    string inType = rdr["DecreciationType"].ToString();
+
+                    switch (inType)
+                    {
+                        case "Lineær":
+                            type = Domain.DecreciationType.Lineær;
+                            break;
+                        case "Saldo":
+                            type = Domain.DecreciationType.Saldo;
+                            break;
+                        case "Annuitet":
+                            type = Domain.DecreciationType.Annuitet;
+                            break;
+
+                    }
+                    // string Asset = "Id: " + rdr.GetInt32(0) + " Name: " + rdr.GetString(1);
+
+                }
+
+            }
+            catch (SqlException es)
+            {
+                Console.WriteLine("UPS " + es.Message);
+                Console.ReadLine();
+            }
+            finally
+            {
+
+                conn.Close();
+
+            }
+
+            returnAsset = new Asset(tempname, tempprice, tempdate, scrapvalue, lifespan, status, type);
+            return returnAsset;
         }
 
         //public void SaveAsset(Asset saveasset)
         //{
         //    // DO STUFF
-            
+
         //    AssetTestList.Add(saveasset);// blot til test: Skriver til en liste // skriver ikke til databasen.
         //    // StoredProcedureCall
         //    //AssetConnection = new SqlConnection("Server=ealdb1.eal.local;Database=ejl49_db;User Id=ejl49_usr;Password=Baz1nga49;");
@@ -76,7 +169,7 @@ namespace Domain
         //        cmd.Parameters.Add(new SqlParameter("@AssetPostedValue",saveasset.AssetPostedValue ));
         //        cmd.Parameters.Add(new SqlParameter("@AssetLifeSpan",saveasset.AssetLifeSpan ));
         //        cmd.Parameters.Add(new SqlParameter("@AssetStatus",saveasset.IsOperative.ToString() ));
-                
+
         //        cmd.ExecuteNonQuery();
 
         //    }
@@ -90,13 +183,13 @@ namespace Domain
         //        AssetConnection.Close();
         //        AssetConnection.Dispose();
         //    }
-            
+
 
 
 
         //}
 
-        
+
 
     }
 }

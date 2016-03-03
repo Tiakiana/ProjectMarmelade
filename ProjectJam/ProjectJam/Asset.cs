@@ -18,13 +18,13 @@ namespace Domain
         public decimal AssetPostedValue { get; private set; }
         public int AssetLifeSpan { get; private set; }
         public string IsOperative { get; private set; }
-        public decimal PostedValue { get; private set; }
         public List<AssetDecreciation> AssetDecreciationList { get; private set; }
         public List<AssetMaintenance> AssetMaintenanceList { get; private set; }
         public DecreciationType AssetDecreciationType { get; private set; }
 
         // Constructors:
-        public Asset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue,  int lifeSpan, string isOperative, DecreciationType decreciationtype)
+        public Asset(string name, decimal purchasePrice, string purchaseDate, decimal scrapvalue,
+                                int lifeSpan, string isoperative, DecreciationType decreciationtype)
         {
             
             this.AssetName = name; 
@@ -32,13 +32,13 @@ namespace Domain
             this.AssetPurchacePrice = purchasePrice;
             this.AssetScrapValue = scrapvalue;
             this.AssetLifeSpan = lifeSpan;
-            this.IsOperative = isOperative;
-            this.PostedValue = purchasePrice;
+            this.IsOperative = isoperative;
+            this.AssetPostedValue = purchasePrice;
             this.AssetDecreciationList = new List<AssetDecreciation>();
             this.AssetMaintenanceList = new List<AssetMaintenance>();
             this.AssetDecreciationType = decreciationtype;
             AssetDecreciation firstDecreciation = new AssetDecreciation(decreciationtype);
-            AssetDecreciationList.Add(firstDecreciation);
+            addDecreciation(firstDecreciation);
 
         }
         //Overrides
@@ -73,7 +73,10 @@ namespace Domain
         {
             // DOO STUUUFFF
         }
-        
+        public void SetID(int inID)
+        {
+            AssetID = inID;
+        }
 
     }
 }
