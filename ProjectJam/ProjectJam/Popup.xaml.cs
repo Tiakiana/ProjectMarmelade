@@ -32,6 +32,5 @@ namespace ProjectJam
             Guide.ParentWindow = this;
             Guide.Next(viewControl);
         }
-
     }
 }

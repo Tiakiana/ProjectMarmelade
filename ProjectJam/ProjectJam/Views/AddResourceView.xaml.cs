@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjectJam.Controllers;
+
 
 namespace ProjectJam.Views
 {
@@ -27,7 +29,29 @@ namespace ProjectJam.Views
 
         private void buttonAccept_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (textboxName.Text.Length > 0 && textboxType.Text.Length > 0 && textboxPrice.Text.Length > 0)
+            {
+                double price = -1;
+                try
+                {
+                    price = Convert.ToDouble(textboxPrice.Text);
+                    if (price > 0)
+                    {
+                        DataFactory.AddResource(textboxName.Text, textboxType.Text, price);
+                        Destroy();
+                    }
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.Message);
+                }
+            }
+        }
+
+        private void Destroy()
+        {
+            Window parent = Window.GetWindow(this);
+            parent.Close();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectJam.Persistents;
-
+using ProjectJam.Controllers;
 
 namespace ProjectJam.Models
 {
@@ -17,8 +17,6 @@ namespace ProjectJam.Models
         public int ContainerCapacity { get; set; }
         public int ProduceRatePerHour { get; set; }
         public int ProductionTime { get; set; }
-
-        private int MostValuableIndex = -1;
         public List<ProductLine> ItemLines { get; private set; }
 
 
@@ -32,7 +30,8 @@ namespace ProjectJam.Models
         public void GeneratePlan()
         {
             // Pull every products from database
-            List<Product> items = Product.GetProducts();
+            //List<Product> items = Product.GetProducts();
+            List<Product> items = DataFactory.PullProducts();
 
             // Initiate ProductLine list
             ItemLines = new List<ProductLine>();
@@ -52,14 +51,21 @@ namespace ProjectJam.Models
             ItemLines = temp.ToList();
 
             // Prepare to save to database
-            
-
-            // -DONE
+            //IRepository<ProductionPlan> repo = new PlanRepository();
+            //repo.Insert(this);
         }
 
-        public void GetMostProfitableProduct()
+        public Product GetMostProfitableProduct()
         {
-
+            if (ItemLines != null)
+            {
+                return ItemLines[0].TargetProduct;
+            }
+            else
+            {
+                Console.WriteLine("Require to run plan first");
+                return null;
+            }
         }
     }
 }

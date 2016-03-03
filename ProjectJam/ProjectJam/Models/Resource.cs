@@ -30,7 +30,10 @@ namespace ProjectJam.Models
             }
         }
 
-
+        public void SetId(int id)
+        {
+            Id = id;
+        }
 
         public List<Resource> GetSources()
         {

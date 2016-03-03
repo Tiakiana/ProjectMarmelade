@@ -22,22 +22,44 @@ namespace ProjectJam.Models
         /// Product Identity
         /// <para>This id got from database, if not defined or id equal to 0, Auto detect as new data</para>
         /// </summary>
-        public int Id { get; private set; }
+        public int Id { get; set; }
         /// <summary>
         /// Product's name
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; set; }
         /// <summary>
         /// Product size auto manage the weight of the product
         /// </summary>
-        public ProductSize Size { get; private set; }
+        public ProductSize Size
+        {
+            get { return _size; }
+            set
+            {
+                _size = value;
+                ManageData();
+            }
+        }
+        /// <summary>
+        /// Product type
+        /// </summary>
+        public ProductType Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                ManageData();
+            }
+        }
         /// <summary>
         /// Weight will auto set by size definition
         /// </summary>
         public double Weight { get; private set; }
         public double Price { get; private set; }
-        public ProductType Type { get; private set; }
-        public Recipe Ingredient { get; private set; }
+        public Recipe Ingredient { get; set; }
+
+        private ProductSize _size = ProductSize.Small;
+        private ProductType _type = ProductType.Premium;
 
         public Product()
         {
@@ -75,6 +97,11 @@ namespace ProjectJam.Models
             return new List<Product>();
         }
 
+        public void SetId(int id)
+        {
+            Id = id;
+        }
+
         public void GetIngredient()
         {
 
@@ -85,28 +112,28 @@ namespace ProjectJam.Models
         /// </summary>
         private void ManageData()
         {
-            if (Type == ProductType.Premium)
+            if (_type == ProductType.Premium)
             {
-                if (Size == ProductSize.Small)
+                if (_size == ProductSize.Small)
                 {
                     Weight = 175;
                     Price = 22;
                 }
                 else
                 {
-                    Size = ProductSize.Medium;
+                    _size = ProductSize.Medium;
                     Weight = 350;
                     Price = 38;
                 }
             }
-            else if (Type == ProductType.Daily)
+            else if (_type == ProductType.Daily)
             {
-                if (Size == ProductSize.Small)
+                if (_size == ProductSize.Small)
                 {
                     Weight = 400;
                     Price = 18;
                 }
-                else if (Size == ProductSize.Medium)
+                else if (_size == ProductSize.Medium)
                 {
                     Weight = 600;
                     Price = 25;
@@ -119,14 +146,14 @@ namespace ProjectJam.Models
             }
             else
             {
-                if (Size == ProductSize.Small)
+                if (_size == ProductSize.Small)
                 {
                     Weight = 500;
                     Price = 16;
                 }
                 else
                 {
-                    Size = ProductSize.Medium;
+                    _size = ProductSize.Medium;
                     Weight = 1000;
                     Price = 28;
                 }

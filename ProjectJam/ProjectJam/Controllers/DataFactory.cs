@@ -10,20 +10,28 @@ namespace ProjectJam.Controllers
 {
     class DataFactory
     {
-        public static List<Resource> resourceList = new List<Resource>();
-        public static List<Product> productList = new List<Product>();
-        public static List<Recipe> recipeList = new List<Recipe>();
+        public static List<Resource> ResourceList { get; private set; }
+        public static List<Product> ProductList { get; private set; }
+        public static List<Recipe> RecipeList { get; private set; }
+
+        //private static List<Resource> listResource = new List<Resource>();
 
         public static void AddResource(string name, string type, double price)
         {
             Task job = new Task(() => {
                 // Direct call persistent
-                Resource item = new Resource(name, type, price);
+                Resource item = new Resource(name, type, price, ResourceList.Count + 1);
 
                 IRepository<Resource> repo = new ResourceRepository();
                 repo.Insert(ref item);
 
-                resourceList.Add(item);
+                // Initiate ResourceList
+                if (ResourceList == null || ResourceList.Count == 0)
+                {
+                    ResourceList = new List<Resource>();
+                }
+
+                ResourceList.Add(item);
             });
 
             // Start Task
@@ -34,6 +42,20 @@ namespace ProjectJam.Controllers
         {
 
         }
+
+        public static List<Resource> PullResources()
+        {
+            IRepository<Resource> repo = new ResourceRepository();
+            return repo.GetAll();
+        }
+
+        
+        public static List<Product> PullProducts()
+        {
+            IRepository<Product> repo = new ProductRepository();
+            return repo.GetAll();
+        }
+        
 
         //public static void AddProduct(string name)
     }

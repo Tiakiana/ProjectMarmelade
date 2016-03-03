@@ -40,5 +40,27 @@ namespace ProjectJam.Persistents
         {
             base.Delete(item);
         }
+
+        public override List<Recipe> GetAll()
+        {
+            // Pulling data from database
+            Database db = new Database("SELECT * FROM [dbo].[ProductRecipe]");
+            List<Dictionary<string, object>> result = db.FetchAll(false);
+            List<Recipe> recipes = new List<Recipe>();
+
+            // Convert raw data to usable objects
+            foreach (Dictionary<string, object> rec in result)
+            {
+                string name;
+                int id;
+                
+                foreach (KeyValuePair<string, object> item in rec)
+                {
+                    
+                }
+            }
+
+            return recipes;
+        }
     }
 }

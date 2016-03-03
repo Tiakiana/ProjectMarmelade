@@ -53,5 +53,43 @@ namespace ProjectJam.Persistents
             base.Delete(item);
             
         }
+
+        public override List<Resource> GetAll()
+        {
+            Database db = new Database("SELECT * FROM [dbo].[Resources]");
+            List<Dictionary<string, object>> result = db.FetchAll(false);
+            List<Resource> resources = new List<Resource>();
+            foreach (Dictionary<string, object> parent in result)
+            {
+                Resource source = new Resource();
+                foreach (KeyValuePair<string, object> item in parent)
+                {
+                    Patching(item, ref source);
+                }
+                resources.Add(source);
+            }
+
+            return resources;
+        }
+
+        private void Patching(KeyValuePair<string, object> parse, ref Resource source)
+        {
+            if (parse.Key == "id")
+            {
+                source.SetId((int)parse.Value);
+            }
+            else if (parse.Key == "name")
+            {
+                source.Name = (string)parse.Value;
+            }
+            else if (parse.Key == "type")
+            {
+                source.Type = (string)parse.Value;
+            }
+            else if (parse.Key == "price")
+            {
+                source.Price = (double)parse.Value;
+            }
+        }
     }
 }

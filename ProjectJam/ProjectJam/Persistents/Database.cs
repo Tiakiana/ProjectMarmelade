@@ -193,15 +193,7 @@ namespace ProjectJam.Persistents
                 ConnectString = "Data Source=ealdb1.eal.local;Initial Catalog=EJL49_DB;Persist Security Info=True;User ID=ejl49_usr;Password=Baz1nga49";
             }
 
-            if (clone == null)
-            {
-                clone = new SqlConnection(ConnectString);
-                connection = clone;
-            }
-            else
-            {
-                connection = clone;
-            }
+            connection = new SqlConnection(ConnectString);
             connection.Open();
         }
     }

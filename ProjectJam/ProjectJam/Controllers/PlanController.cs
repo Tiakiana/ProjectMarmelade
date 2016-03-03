@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectJam.Models;
+using System.Diagnostics;
+using System.Windows;
 
 namespace ProjectJam.Controllers
 {
@@ -21,8 +23,13 @@ namespace ProjectJam.Controllers
         
         public static void DoProductionPlan()
         {
-            //plan.GeneratePlan();
-            
+            // Initialize the task
+            new Task(() => {
+                plan.GeneratePlan();
+                MessageBox.Show("Optimizing production is done!");
+            }).Start();
+
+
         }
         
 
